@@ -1,0 +1,17 @@
+# media & render products (decision ④: not in git)
+*.mp4
+*.mov
+*.webm
+*.wav
+*.mp3
+out/
+**/out/
+frames/
+node_modules/
+.DS_Store
+.claude/
+# release assets are built by scripts/release-assets.sh and uploaded to the GitHub Release, not committed
+release/
+projects/_rp*/
+.env
+.env.*

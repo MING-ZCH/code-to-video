@@ -1,0 +1,37 @@
+{
+ "kind": "script",
+ "source": "script.md",
+ "beats": [
+  {
+   "t0": 0.5,
+   "t1": 4.3,
+   "text": "A paper boat drifts down a gutter in the rain."
+  },
+  {
+   "t0": 4.3,
+   "t1": 6.7,
+   "text": "Clawd sees it and gasps!"
+  },
+  {
+   "t0": 6.7,
+   "t1": 10.7,
+   "text": "Clawd runs alongside, holding a leaf over the boat like an umbrella."
+  },
+  {
+   "t0": 10.7,
+   "t1": 13.38,
+   "text": "The boat tips at a drain."
+  },
+  {
+   "t0": 13.38,
+   "t1": 16.9,
+   "text": "Clawd dives, catches it, and sits soaked but proud."
+  },
+  {
+   "t0": 16.9,
+   "t1": 20.66,
+   "text": "雨停了，太阳出来，小船上落了一只蝴蝶。"
+  }
+ ],
+ "duration": 21.66
+}

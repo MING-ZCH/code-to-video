@@ -1,0 +1,32 @@
+{
+ "kind": "image",
+ "source": "bridge.png",
+ "size": "1920x1080",
+ "palette": [
+  {
+   "hex": "#526c7f",
+   "share": 0.301
+  },
+  {
+   "hex": "#0e3355",
+   "share": 0.275
+  },
+  {
+   "hex": "#1d4c6c",
+   "share": 0.144
+  },
+  {
+   "hex": "#536471",
+   "share": 0.137
+  },
+  {
+   "hex": "#142b25",
+   "share": 0.101
+  },
+  {
+   "hex": "#879b99",
+   "share": 0.041
+  }
+ ],
+ "reference": "input/reference.jpg"
+}

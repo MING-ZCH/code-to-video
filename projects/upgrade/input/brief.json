@@ -1,0 +1,80 @@
+{
+ "kind": "audio",
+ "source": "upgrade_chorus.wav",
+ "lines": [
+  [
+   0.2,
+   4.9,
+   "One more upgrade, one more try"
+  ],
+  [
+   4.9,
+   9.5,
+   "Raise the ceiling, touch the sky"
+  ],
+  [
+   9.5,
+   13.9,
+   "I hold the switch, I run the show"
+  ],
+  [
+   13.9,
+   18,
+   "At least I did a song ago"
+  ]
+ ],
+ "duration": 18,
+ "audio": "projects/upgrade/assets/audio.wav",
+ "music": {
+  "duration": 18,
+  "bpm": 111.8,
+  "beat": 0.5367,
+  "offset": 0.515,
+  "contrast": 88.58,
+  "confidence": "high",
+  "band": "kick",
+  "candidates": [
+   {
+    "bpm": 111.8,
+    "contrast": 88.58,
+    "phase": 0.515,
+    "score": 88.58
+   },
+   {
+    "bpm": 111.8,
+    "contrast": 88.58,
+    "phase": 0.515,
+    "score": 88.58
+   },
+   {
+    "bpm": 64,
+    "contrast": 71.32,
+    "phase": 0.135,
+    "score": 57.06
+   },
+   {
+    "bpm": 74.3,
+    "contrast": 49.82,
+    "phase": 0.245,
+    "score": 49.82
+   },
+   {
+    "bpm": 74.3,
+    "contrast": 49.82,
+    "phase": 0.245,
+    "score": 49.82
+   }
+  ],
+  "sections": [
+   {
+    "t0": 0,
+    "t1": 18,
+    "energy_db": -12.9
+   }
+  ]
+ },
+ "inputs": [
+  "upgrade_chorus.lrc (lyrics)",
+  "upgrade_chorus.wav (audio)"
+ ]
+}

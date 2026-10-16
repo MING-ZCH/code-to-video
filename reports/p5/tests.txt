@@ -1,0 +1,17 @@
+PASS  LRC: 5 lines, multi-tag line expanded, end = next start  → [1.2,3.8,"A tiny light wakes up"]
+PASS  kindOf: lyrics vs script
+PASS  script: 6 beats, each 1.4–4 s  → 3.8,2.4,4,2.68,3.52,3.76
+PASS  read time grows with CJK length
+PASS  pdoom.mp3 tempo 88 BPM  → 88
+PASS  pdoom.mp3 first beat within one frame of 0.21 s  → 0.185 (err 0.025 s)
+PASS  pdoom.mp3 confidence high  → high (13.9)
+PASS  JS video metrics == Python baseline metrics  → cuts=8 shots_1p4_4s=0 still_ratio=0.398 motion_mean=1.9 bottom_band_text=0.633
+PASS  check exits 1 when there are errors  → 1
+PASS  check: determinism errors (Math.random, Date.now, outer state)
+PASS  check: medium warnings (rect, fill, rotateY)
+PASS  check: all 5 seams flagged (opening, 3 cuts, ending)
+PASS  check: shot lengths, score range, storyboard
+PASS  check: a rule word inside a comment is not flagged
+PASS  check: a scene syntax error is reported (page error + no shots), not a crash
+
+ALL PASS

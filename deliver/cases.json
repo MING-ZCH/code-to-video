@@ -1,0 +1,185 @@
+{
+ "_note": "Review statistics are hand-kept from each project's review notes (docs/case-*.md, reports/*/REVIEW.md); everything else in the delivery page is read from the projects' own out/check.json and out/metrics.json.",
+ "cases": [
+  {
+   "project": "umbrella",
+   "title": "The umbrella",
+   "input": "text (script, 6 beats)",
+   "inputKind": "text",
+   "role": "P3 acceptance short + text-input generalization",
+   "doc": "reports/p3/umbrella/REVIEW.md",
+   "sheet": "reports/p3/umbrella/final_1fps.jpg",
+   "reviewPasses": 5,
+   "fixes": 12,
+   "failures": [
+    "key idea unreadable",
+    "prop continuity across cuts",
+    "jump cut",
+    "reaction on top of cause",
+    "floating contacts",
+    "tool: check crash on load error"
+   ],
+   "render": "brush, scale 0.5, VM",
+   "sound": "code (23 events)"
+  },
+  {
+   "project": "pdoom-c08",
+   "title": "PDoomVideo chorus 4, regenerated",
+   "input": "audio slice + 6 lyric lines",
+   "inputKind": "audio+lyrics",
+   "role": "case A",
+   "doc": "docs/case-A-pdoom.md",
+   "sheet": "reports/p4/caseA/compare.jpg",
+   "reviewPasses": 4,
+   "fixes": 9,
+   "failures": [
+    "last read too small (zoom)",
+    "continuity jump between shots",
+    "draw order hid the payoff",
+    "prop contact / reach",
+    "beat off by 0.18"
+   ],
+   "render": "brush, scale 0.5, VM",
+   "sound": "original song",
+   "caveat": "not blind: the chapter summary had been read before planning"
+  },
+  {
+   "project": "bench",
+   "title": "The bench meme, six styles",
+   "input": "meme description (image unavailable)",
+   "inputKind": "meme",
+   "role": "case B",
+   "doc": "docs/case-B-bench-meme.md",
+   "sheet": "reports/p4/caseB/final_1fps.jpg",
+   "reviewPasses": 4,
+   "fixes": 6,
+   "failures": [
+    "character read as caged",
+    "subject cropped",
+    "style destroys small props",
+    "prop on hidden arm",
+    "effect before cause"
+   ],
+   "render": "flat base + 6 style shaders, scale 1, VM",
+   "sound": "code (63 events)"
+  },
+  {
+   "project": "upgrade",
+   "title": "One more upgrade — after",
+   "input": "baseline audio + 4 lyric lines",
+   "inputKind": "audio+lyrics",
+   "role": "case C (before/after)",
+   "doc": "docs/case-C-before-after.md",
+   "sheet": "reports/p4/caseC/compare.jpg",
+   "before": "gpt-6-one-more-upgrade.mp4 32–50 s",
+   "reviewPasses": 4,
+   "fixes": 7,
+   "failures": [
+    "growth read as shrinking (camera)",
+    "hidden prop / no contact",
+    "roof invisible then too fast",
+    "lyric line mistimed",
+    "missing CJK font"
+   ],
+   "render": "brush, scale 0.5, VM",
+   "sound": "original song"
+  },
+  {
+   "project": "whale",
+   "title": "The whale asks why",
+   "input": "one key frame (image)",
+   "inputKind": "image",
+   "role": "image-input generalization",
+   "doc": "projects/whale/STORYBOARD.md",
+   "sheet": "reports/p5/whale/final_1fps.jpg",
+   "reviewPasses": 2,
+   "fixes": 1,
+   "failures": [
+    "gesture misread (wave looked like a slam)"
+   ],
+   "render": "brush, scale 0.5, VM",
+   "sound": "code (17 events)"
+  },
+  {
+   "project": "p1-media",
+   "title": "The button (media test)",
+   "input": "none (engine test)",
+   "inputKind": "test",
+   "role": "P1 media test",
+   "doc": "projects/p1-media/STORYBOARD.md",
+   "sheet": "reports/p1/boom2.jpg",
+   "reviewPasses": 3,
+   "fixes": 4,
+   "failures": [
+    "no contact with prop",
+    "hard cut sold as cut on action",
+    "double emote take",
+    "shader layer pasted on"
+   ],
+   "render": "flat, scale 0.5, VM",
+   "sound": "code (11 events)"
+  },
+  {
+   "project": "night",
+   "title": "Under the water, at night (RSI round 1)",
+   "input": "baseline audio + 3 lyric lines",
+   "inputKind": "audio+lyrics",
+   "role": "RSI-1 case 1 (before/after)",
+   "doc": "docs/RSI-round-1.md",
+   "sheet": "reports/rsi1/night/compare.jpg",
+   "before": "deepseek-4-1-flash-under-the-water.mp4 85.8–99.5 s",
+   "reviewPasses": 2,
+   "fixes": 5,
+   "toolCatches": 2,
+   "failures": [
+    "tool: focus declaration missing (reads)",
+    "selftest: non-deterministic textured glow (engine fix)",
+    "moon too small (declared box ≠ drawn)",
+    "reads false positive (rule fix)"
+   ],
+   "render": "brush, scale 0.5, VM",
+   "sound": "original song"
+  },
+  {
+   "project": "flood",
+   "title": "Hold the light (RSI round 1)",
+   "input": "one key frame (image)",
+   "inputKind": "image",
+   "role": "RSI-1 case 2",
+   "doc": "docs/RSI-round-1.md",
+   "sheet": "reports/rsi1/flood/compare.jpg",
+   "reviewPasses": 2,
+   "fixes": 5,
+   "toolCatches": 1,
+   "failures": [
+    "cost: one shot 3.9× slower (small Clawds; lite)",
+    "lantern on the trailing arm ('lead' hand)",
+    "gold path too faint",
+    "sun hidden behind cloud",
+    "gust lines too faint"
+   ],
+   "render": "brush, scale 0.5, VM",
+   "sound": "code (11 events)"
+  },
+  {
+   "project": "keys",
+   "title": "Where are the keys? (RSI round 1)",
+   "input": "Chinese text script (4 beats)",
+   "inputKind": "text",
+   "role": "RSI-1 case 3",
+   "doc": "docs/RSI-round-1.md",
+   "sheet": "reports/rsi1/keys/sheet.jpg",
+   "reviewPasses": 3,
+   "fixes": 4,
+   "toolCatches": 1,
+   "failures": [
+    "cat too small in the last read (reads R1)",
+    "drawer/cabinet behind Clawd (→ new rule R6)",
+    "set edge visible",
+    "cut on action without action before the cut"
+   ],
+   "render": "brush, scale 0.5, VM",
+   "sound": "code (19 events)"
+  }
+ ]
+}

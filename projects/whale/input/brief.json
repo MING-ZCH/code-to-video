@@ -1,0 +1,35 @@
+{
+ "kind": "image",
+ "source": "whale_question.png",
+ "size": "1280x720",
+ "palette": [
+  {
+   "hex": "#5d1f27",
+   "share": 0.349
+  },
+  {
+   "hex": "#351225",
+   "share": 0.22
+  },
+  {
+   "hex": "#1b0a1c",
+   "share": 0.19
+  },
+  {
+   "hex": "#832129",
+   "share": 0.149
+  },
+  {
+   "hex": "#724c51",
+   "share": 0.064
+  },
+  {
+   "hex": "#c8a697",
+   "share": 0.028
+  }
+ ],
+ "reference": "input/reference.jpg",
+ "inputs": [
+  "whale_question.png (image)"
+ ]
+}

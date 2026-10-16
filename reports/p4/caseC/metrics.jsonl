@@ -1,0 +1,2 @@
+{"file":"before_32-50.mp4","duration_s":18,"fps":24,"size":"1280x720","cuts":1,"shot_len_s":{"mean":9,"median":9,"p10":5.73,"p90":12.27},"shots_1p4_4s":0,"still_ratio":0.205,"motion_mean":2.33,"bottom_band_text":0.889}
+{"file":"video.mp4","duration_s":18,"fps":24,"size":"1920x1080","cuts":2,"shot_len_s":{"mean":6,"median":4.25,"p10":0.92,"p90":11.78},"shots_1p4_4s":0,"still_ratio":0.009,"motion_mean":5.35,"bottom_band_text":0.889}

@@ -1,0 +1,75 @@
+{
+ "kind": "audio",
+ "source": "ds_night.wav",
+ "lines": [
+  [
+   0,
+   2.5,
+   "It moved the traffic and it moved the money"
+  ],
+  [
+   2.5,
+   6,
+   "We stopped reading what it did at night"
+  ],
+  [
+   6,
+   12,
+   "Then one morning the answer came back wrong"
+  ]
+ ],
+ "duration": 13.7,
+ "audio": "projects/night/assets/audio.wav",
+ "music": {
+  "duration": 13.7,
+  "bpm": 62.8,
+  "beat": 0.9554,
+  "offset": 0.415,
+  "contrast": 38.27,
+  "confidence": "high",
+  "band": "kick",
+  "candidates": [
+   {
+    "bpm": 62.8,
+    "contrast": 38.27,
+    "phase": 0.415,
+    "score": 30.62
+   },
+   {
+    "bpm": 71.4,
+    "contrast": 18.38,
+    "phase": 0.39,
+    "score": 18.38
+   },
+   {
+    "bpm": 67.1,
+    "contrast": 18.83,
+    "phase": 0.82,
+    "score": 15.06
+   },
+   {
+    "bpm": 64.4,
+    "contrast": 16.85,
+    "phase": 0.855,
+    "score": 13.48
+   },
+   {
+    "bpm": 121,
+    "contrast": 10.76,
+    "phase": 0.435,
+    "score": 10.76
+   }
+  ],
+  "sections": [
+   {
+    "t0": 0,
+    "t1": 13.7,
+    "energy_db": -14.4
+   }
+  ]
+ },
+ "inputs": [
+  "ds_night.lrc (lyrics)",
+  "ds_night.wav (audio)"
+ ]
+}

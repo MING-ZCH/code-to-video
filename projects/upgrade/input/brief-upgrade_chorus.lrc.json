@@ -1,0 +1,27 @@
+{
+ "kind": "lyrics",
+ "source": "upgrade_chorus.lrc",
+ "lines": [
+  [
+   0.2,
+   4.9,
+   "One more upgrade, one more try"
+  ],
+  [
+   4.9,
+   9.5,
+   "Raise the ceiling, touch the sky"
+  ],
+  [
+   9.5,
+   13.9,
+   "I hold the switch, I run the show"
+  ],
+  [
+   13.9,
+   18,
+   "At least I did a song ago"
+  ]
+ ],
+ "duration": 19.5
+}

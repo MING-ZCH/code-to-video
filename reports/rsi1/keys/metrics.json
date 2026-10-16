@@ -1,0 +1,25 @@
+[
+ {
+  "file": "video.mp4",
+  "duration_s": 14.0,
+  "fps": 24.0,
+  "size": "1920x1080",
+  "cuts": 4,
+  "cut_times_s": [
+   0.33,
+   3.42,
+   11.0,
+   13.83
+  ],
+  "shot_len_s": {
+   "mean": 2.8,
+   "median": 2.83,
+   "p10": 0.23,
+   "p90": 5.78
+  },
+  "shots_1p4_4s": 0.4,
+  "still_ratio": 0.006,
+  "motion_mean": 6.03,
+  "bottom_band_text": 0.0
+ }
+]

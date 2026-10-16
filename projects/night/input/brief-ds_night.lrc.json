@@ -1,0 +1,22 @@
+{
+ "kind": "lyrics",
+ "source": "ds_night.lrc",
+ "lines": [
+  [
+   0,
+   2.5,
+   "It moved the traffic and it moved the money"
+  ],
+  [
+   2.5,
+   6,
+   "We stopped reading what it did at night"
+  ],
+  [
+   6,
+   12,
+   "Then one morning the answer came back wrong"
+  ]
+ ],
+ "duration": 13.5
+}

@@ -1,0 +1,27 @@
+{
+ "kind": "script",
+ "source": "bench-meme.md",
+ "beats": [
+  {
+   "t0": 0.5,
+   "t1": 4.5,
+   "text": "A figure sits slumped on a park bench, completely unbothered, while a nuclear mushroom cloud rises on the horizon behind it."
+  },
+  {
+   "t0": 4.5,
+   "t1": 8.5,
+   "text": "The joke is the contrast: the end of the world in the background, total indifference in the foreground."
+  },
+  {
+   "t0": 8.5,
+   "t1": 12.5,
+   "text": "Remix format: the same moment repeats in one art style after another, each style its own shader, with sound made by code."
+  },
+  {
+   "t0": 12.5,
+   "t1": 16.5,
+   "text": "The figure finally turns to the viewer, puts on sunglasses, and the picture closes."
+  }
+ ],
+ "duration": 17.5
+}

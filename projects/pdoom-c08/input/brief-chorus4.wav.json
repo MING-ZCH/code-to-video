@@ -1,0 +1,59 @@
+{
+ "kind": "audio",
+ "source": "chorus4.wav",
+ "duration": 17,
+ "audio": "projects/pdoom-c08/assets/audio.wav",
+ "music": {
+  "duration": 17,
+  "bpm": 87.8,
+  "beat": 0.6834,
+  "offset": 0.305,
+  "contrast": 49.38,
+  "confidence": "high",
+  "band": "kick",
+  "candidates": [
+   {
+    "bpm": 87.8,
+    "contrast": 49.38,
+    "phase": 0.305,
+    "score": 49.38
+   },
+   {
+    "bpm": 87.8,
+    "contrast": 49.38,
+    "phase": 0.305,
+    "score": 49.38
+   },
+   {
+    "bpm": 61,
+    "contrast": 31.95,
+    "phase": 0.855,
+    "score": 25.56
+   },
+   {
+    "bpm": 72,
+    "contrast": 19.26,
+    "phase": 0.095,
+    "score": 19.26
+   },
+   {
+    "bpm": 66.4,
+    "contrast": 23.62,
+    "phase": 0.22,
+    "score": 18.9
+   }
+  ],
+  "sections": [
+   {
+    "t0": 0,
+    "t1": 15,
+    "energy_db": -13.7
+   },
+   {
+    "t0": 15,
+    "t1": 17,
+    "energy_db": -20.5
+   }
+  ]
+ }
+}

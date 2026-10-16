@@ -1,0 +1,50 @@
+{
+ "project": "umbrella",
+ "at": "2026-10-15T08:03:40.128Z",
+ "summary": {
+  "duration": 14,
+  "bpm": 96,
+  "medium": "brush",
+  "karaoke": false,
+  "shots": 4,
+  "loops": [
+   "emotions",
+   "views"
+  ],
+  "sound_events": 23,
+  "shot_len": {
+   "min": 3,
+   "max": 4,
+   "mean": 3.5
+  },
+  "shots_1p4_4s": 1
+ },
+ "shots": [
+  {
+   "t0": 0,
+   "name": "shotA",
+   "t1": 3.2,
+   "len": 3.2
+  },
+  {
+   "t0": 3.2,
+   "name": "shotB",
+   "t1": 7,
+   "len": 3.8
+  },
+  {
+   "t0": 7,
+   "name": "shotC",
+   "t1": 10,
+   "len": 3
+  },
+  {
+   "t0": 10,
+   "name": "shotD",
+   "t1": 14,
+   "len": 4
+  }
+ ],
+ "texts": [],
+ "issues": []
+}

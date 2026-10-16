@@ -1,0 +1,30 @@
+{
+  "name": "code-to-video",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Pure-code video generation: deterministic p5.js / p5.brush / shader frames rendered in headless Chrome and encoded with ffmpeg. No video-generation models.",
+  "scripts": {
+    "demo:sheet": "node render.mjs --project=demo --sheet=0.5,2,4,6,8,10 --cols=3 --w=480",
+    "demo:clip": "node render.mjs --project=demo --clip",
+    "test": "node tests/run.mjs --fast",
+    "test:full": "node tests/run.mjs",
+    "test:replay": "node tests/replay.mjs",
+    "test:mcp": "node tests/mcp-smoke.mjs",
+    "mcp": "node mcp/c2v-mcp.mjs",
+    "deliver": "node bin/c2v.mjs deliver"
+  },
+  "dependencies": {
+    "@fontsource/permanent-marker": "^5.2.5",
+    "p5": "2.3.3",
+    "p5.brush": "2.2.3",
+    "puppeteer-core": "^25.11.0"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "c2v": "bin/c2v.mjs"
+  }
+}

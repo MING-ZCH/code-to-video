@@ -5,7 +5,7 @@
 ## 2026-10-14 · P0 基建（分支 `phase/p0-infra`）
 
 **构建（已完成，待 Leo 本地核验）**
-- 设计文档从飞书 SSR 全量转存 → `docs/source-design.md`（197 块，has_more=False）。
+- 设计文档从飞书 SSR 全量转存 → `docs/history/source-design.md`（原 `docs/source-design.md`）（197 块，has_more=False）。
 - vendor ClaudeAnimationBase @0ac8bf2（MIT）到 `engine/`；多项目布局 `projects/<name>/project.js`；`studio.html?project=` 加载器；字体改本地 `@fontsource/permanent-marker`（去掉 Google Fonts 外网依赖）。
 - `render.mjs` 新增：`--project`、`--selftest`（3 路逐字节比对）、`render-log.jsonl`、Playwright headless-shell 探测、encode 支持非 0 起始帧并拒绝有洞的帧序列。
 

@@ -1,8 +1,10 @@
 # Code-to-Video 分阶段实施计划
 
-> **状态（2026-10-15）**：P0–P5 全部完成，均按 Leo 授权自验收并合并 main，证据见 `research_log.md` 与 `deliver/index.html`。最终验收归 Leo。待办：Mac GPU 上的 scale 1 终渲；案例 A 盲测；案例 B 原图。
+> 归档说明（2026-10-16）：本文件是 P0–P5 的阶段计划，已全部完成，保留作为过程记录；当前用法见根目录 README。文件已从根目录移到 `docs/history/`，第 1 节中的仓库结构图是当时的布局。
+>
+> **状态（2026-10-15）**：P0–P5 全部完成，均按 Leo 授权自验收并合并 main，证据见 `docs/history/research_log.md` 与 `deliver/index.html`。最终验收归 Leo。待办：Mac GPU 上的 scale 1 终渲；案例 A 盲测；案例 B 原图。
 
-> 来源：飞书《Code-to-Video：纯代码生成视频》（全文转存见 `docs/source-design.md`），参考仓库 JohnHeibel/ClaudeAnimationBase（MIT）与 JohnHeibel/PDoomVideo，Leo 2026-10-14 的四项决定。
+> 来源：飞书《Code-to-Video：纯代码生成视频》（全文转存见 `docs/history/source-design.md`），参考仓库 JohnHeibel/ClaudeAnimationBase（MIT）与 JohnHeibel/PDoomVideo，Leo 2026-10-14 的四项决定。
 > 状态标注约定：**已验证** = 有可复现产物/日志；**待定** = 未跑；**失败** = 跑过不达标；**已验收** = Leo 确认。每阶段分 4 个 gate：技术构建 → 视觉审查 → 阶段验收（Leo）→ 合并 main。
 
 ## 0. 目标与边界

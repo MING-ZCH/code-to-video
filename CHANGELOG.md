@@ -2,7 +2,7 @@
 
 ## v0.1.0 — 2026-10-16
 
-首个版本：P0–P5 全部完成，外加 RSI 第 1 轮（详见 PLAN.md、docs/RSI-round-1.md、research_log.md）。
+首个版本：P0–P5 全部完成，外加 RSI 第 1 轮（详见 docs/history/：PLAN.md、RSI-round-1.md、research_log.md）。
 
 **引擎**
 - 基于 ClaudeAnimationBase 的 p5.js 2.3.3 + p5.brush 2.2.3 水彩引擎，每帧是 t 的纯函数，selftest 逐字节确定。

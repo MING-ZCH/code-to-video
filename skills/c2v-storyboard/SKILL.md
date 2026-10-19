@@ -71,4 +71,4 @@ Across the first six pieces, 77% of what review caught was one of: the focal thi
 | a lyric line explained by a sign | act the line: a gesture, a prop interaction, a transformation |
 | a transition chosen for variety only | motivate it by the story: the action of shot A carries into shot B |
 
-Evidence this works: `projects/p1-media/STORYBOARD.md` (6 s, two shots, flash cut) and the case studies listed in `research_log.md`.
+Evidence this works: `projects/p1-media/STORYBOARD.md` (6 s, two shots, flash cut) and the case studies listed in `docs/history/research_log.md`.

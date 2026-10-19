@@ -85,4 +85,4 @@ function remix(t, lt, dur) { scene(t); stylize('inkwash', { t: onTwos(t), k: eas
 | the focal prop is hidden behind Clawd at its read | the character walked in front of it | `reads` R6; put Clawd beside the target |
 | a code comment swallowed `]);` or a whole statement | inline comment placed before the closing tokens | put comments at the end of complete statements; `node tests/run.mjs` parses every engine/lib file |
 
-Evidence: `projects/p1-media/scenes/button.js` (brush + explosion shader + flash cut + sound) and the cases in `research_log.md`.
+Evidence: `projects/p1-media/scenes/button.js` (brush + explosion shader + flash cut + sound) and the cases in `docs/history/research_log.md`.

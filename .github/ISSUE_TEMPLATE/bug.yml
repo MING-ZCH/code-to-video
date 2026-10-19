@@ -1,0 +1,22 @@
+name: Bug
+description: 渲染、检查、CLI 或 MCP 的问题 / a rendering, check, CLI or MCP problem
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: 现象 / What happened
+      description: 命令、输出、预期 vs 实际。视觉问题请附 sheet 或 strip（node render.mjs --project=<name> --sheet=… / --strip=a:b）
+    validations:
+      required: true
+  - type: input
+    id: project
+    attributes:
+      label: 项目与时间点 / Project and time
+      placeholder: "keys @ 7.4 s"
+  - type: textarea
+    id: env
+    attributes:
+      label: 环境 / Environment
+      description: OS、Node、Chrome 版本，是否 --soft-gl
+      placeholder: "macOS 15 / Node 22 / Chrome 141 / GPU (Metal)"

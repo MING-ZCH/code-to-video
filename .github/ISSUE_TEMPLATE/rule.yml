@@ -1,0 +1,21 @@
+name: 新规则 / Review catch → rule
+description: 一个肉眼核验发现的问题，看能否做成 reads / check 规则 / a visual-review catch that a tool could find
+labels: [rule]
+body:
+  - type: textarea
+    id: catch
+    attributes:
+      label: 看到了什么 / What the eye caught
+      description: 哪个作品、哪一镜、什么读点；附图
+    validations:
+      required: true
+  - type: textarea
+    id: rule
+    attributes:
+      label: 怎么机检 / How a tool could catch it
+      description: 需要场景声明什么（focus 字段等），判据是什么，可能的误报
+  - type: textarea
+    id: replay
+    attributes:
+      label: 回放 / Replay
+      description: 在哪个已完成的项目上注入这个问题来验证（tests/replay.mjs）

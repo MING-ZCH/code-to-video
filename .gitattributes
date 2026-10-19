@@ -1,0 +1,12 @@
+* text=auto eol=lf
+*.jpg binary
+*.png binary
+*.gif binary
+*.skill binary
+*.zip binary
+# keep GitHub's language bar honest: the delivery page embeds images as base64, reports are evidence
+deliver/** linguist-generated
+reports/** linguist-documentation
+docs/** linguist-documentation
+tests/fixture-*/** linguist-vendored
+package-lock.json linguist-generated

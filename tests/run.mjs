@@ -21,6 +21,16 @@ let fails = 0; const ok = (cond, what, got = '') => { console.log(`${cond ? 'PAS
   const bad = files.filter(f => spawnSync(process.execPath, ['--check', f]).status !== 0);
   ok(!bad.length, `syntax: ${files.length} engine/lib/bin files parse`, bad.join(' ')); }
 
+// document inputs (RSI-2 probe): layout kinds from lib/layout.py, when tesseract is installed
+{ const has = spawnSync('tesseract', ['--version']).status === 0;
+  if (has && existsSync('projects/probe-img/input/poster.pdf')) {
+    const { ingest } = await import('../lib/ingest.mjs'); const tmp = '/tmp/c2v-doc-test'; rmSync(tmp, { recursive: true, force: true });
+    const want = { 'poster.pdf': 'poster', 'richtext.png': 'card', 'meme.png': 'meme' }, got = {};
+    for (const f of Object.keys(want)) { const b = ingest(`projects/probe-img/input/${f}`, `${tmp}/${f.replace(/\W/g, '_')}`); got[f] = b.layout?.kind; }
+    ok(Object.keys(want).every(f => got[f] === want[f]), 'ingest: document kinds (poster / card / meme)', JSON.stringify(got));
+    rmSync(tmp, { recursive: true, force: true });
+  } else console.log('SKIP  document layout (tesseract or probe inputs missing)'); }
+
 // parsers
 const L = parseLyrics(readFileSync('tests/inputs/song.lrc', 'utf8'));
 ok(L.length === 5 && L[0][0] === 1.2 && L[0][1] === 3.8 && L[3][2] === 'We never asked it back', 'LRC: 5 lines, multi-tag line expanded, end = next start', JSON.stringify(L[0]));

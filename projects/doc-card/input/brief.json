@@ -1,0 +1,183 @@
+{
+ "kind": "image",
+ "source": "richtext.png",
+ "size": "1080x1440",
+ "palette": [
+  {
+   "hex": "#fff9f1",
+   "share": 0.577
+  },
+  {
+   "hex": "#e7edfb",
+   "share": 0.154
+  },
+  {
+   "hex": "#ff6e4e",
+   "share": 0.11
+  },
+  {
+   "hex": "#d9c2b5",
+   "share": 0.067
+  },
+  {
+   "hex": "#fdfcf7",
+   "share": 0.049
+  },
+  {
+   "hex": "#898787",
+   "share": 0.044
+  }
+ ],
+ "reference": "input/reference.jpg",
+ "layout": {
+  "file": "input/layout-richtext.png.json",
+  "kind": "card",
+  "columns": 1,
+  "text_area": 0.208,
+  "lines": 9,
+  "mean_conf": 88.7,
+  "text_blocks": 8,
+  "figure_blocks": 3
+ },
+ "doc": {
+  "kind": "card",
+  "captions": [],
+  "lines": [
+   "3个让视频不再像PPT的小技巧",
+   "@每个镜头只讲一件事",
+   "观众需要1.5-4秒读懂它",
+   "把“说明”变成角色的表演",
+   "G@)切点前要有动作",
+   "没有动作的切点会显得生硬",
+   "“Showit,don'twriteit.”",
+   "一动画师的第一条规则",
+   "#动画#短视频#创作笔记"
+  ],
+  "regions": [
+   {
+    "id": 0,
+    "kind": "text",
+    "box": [
+     0,
+     0,
+     1080,
+     182
+    ],
+    "text": "3个让视频不再像PPT的小技巧"
+   },
+   {
+    "id": 1,
+    "kind": "figure",
+    "box": [
+     61,
+     806,
+     961,
+     261
+    ],
+    "text": "“Showit,don'twriteit.” / 一动画师的第一条规则"
+   },
+   {
+    "id": 2,
+    "kind": "text",
+    "box": [
+     136,
+     256,
+     465,
+     51
+    ],
+    "text": "@每个镜头只讲一件事"
+   },
+   {
+    "id": 3,
+    "kind": "text",
+    "box": [
+     270,
+     342,
+     269,
+     40
+    ],
+    "text": "观众需要1.5-4秒读懂它"
+   },
+   {
+    "id": 4,
+    "kind": "figure",
+    "box": [
+     136,
+     432,
+     360,
+     51
+    ],
+    "text": ""
+   },
+   {
+    "id": 5,
+    "kind": "text",
+    "box": [
+     99,
+     517,
+     444,
+     40
+    ],
+    "text": "把“说明”变成角色的表演"
+   },
+   {
+    "id": 6,
+    "kind": "text",
+    "box": [
+     136,
+     607,
+     362,
+     50
+    ],
+    "text": "G@)切点前要有动作"
+   },
+   {
+    "id": 7,
+    "kind": "text",
+    "box": [
+     99,
+     692,
+     478,
+     40
+    ],
+    "text": "没有动作的切点会显得生硬"
+   },
+   {
+    "id": 8,
+    "kind": "figure",
+    "box": [
+     104,
+     871,
+     174,
+     44
+    ],
+    "text": ""
+   },
+   {
+    "id": 9,
+    "kind": "text",
+    "box": [
+     180,
+     953,
+     355,
+     40
+    ],
+    "text": "一动画师的第一条规则"
+   },
+   {
+    "id": 10,
+    "kind": "text",
+    "box": [
+     168,
+     1361,
+     284,
+     34
+    ],
+    "text": "#动画#短视频#创作笔记"
+   }
+  ]
+ },
+ "inputs": [
+  "richtext.png (image)"
+ ]
+}

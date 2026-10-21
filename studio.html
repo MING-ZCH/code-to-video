@@ -32,7 +32,7 @@
 </script>
 <script>
   if (typeof PROJECT === 'undefined') document.body.insertAdjacentHTML('afterbegin', `<p style="color:#f88">no project "${PROJECT_NAME}"</p>`);
-  for (const f of ['core', 'clawd', 'timeline', 'sheets', 'shaders', 'overlay', 'audio']) document.write(`<script src="engine/${f}.js"><\/script>`);
+  for (const f of ['core', 'clawd', 'timeline', 'sheets', 'shaders', 'overlay', 'audio', 'doc']) document.write(`<script src="engine/${f}.js"><\/script>`);
   for (const f of PROJECT.scenes || []) document.write(`<script src="projects/${PROJECT_NAME}/scenes/${f}"><\/script>`);
 </script>
 <script>

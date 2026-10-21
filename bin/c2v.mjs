@@ -63,7 +63,7 @@ const commands = {
     need(); const { staticCheck, runtimeCheck, checkMarkdown } = await import('../lib/check.mjs'); const { openStudio } = await import('../lib/page.mjs');
     const { browser, page, errors } = await openStudio(name, { softGl: opt['soft-gl'], chrome: opt.chrome });
     const scenes = await page.evaluate(() => PROJECT.scenes || []); const rt = await runtimeCheck(page, PDIR); await browser.close();
-    const st = staticCheck(PDIR, scenes);
+    const st = staticCheck(PDIR, scenes, { text: rt.summary.text });
     const res = { project: name, at: new Date().toISOString(), summary: rt.summary, shots: rt.shots, texts: st.texts,
       issues: [...errors.filter(e => !/INVALID_OPERATION|not from the associated program/.test(e)).map(e => ({ sev: 'error', file: 'page', line: 0, msg: e })), ...st.issues, ...rt.issues] };
     mkdirSync(OUT, { recursive: true }); writeFileSync(join(OUT, 'check.json'), JSON.stringify(res, null, 1)); const md = checkMarkdown(name, res); writeFileSync(join(OUT, 'check.md'), md);

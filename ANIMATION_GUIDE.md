@@ -527,6 +527,15 @@ sound(beats(0, 4, 'x...x...x...x...', 'kick'));      // 4 bars on PROJECT.bpm
 - `clawd(x, y, u, { sit: true })` seats the body bottom on (x, y).
 - `emotions(t, keys, { fresh: true })` declares a new emotional timeline at a cut. Otherwise a timeline that starts at a cut is flagged: its emote and take re-pop.
 
+## Document inputs: posters, rich-text cards, memes (engine/doc.js)
+
+- `c2v ingest` on an image or PDF writes the layout to `input/layout-*.json`: OCR lines, regions in reading order, and the document kind (meme / poster / card). For memes it also writes the captions and a caption-free plate (`*-clean.png`). OCR is a draft: type the words on screen from the source.
+- `PROJECT.assets = { name: 'input/file.png' }` and `plate(name, src, x, y, w, h)` draw the source (or a crop of it) in world space, under later paint.
+- `textBlock(text, x, y, { size, weight, maxW, reveal, align })` typesets the source's words. They are crisp, sit on the lettering layer, wrap CJK per character, and type out with `reveal`. `marker(x, y, w, h, k)` sweeps a highlighter stroke.
+- Set `PROJECT.text = 'content'` when the words ARE the content. Rule 2 then becomes: show the words the source shows, where it shows them, and never add captions that explain the picture.
+- Pattern: the layout is the storyboard. Reading order gives the shots, a region gives the framing. Rebuild what should move (bars that grow, boxes that light up, a timer); the plate covers the rest.
+- Check the text survives with `python3 scripts/dev/text-recall.py <video> <checks.json>`. It OCRs the frames at read times and gives a lower bound on legibility.
+
 ## Lyric bar (optional overlay)
 
 - Off by default. The rule stays **lyrics are not text**: act the line in the picture.

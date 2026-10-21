@@ -310,6 +310,7 @@ async function setup() {
   paperG = makePaper(); grainC = makeGrain(); glowTex = makeGlowTex(); letG = createGraphics(W, H); letG.pixelDensity(1);
   outC = document.getElementById('out'); outX = outC.getContext('2d');
   await document.fonts.load('100px "Permanent Marker"');
+  if (typeof loadAssets === 'function') await loadAssets();       // engine/doc.js: PROJECT.assets (source images)
   window.ready = true;
   if (!location.search.includes('render')) devUI();
 }
@@ -358,7 +359,7 @@ function focus(id, x, y, w, h, o = {}) {
   if (!window.FOCUS) return;
   const pts = [[x - w / 2, y - h / 2], [x + w / 2, y - h / 2], [x - w / 2, y + h / 2], [x + w / 2, y + h / 2]].map(p => toScreen(p[0], p[1]));
   const xs = pts.map(p => p[0]), ys = pts.map(p => p[1]), x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = Math.min(...ys), y1 = Math.max(...ys);
-  FOCUS.push({ id, box: [x0, y0, x1 - x0, y1 - y0], min: o.min ?? 70, offscreenOk: !!o.offscreenOk, words: o.words || [], held: !!o.held, front: !!(o.front || o.held), char: !!o.char });
+  FOCUS.push({ id, box: [x0, y0, x1 - x0, y1 - y0], min: o.min ?? 70, offscreenOk: !!o.offscreenOk, words: o.words || [], held: !!o.held, front: !!(o.front || o.held), char: !!o.char, group: !!o.group });
 }
 // a character's box is opaque: R6 warns when it covers a read target that isn't drawn over it (o.front / o.held)
 const focusClawd = (id, x, y, u, o = {}) => o.sit ? focus(id, x, y - 3 * u, 10 * u, 6 * u, { ...o, char: true }) : focus(id, x, y - 4 * u, 10 * u, 8 * u, { ...o, char: true });

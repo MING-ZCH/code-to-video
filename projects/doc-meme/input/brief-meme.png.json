@@ -1,0 +1,86 @@
+{
+ "kind": "image",
+ "source": "meme.png",
+ "size": "1280x720",
+ "palette": [
+  {
+   "hex": "#526b7d",
+   "share": 0.383
+  },
+  {
+   "hex": "#0d3254",
+   "share": 0.258
+  },
+  {
+   "hex": "#1b4b6c",
+   "share": 0.152
+  },
+  {
+   "hex": "#132a25",
+   "share": 0.097
+  },
+  {
+   "hex": "#4d5051",
+   "share": 0.056
+  },
+  {
+   "hex": "#94a0a0",
+   "share": 0.054
+  }
+ ],
+ "reference": "input/reference.jpg",
+ "layout": {
+  "file": "input/layout-meme.png.json",
+  "kind": "meme",
+  "columns": 1,
+  "text_area": 0,
+  "lines": 3,
+  "mean_conf": 32.7,
+  "text_blocks": 0,
+  "figure_blocks": 3
+ },
+ "doc": {
+  "kind": "meme",
+  "captions": [
+   "老碑.:这个需求很简单",
+   "举起%aesec上涨"
+  ],
+  "lines": [],
+  "clean": "input/meme-clean.png",
+  "regions": [
+   {
+    "id": 0,
+    "kind": "figure",
+    "box": [
+     0,
+     214,
+     1280,
+     506
+    ],
+    "text": ""
+   },
+   {
+    "id": 1,
+    "kind": "figure",
+    "box": [
+     316,
+     0,
+     648,
+     257
+    ],
+    "text": ""
+   },
+   {
+    "id": 2,
+    "kind": "figure",
+    "box": [
+     580,
+     131,
+     78,
+     55
+    ],
+    "text": ""
+   }
+  ]
+ }
+}

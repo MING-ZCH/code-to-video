@@ -110,7 +110,7 @@
     const hand = clawdHand(RX, ROOF - 6, U, o, 'R'), [gx, gy] = lantern(...hand, .04 * Math.sin(t * 2), .9);
     focus('lantern', gx, gy, 60, 90, { held: true, min: 50 });
     raft(t); const S = smalls(t);
-    if (t > HUDDLE) focus('huddle', RX + 20, ROOF - 70, 420, 160, { min: 200 });
+    if (t > HUDDLE) focus('huddle', RX + 20, ROOF - 70, 420, 160, { min: 200, group: true });
     camEnd();
     rain(t, 1 - seg(t, DRY - .3, DRY + .3));
     if (lt < .3) flash(1 - lt / .3, '#DDE8FF');                                                  // transition in: the last lightning

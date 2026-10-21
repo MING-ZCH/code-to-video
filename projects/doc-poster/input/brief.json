@@ -1,0 +1,149 @@
+{
+ "kind": "pdf",
+ "source": "poster.pdf",
+ "pdf_text": "           PixelFree: Turning Posters into Videos with Programs\n                              A. Author, B. Author · Example University · Probe input for code-to-video\n\n\n1. Motivation                                 2. Method                                                       3. Results\nVideo models give pixels;\nprograms give editable,                                       Parse                                                80\n                                                                                                                                                  73.4\n                                                                                                                   70\ndiffable, reproducible                                                                                             60                 55.8\n\n\n\n\n                                                                                              PaperQuiz acc. (%)\nframes. We parse the poster                                                                                        50\n                                                                                                                        41.2\nlayout, then animate each                                                                                          40\n\npanel in reading order.\n                                                               Plan                                                30\n\n                                                                                                                   20\n\nKey idea                                                                                                           10\n\n                                                                                                                   0\n                                                                                                                        slides       video gen    ours\n                                                             Render\n   frame(t) = f(t), no model\n                                                                                                              Ours +17.6 over the best baseline\n                                                                                                              (synthetic numbers for the probe)\n                                                    layout storyboard frames",
+ "page_image": "input/poster.png",
+ "size": "3200x2000",
+ "palette": [
+  {
+   "hex": "#f3f5f9",
+   "share": 0.445
+  },
+  {
+   "hex": "#30566f",
+   "share": 0.159
+  },
+  {
+   "hex": "#fefeff",
+   "share": 0.14
+  },
+  {
+   "hex": "#eee9e5",
+   "share": 0.099
+  },
+  {
+   "hex": "#a39e8a",
+   "share": 0.09
+  },
+  {
+   "hex": "#bdc2cb",
+   "share": 0.067
+  }
+ ],
+ "reference": "input/reference.jpg",
+ "layout": {
+  "file": "input/layout-poster.pdf.json",
+  "kind": "poster",
+  "columns": 3,
+  "text_area": 0.093,
+  "lines": 30,
+  "mean_conf": 86,
+  "text_blocks": 1,
+  "figure_blocks": 5
+ },
+ "doc": {
+  "kind": "poster",
+  "captions": [],
+  "lines": [
+   "PixelFree: Turning Posters into Videos with Programs",
+   "A. Author, B. Author - Example University - Probe input for code-to-video",
+   "1. Motivation",
+   "2. Method",
+   "3. Results",
+   "Video models give pixels;",
+   "80",
+   "73.4",
+   "programs give editable,",
+   "70 4",
+   "diffable, reproducible",
+   "= 60 55.8",
+   "frames. We parse the poster",
+   "N 41.2",
+   "layout, then animate each",
+   "3 40",
+   "panel in reading order.",
+   "o@ 30",
+   "204",
+   "Key idea",
+   "105",
+   "0 T T",
+   "slides video gen",
+   "ours",
+   "frame(t) = f(t), no model",
+   "Ours +17.6 over the best baseline",
+   "(synthetic numbers for the probe)",
+   "layout > storyboard — frames"
+  ],
+  "regions": [
+   {
+    "id": 0,
+    "kind": "text",
+    "box": [
+     0,
+     0,
+     3200,
+     281
+    ],
+    "text": "PixelFree: Turning Posters into Videos with Programs / A. Author, B. Author - Example University - Probe input for code-to-video"
+   },
+   {
+    "id": 1,
+    "kind": "figure",
+    "box": [
+     66,
+     346,
+     948,
+     1548
+    ],
+    "text": "1. Motivation / Video models give pixels; / programs give editable, / diffable, reproducible / frames. We parse the poster / layout, then animate each / panel in reading order. / Key idea / frame(t) = f(t), no model"
+   },
+   {
+    "id": 2,
+    "kind": "figure",
+    "box": [
+     108,
+     1388,
+     864,
+     344
+    ],
+    "text": "frame(t) = f(t), no model"
+   },
+   {
+    "id": 3,
+    "kind": "figure",
+    "box": [
+     1126,
+     346,
+     948,
+     1548
+    ],
+    "text": "2. Method / layout > storyboard — frames"
+   },
+   {
+    "id": 4,
+    "kind": "figure",
+    "box": [
+     1308,
+     568,
+     584,
+     1024
+    ],
+    "text": ""
+   },
+   {
+    "id": 5,
+    "kind": "figure",
+    "box": [
+     2186,
+     346,
+     948,
+     1548
+    ],
+    "text": "3. Results / 80 / 73.4 / 70 4 / = 60 55.8 / N 41.2 / 3 40 / o@ 30 / 204 / 105 / 0 T T / slides video gen / ours / Ours +17.6 over the best baseline / (synthetic numbers for the probe)"
+   }
+  ]
+ },
+ "inputs": [
+  "poster.pdf (pdf)"
+ ]
+}

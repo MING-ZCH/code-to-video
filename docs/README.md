@@ -7,6 +7,7 @@
 | [case-A-pdoom.md](case-A-pdoom.md) | 案例 A：用我们的 skills 从歌词和音频重生成 PDoomVideo 合唱 4 |
 | [case-B-bench-meme.md](case-B-bench-meme.md) | 案例 B：长椅梗图，6 种 shader 风格，代码合成配乐 |
 | [case-C-before-after.md](case-C-before-after.md) | 案例 C：基线同段音频与歌词的 before/after |
+| [doc-inputs.md](doc-inputs.md) | 文档类输入（meme 图 / 论文 poster / 富文本图）→ video：可行性、相关工作、实现与 3 个原型实测 |
 | [model-sheets/](model-sheets/) | 角色模型表：表情、视角 |
 | [media/](media/) | README 和社交预览所用的图片 |
 

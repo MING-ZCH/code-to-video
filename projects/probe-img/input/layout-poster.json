@@ -1,0 +1,485 @@
+{
+ "source": "projects/probe-img/input/poster.png",
+ "size": [
+  2400,
+  1500
+ ],
+ "lang": "chi_sim+eng",
+ "kind": "poster",
+ "columns": 3,
+ "text_area": 0.091,
+ "captions": [],
+ "lines": [
+  {
+   "text": "PixelFree:TurningPostersintoVideoswithPrograms",
+   "conf": 95.3,
+   "box": [
+    265,
+    52,
+    1872,
+    60
+   ]
+  },
+  {
+   "text": "A.Author,B.Author-ExampleUniversity-Probeinputforcode-to-video",
+   "conf": 83.2,
+   "box": [
+    636,
+    151,
+    1126,
+    28
+   ]
+  },
+  {
+   "text": "1.Motivation",
+   "conf": 95.5,
+   "box": [
+    95,
+    309,
+    303,
+    34
+   ]
+  },
+  {
+   "text": "2.Method",
+   "conf": 96.0,
+   "box": [
+    888,
+    309,
+    230,
+    34
+   ]
+  },
+  {
+   "text": "3.Results",
+   "conf": 94.0,
+   "box": [
+    1683,
+    309,
+    228,
+    34
+   ]
+  },
+  {
+   "text": "Videomodelsgivepixels;",
+   "conf": 95.8,
+   "box": [
+    90,
+    435,
+    394,
+    29
+   ]
+  },
+  {
+   "text": "804",
+   "conf": 84.5,
+   "box": [
+    1688,
+    477,
+    39,
+    16
+   ]
+  },
+  {
+   "text": "73.4",
+   "conf": 94.0,
+   "box": [
+    2192,
+    498,
+    63,
+    20
+   ]
+  },
+  {
+   "text": "programsgiveeditable,",
+   "conf": 96.0,
+   "box": [
+    93,
+    513,
+    367,
+    29
+   ]
+  },
+  {
+   "text": "704",
+   "conf": 91.5,
+   "box": [
+    1690,
+    548,
+    37,
+    16
+   ]
+  },
+  {
+   "text": "diffable,reproducible",
+   "conf": 93.0,
+   "box": [
+    92,
+    591,
+    330,
+    29
+   ]
+  },
+  {
+   "text": "=60455.8",
+   "conf": 76.0,
+   "box": [
+    1653,
+    618,
+    406,
+    34
+   ]
+  },
+  {
+   "text": "BS",
+   "conf": 30.0,
+   "box": [
+    1653,
+    647,
+    23,
+    27
+   ]
+  },
+  {
+   "text": "frames.Weparsetheposter",
+   "conf": 95.4,
+   "box": [
+    91,
+    669,
+    445,
+    29
+   ]
+  },
+  {
+   "text": "5504",
+   "conf": 58.0,
+   "box": [
+    1658,
+    686,
+    69,
+    19
+   ]
+  },
+  {
+   "text": "8",
+   "conf": 35.0,
+   "box": [
+    1658,
+    707,
+    14,
+    26
+   ]
+  },
+  {
+   "text": "N41.2",
+   "conf": 91.0,
+   "box": [
+    1653,
+    725,
+    211,
+    35
+   ]
+  },
+  {
+   "text": "layout,thenanimateeach",
+   "conf": 96.0,
+   "box": [
+    93,
+    747,
+    406,
+    29
+   ]
+  },
+  {
+   "text": "3404",
+   "conf": 51.5,
+   "box": [
+    1658,
+    760,
+    69,
+    17
+   ]
+  },
+  {
+   "text": "om",
+   "conf": 24.0,
+   "box": [
+    1654,
+    780,
+    21,
+    17
+   ]
+  },
+  {
+   "text": "=",
+   "conf": 65.0,
+   "box": [
+    1658,
+    798,
+    14,
+    8
+   ]
+  },
+  {
+   "text": "2",
+   "conf": 53.0,
+   "box": [
+    1658,
+    810,
+    19,
+    28
+   ]
+  },
+  {
+   "text": "panelinreadingorder.",
+   "conf": 95.5,
+   "box": [
+    93,
+    825,
+    348,
+    29
+   ]
+  },
+  {
+   "text": "2304",
+   "conf": 88.5,
+   "box": [
+    1658,
+    830,
+    69,
+    24
+   ]
+  },
+  {
+   "text": "a",
+   "conf": 85.0,
+   "box": [
+    1654,
+    855,
+    18,
+    12
+   ]
+  },
+  {
+   "text": "204",
+   "conf": 85.0,
+   "box": [
+    1688,
+    901,
+    39,
+    16
+   ]
+  },
+  {
+   "text": "Keyidea",
+   "conf": 96.0,
+   "box": [
+    93,
+    964,
+    156,
+    33
+   ]
+  },
+  {
+   "text": "104",
+   "conf": 91.0,
+   "box": [
+    1689,
+    971,
+    38,
+    16
+   ]
+  },
+  {
+   "text": "0]",
+   "conf": 40.0,
+   "box": [
+    1702,
+    1042,
+    25,
+    16
+   ]
+  },
+  {
+   "text": "slidesvideogen",
+   "conf": 92.3,
+   "box": [
+    1794,
+    1061,
+    283,
+    28
+   ]
+  },
+  {
+   "text": "ours",
+   "conf": 95.0,
+   "box": [
+    2201,
+    1069,
+    43,
+    12
+   ]
+  },
+  {
+   "text": "frame(t)=f(t),nomodel",
+   "conf": 93.6,
+   "box": [
+    142,
+    1153,
+    525,
+    32
+   ]
+  },
+  {
+   "text": "Ours+17.6overthebestbaseline",
+   "conf": 94.5,
+   "box": [
+    1681,
+    1186,
+    500,
+    22
+   ]
+  },
+  {
+   "text": "(syntheticnumbersfortheprobe)",
+   "conf": 95.8,
+   "box": [
+    1682,
+    1278,
+    421,
+    24
+   ]
+  },
+  {
+   "text": "layout>storyboard—frames",
+   "conf": 73.6,
+   "box": [
+    983,
+    1298,
+    435,
+    28
+   ]
+  }
+ ],
+ "blocks": [
+  {
+   "box": [
+    0,
+    0,
+    2400,
+    212
+   ],
+   "kind": "text",
+   "text_cover": 0.28,
+   "lines": [
+    0,
+    1
+   ],
+   "id": 0
+  },
+  {
+   "box": [
+    50,
+    260,
+    712,
+    1162
+   ],
+   "kind": "figure",
+   "text_cover": 0.12,
+   "lines": [
+    2,
+    5,
+    8,
+    10,
+    13,
+    17,
+    22,
+    26,
+    31
+   ],
+   "id": 1
+  },
+  {
+   "box": [
+    82,
+    1042,
+    648,
+    258
+   ],
+   "kind": "figure",
+   "text_cover": 0.1,
+   "lines": [
+    31
+   ],
+   "id": 2
+  },
+  {
+   "box": [
+    845,
+    260,
+    712,
+    1162
+   ],
+   "kind": "figure",
+   "text_cover": 0.02,
+   "lines": [
+    3,
+    34
+   ],
+   "id": 3
+  },
+  {
+   "box": [
+    982,
+    427,
+    438,
+    768
+   ],
+   "kind": "figure",
+   "text_cover": 0.0,
+   "lines": [],
+   "id": 4
+  },
+  {
+   "box": [
+    1640,
+    260,
+    712,
+    1162
+   ],
+   "kind": "figure",
+   "text_cover": 0.08,
+   "lines": [
+    4,
+    6,
+    7,
+    9,
+    11,
+    12,
+    14,
+    15,
+    16,
+    18,
+    19,
+    20,
+    21,
+    23,
+    24,
+    25,
+    27,
+    28,
+    29,
+    30,
+    32,
+    33
+   ],
+   "id": 5
+  }
+ ],
+ "stats": {
+  "lines": 35,
+  "mean_conf": 80.6,
+  "text_blocks": 1,
+  "figure_blocks": 5
+ }
+}

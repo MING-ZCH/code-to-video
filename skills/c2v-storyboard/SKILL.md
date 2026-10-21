@@ -72,3 +72,7 @@ Across the first six pieces, 77% of what review caught was one of: the focal thi
 | a transition chosen for variety only | motivate it by the story: the action of shot A carries into shot B |
 
 Evidence this works: `projects/p1-media/STORYBOARD.md` (6 s, two shots, flash cut) and the case studies listed in `docs/history/research_log.md`.
+
+## Document inputs (poster / rich-text card / meme)
+
+Read `input/brief.md` → *Regions in reading order*: the regions are the shots, in that order, and each region's box is the framing. Keep the source's words and positions, and act each claim with a character beside it. For memes, keep the meme's own two beats (setup caption → reveal → punchline caption). Set `PROJECT.text = 'content'`. Worked examples: `projects/doc-poster`, `doc-card`, `doc-meme`; see `docs/doc-inputs.md`.

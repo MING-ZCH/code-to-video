@@ -180,6 +180,63 @@
    ],
    "render": "brush, scale 0.5, VM",
    "sound": "code (19 events)"
+  },
+  {
+   "project": "doc-poster",
+   "title": "A paper poster, toured panel by panel",
+   "input": "paper poster (PDF, 3 columns, synthetic)",
+   "inputKind": "poster",
+   "role": "document input (poster)",
+   "doc": "docs/doc-inputs.md",
+   "sheet": "reports/doc-probe/doc-poster-strip.jpg",
+   "reviewPasses": 3,
+   "fixes": 6,
+   "failures": [
+    "Clawd covered the title / headings",
+    "plate edge visible in the pan",
+    "bar labels collided with Clawd",
+    "pop-in at a continuous seam (reads R3)"
+   ],
+   "render": "brush, scale 0.5, VM",
+   "sound": "code (39 events)"
+  },
+  {
+   "project": "doc-card",
+   "title": "Three tips, typed and acted",
+   "input": "Chinese rich-text card (1080×1440, synthetic)",
+   "inputKind": "card",
+   "role": "document input (rich-text card)",
+   "doc": "docs/doc-inputs.md",
+   "sheet": "reports/doc-probe/doc-card-strip.jpg",
+   "reviewPasses": 3,
+   "fixes": 5,
+   "failures": [
+    "NaN coordinates from a destructuring slip (OffscreenCanvas error)",
+    "Clawd hid the cut example (reads R6)",
+    "Clawd out of frame",
+    "full-width apostrophe from the CJK font"
+   ],
+   "render": "brush, scale 0.5, VM",
+   "sound": "code (76 events)"
+  },
+  {
+   "project": "doc-meme",
+   "title": "\"This requirement is easy\"",
+   "input": "two-caption meme (flood key frame + captions, synthetic)",
+   "inputKind": "meme",
+   "role": "document input (meme)",
+   "doc": "docs/doc-inputs.md",
+   "sheet": "reports/doc-probe/doc-meme-strip.jpg",
+   "reviewPasses": 2,
+   "fixes": 4,
+   "failures": [
+    "page OCR could not read outlined captions (caption layer added)",
+    "source's burned-in subtitle band exposed",
+    "plate edge in the tight shot",
+    "pop-in at a continuous seam (reads R3)"
+   ],
+   "render": "brush, scale 0.5, VM",
+   "sound": "code (20 events)"
   }
  ]
 }

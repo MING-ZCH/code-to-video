@@ -6,8 +6,10 @@
 
 由编码模型编写绘制代码，每帧都是时间 `t` 的纯函数，在 headless Chrome 中逐帧确定性渲染，再由 ffmpeg 编码成片。
 
+**支持的输入：** 歌词 · 脚本 · 音频 · 视频 · 关键帧图片 · **meme 图 · 学术论文 poster（PDF）· 富文本图**
+
 [![ci](https://github.com/MING-ZCH/code-to-video/actions/workflows/ci.yml/badge.svg)](https://github.com/MING-ZCH/code-to-video/actions/workflows/ci.yml)
-[![release v0.1.0](https://img.shields.io/badge/release-v0.1.0-orange)](https://github.com/MING-ZCH/code-to-video/releases)
+[![release v0.2.0](https://img.shields.io/badge/release-v0.2.0-orange)](https://github.com/MING-ZCH/code-to-video/releases)
 [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![node ≥ 20](https://img.shields.io/badge/node-%E2%89%A5%2020-339933)
 
@@ -23,13 +25,13 @@
 
 仓库包含三部分：
 
-- **引擎**：水彩笔刷、扁平媒介、9 种 shader 风格；带表演助手的角色；转场；代码合成的声音；卡拉 OK 歌词条。
-- **CLI 与机检**：在看帧之前，先自动查出动画师肉眼会发现的问题。
+- **引擎**：水彩笔刷、扁平媒介、9 种 shader 风格；带表演助手的角色；转场；代码合成的声音；卡拉 OK 歌词条；文档类输入可用的原图素材与排版文字。
+- **CLI 与机检**：在看帧之前，先自动查出动画师肉眼会发现的问题。图片和 PDF 输入会被解析成版面：OCR 文字、按阅读顺序排列的区块、文档类型。
 - **Skills 和 MCP 服务**：agent 可以通过它们完成分镜、构建、核验与渲染。
 
 ## 作品
 
-<img src="docs/media/gallery.jpg" alt="九部作品的画面">
+<img src="docs/media/gallery.jpg" alt="其中九部作品的画面">
 
 | | 作品 | 输入 | 时长 / 镜头 | 声音 |
 |---|---|---|---|---|
@@ -42,8 +44,31 @@
 | 🐋 | `whale`：鲸鱼问为什么 | 一张关键帧 | 9 s / 3 | 代码（17） |
 | 🎵 | `pdoom-c08`：重生成 PDoomVideo 合唱 4 | 音频 + 歌词 | 17 s / 6 | 原曲 |
 | 🔴 | `p1-media`：按钮（媒介测试） | — | 6 s / 2 | 代码（11） |
+| 📊 | `doc-poster`：逐栏巡游一张论文 poster | 论文 poster（PDF） | 14 s / 4 | 代码（39） |
+| 📝 | `doc-card`：三条技巧，边打字边表演 | 中文富文本图 | 14 s / 4 | 代码（76） |
+| 🌊 | `doc-meme`：“这个需求很简单” | 双字幕 meme 图 | 10 s / 3 | 代码（20） |
 
 成片在 [Release](https://github.com/MING-ZCH/code-to-video/releases) 附件中。大多数是在无 GPU 环境下渲染的半分辨率水彩预览，`bench` 为全分辨率。分镜见各项目的 `projects/<name>/STORYBOARD.md`，含检查、指标和 before/after 的完整交付页见 [`deliver/index.html`](deliver/index.html)。
+
+## 文档类输入：meme 图、论文 poster、富文本图
+
+<img src="docs/media/doc-inputs.jpg" alt="左：原始文档；右：由它生成的视频画面（论文 poster、富文本图、meme）">
+
+这类输入里，文字就是内容，版面就是分镜。
+
+1. `c2v ingest` 解析图片或 PDF（[`lib/layout.py`](lib/layout.py)，Tesseract + OpenCV，不用模型），输出 OCR 文字行、按阅读顺序排列的区块和文档类型（**poster / card / meme**）。PDF 同时保留内嵌文字（精确无误）；meme 额外拆出字幕，并生成去字底图。
+2. 分镜按阅读顺序把区块逐个排成镜头。
+3. 场景把原图当素材（`plate()`），排出原文文字（`textBlock()`，支持中文，可逐字打出），并把该动的部分重建成会动的对象：长高的柱子、亮起的方框。
+4. `PROJECT.text = 'content'` 把规则 2 从“画面不放字”改为“只展示原文的字，不加说明字”。
+5. `scripts/dev/text-recall.py` 在成片的每个读点做 OCR，统计原文有多少还能被认出来。
+
+| 作品 | 识别类型 | 检查 | 成片中被 OCR 认出的原文 |
+|---|---|---|---|
+| `doc-poster` | poster，3 栏 | check 0 错误 · reads 0 · selftest ✓ | **12/12** |
+| `doc-card` | 富文本卡，9 行 | check 0 错误 · reads 0 · selftest ✓ | **9/9** |
+| `doc-meme` | meme，2 条字幕 | check 0 错误 · reads 0 · selftest ✓ | **3/4**（漏掉的一条人眼可读） |
+
+三个输入都是合成的单页样例（[`scripts/dev/make-probe-inputs.py`](scripts/dev/make-probe-inputs.py)）；真实扫描件、多页论文和任意图表还没覆盖。细节、相关工作（Paper2Video、Code2Video、Paper2Poster、MoVer 等）与局限见 [`docs/doc-inputs.md`](docs/doc-inputs.md)。
 
 ## 结果
 
@@ -65,11 +90,11 @@
 
 ## 快速开始
 
-需要 Node ≥ 20、ffmpeg，以及 Chrome 或 Chromium（自动查找，也可以设置 `CHROME_PATH`）。
+需要 Node ≥ 20、ffmpeg，以及 Chrome 或 Chromium（自动查找，也可以设置 `CHROME_PATH`）。图片和 PDF 文档输入还需要 `tesseract`（中文另装 `tesseract-ocr-chi-sim`）、`poppler-utils`，以及带 OpenCV 的 Python 3。
 
 ```bash
 npm install
-node bin/c2v.mjs new my-film --from=song.mp3     # 或 lyrics.lrc / script.md / image.png / clip.mp4 → input/brief.md
+node bin/c2v.mjs new my-film --from=song.mp3     # 或 lyrics.lrc / script.md / image.png / poster.pdf / clip.mp4 → input/brief.md
 # 先写 projects/my-film/STORYBOARD.md，再写 scenes/*.js；用 studio.html?project=my-film 预览
 node bin/c2v.mjs check    my-film                 # 规则：确定性、媒介、镜头时长、每个接缝都有转场
 node bin/c2v.mjs reads    my-film                 # 读点：过小 · 出画 · 跨切点连续性 · 跳切 · 被遮挡
@@ -86,8 +111,8 @@ node bin/c2v.mjs deliver                          # 生成全部作品的 delive
 <summary><b>一部作品是怎么做出来的</b></summary>
 
 ```
-输入（歌词 · 脚本 · 图像 · 音频 · 视频）
-  └─ c2v new / ingest ─→ input/brief.md（节拍、读点时长、调色板、速度）
+输入（歌词 · 脚本 · 图像 · 音频 · 视频 · meme / poster PDF / 富文本图）
+  └─ c2v new / ingest ─→ input/brief.md（节拍、读点时长、调色板、速度；文档类另有版面、OCR 文字、阅读顺序、类型）
        └─ STORYBOARD.md：每镜头一个事件，加读点目标表、道具表、景别表    ← skills/c2v-storyboard
             └─ scenes/*.js：镜头是 t 的纯函数，focus() 声明，sound()   ← skills/c2v-build
                  └─ check → reads → cost → 看 sheet / strip / crop，修，再看  ← skills/c2v-review
@@ -133,15 +158,15 @@ CI 在每次 push 时运行以上全部测试。
 
 | 路径 | |
 |---|---|
-| `engine/` | core · clawd（角色） · timeline · sheets · shaders（`stylize`、`shade`） · overlay（歌词条） · audio |
+| `engine/` | core · clawd（角色） · timeline · sheets · shaders（`stylize`、`shade`） · overlay（歌词条） · audio · doc（原图素材、排版文字） |
 | `projects/<name>/` | `project.js`、`STORYBOARD.md`、`scenes/`、`input/`；`assets/` 与 `out/` 不入 git |
-| `bin/c2v.mjs`、`lib/` | CLI |
+| `bin/c2v.mjs`、`lib/` | CLI；`lib/layout.py` 解析文档类输入 |
 | `render.mjs`、`studio.html` | 渲染器与浏览器内预览器 |
 | `mcp/` | MCP 服务 |
 | `skills/`、`dist/` | skills 及其打包 |
 | `tests/` | 回归测试、失败回放、MCP 冒烟、fixture |
 | `ANIMATION_GUIDE.md` | 规则、工作流与 API：写场景代码前必读 |
-| `docs/` | 基线、案例、模型表；[`docs/history/`](docs/history/) 存放计划、实验日志与 RSI 轮次 |
+| `docs/` | 基线、案例、文档类输入（[`doc-inputs.md`](docs/doc-inputs.md)）、模型表；[`docs/history/`](docs/history/) 存放计划、实验日志与 RSI 轮次 |
 | `reports/`、`deliver/` | 各阶段核验图；交付页 |
 
 ## Release 资产
@@ -156,9 +181,9 @@ CI 在每次 push 时运行以上全部测试。
 一键放回原位：
 
 ```bash
-gh release download v0.1.0 -R MING-ZCH/code-to-video -D release/v0.1.0
-for f in release/v0.1.0/c2v-*.mp4; do p=$(basename "$f" .mp4); p=${p#c2v-}; mkdir -p projects/$p/out; cp "$f" projects/$p/out/video.mp4; done
-unzip -o release/v0.1.0/c2v-input-audio.zip
+gh release download v0.2.0 -R MING-ZCH/code-to-video -D release/v0.2.0
+for f in release/v0.2.0/c2v-*.mp4; do p=$(basename "$f" .mp4); p=${p#c2v-}; mkdir -p projects/$p/out; cp "$f" projects/$p/out/video.mp4; done
+unzip -o release/v0.2.0/c2v-input-audio.zip
 ```
 
 在 GPU 上全分辨率重渲全部作品：`bash scripts/mac-final.sh`。

@@ -1,5 +1,23 @@
 # Changelog
 
+## v0.2.0 — 2026-10-21
+
+**文档类输入：meme 图、学术论文 poster（PDF）、富文本图 → video**
+
+- `lib/layout.py`（Tesseract + OpenCV，不用模型），由 `c2v ingest` 自动调用。它输出：
+  - OCR 文字行；
+  - 按阅读顺序排列的区块；
+  - 文档类型 poster / card / meme；
+  - 自动判定的中英文语言；
+  - meme 的字幕层与去字底图。
+- PDF 输入：第 1 页按 200 dpi 栅格化，并保留内嵌文字。
+- `engine/doc.js`：`plate()` 绘制原图素材；`textBlock()` 排版文字，支持中文、逐字打出；`marker()` 绘制荧光笔效果；`PROJECT.assets` 声明素材。
+- `PROJECT.text = 'content'`：文字原生的输入里，规则 2 改为“只展示原文的字”。
+- `reads` R6 支持 `focus({ group })`，解决群组目标被自身成员“遮挡”的误报。
+- `scripts/dev/text-recall.py`：成片原文 OCR 召回。
+- 3 个原型 `doc-poster` / `doc-card` / `doc-meme`：check、reads、selftest 均通过，召回 12/12、9/9、3/4。报告见 `docs/doc-inputs.md`。
+- 回归：新增文档类型判定测试，原有测试全部通过；7/7 回放仍被捕获。
+
 ## v0.1.0 — 2026-10-16
 
 首个版本：P0–P5 全部完成，外加 RSI 第 1 轮（详见 docs/history/：PLAN.md、RSI-round-1.md、research_log.md）。

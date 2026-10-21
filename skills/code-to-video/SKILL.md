@@ -1,6 +1,6 @@
 ---
 name: code-to-video
-description: Make a short animated video entirely in code (no video or image generation models) with the Code-to-Video kit — p5.js/p5.brush watercolour, shader styles and code-generated sound, rendered frame by frame in headless Chrome. Use when someone asks to turn lyrics, a script, a meme/key image, a song or a video clip into an animation, music video, meme remix or explainer, or asks for a "Clawd" / hand-painted / pure-code animation. Routes to c2v-storyboard → c2v-build → c2v-review → c2v-deliver (and c2v-orchestrate for pieces over ~30 s).
+description: Make a short animated video entirely in code (no video or image generation models) with the Code-to-Video kit — p5.js/p5.brush watercolour, shader styles and code-generated sound, rendered frame by frame in headless Chrome. Use when someone asks to turn lyrics, a script, a meme/key image, a paper poster (PDF/image), a rich-text card/screenshot, a song or a video clip into an animation, music video, meme remix or explainer, or asks for a "Clawd" / hand-painted / pure-code animation. Routes to c2v-storyboard → c2v-build → c2v-review → c2v-deliver (and c2v-orchestrate for pieces over ~30 s).
 ---
 
 # Code-to-Video
@@ -41,6 +41,11 @@ Pieces over ~30 s: plan chapters and split the build across agents with **c2v-or
 | song (`.mp3`, `.wav`) | duration, BPM, first beat, loudness sections | sections → chapters; hits on beats (`PROJECT.bpm/offset` are prefilled) |
 | script (`.md`, `.txt`) | story beats with read-time estimates | beats → shots; merge or split until every shot has one EVENT |
 | image (meme, key art) | size, palette, reference thumbnail | the image is a moment: build the shots before and after it; reuse its palette; restyle it per segment with `stylize()` for multi-style remixes |
+| meme with captions | kind `meme`, the captions (OCR draft), a caption-free plate `input/*-clean.png` | keep the meme's own beats (setup caption → reveal the picture → punchline caption); the plate via `plate()`; captions typed from the source; `PROJECT.text = 'content'` (example `projects/doc-meme`) |
+| paper poster (.pdf or image) | kind `poster`, columns, regions in reading order, embedded PDF text (exact) | the poster is the set: tour the regions in reading order; act each panel's claim; rebuild what should move (bars, method boxes); `PROJECT.text = 'content'` (example `projects/doc-poster`) |
+| rich-text card / screenshot | kind `card`, OCR lines with boxes | typeset the card's own lines where it puts them (`textBlock`, `reveal`); one beat per item, acted beside it (example `projects/doc-card`) |
 | video clip | cuts, keyframe sheet, music analysis | adapt the beats and timing, never trace frames; keep the rhythm, redesign the pictures |
 
 If the music analysis says `confidence: low`, set `bpm`/`offset` by hand (tap along, or read them from the score); on short excerpts check the first-beat phase on a strip.
+
+Document inputs need `tesseract` (+ `chi_sim` for Chinese), `poppler-utils` and Python 3 + OpenCV. After rendering, check the source text survives: `python3 scripts/dev/text-recall.py projects/<name>/out/video.mp4 <checks.json>`. Details: `docs/doc-inputs.md`.

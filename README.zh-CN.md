@@ -70,6 +70,24 @@
 
 三个输入都是合成的单页样例（[`scripts/dev/make-probe-inputs.py`](scripts/dev/make-probe-inputs.py)）；真实扫描件、多页论文和任意图表还没覆盖。细节、相关工作（Paper2Video、Code2Video、Paper2Poster、MoVer 等）与局限见 [`docs/doc-inputs.md`](docs/doc-inputs.md)。
 
+## 写实层：真实素材、路径追踪 3D、编辑数据对
+
+`PROJECT.look = 'real'` 把绘制媒介换成真实像素，画面仍由程序控制（[`docs/realism.md`](docs/realism.md)）：
+
+- `c2v assets`：从 Wikimedia Commons、NASA、Poly Haven（CC0 的 HDRI、PBR 贴图、模型）、Internet Archive 检索与下载素材，配置 key 后也支持 Pexels/Pixabay。许可证、作者、来源页与 sha256 写入 `assets.lock.json`，`restore` 可在另一台机器上重建素材。
+- `footage()` 在虚拟相机下绘制素材的源时间 `st`；`speedRamp()` 对速度曲线积分；`--interp=4` 用运动补偿插帧支持慢动作；`grade()` 与 `PROJECT.shutter` 提供摄影机质感（色调曲线、颗粒、光晕、离焦、真实运动模糊）。
+- `c2v blender`：用 Cycles 渲染 Python 场景（HDRI 光照、PBR、Bullet 刚体、Mantaflow 火焰与烟雾），作为素材层合成。
+- `c2v pairs`：对每个参数编辑渲染目标视频，与共享的源视频配对，输出逐帧差分掩码与 `pairs.jsonl` 指令，用于编辑数据集；`sweep` 按声明的参数空间采样大量单参数编辑，`--export` 导出关键帧三元组。
+
+| 示例 | 维度 | 画面 |
+|---|---|---|
+| `real-motion` | 真人运动 · 片头 · 文字 · 风格 | Commons 体操实拍，变速（0.25× 慢动作）、重新构图、标题、调色、转为水墨 |
+| `real-physics` | 物理规律 · 片头 · 3D | 路径追踪的金属字母在 Bullet 重力下依次落到 PBR 混凝土地面；变体修改材质或重力（地球 / 月球） |
+| `real-world` | 世界知识 | NASA Artemis I 发射实拍；任务名、日期、发射台读取自 NASA 素材元数据；任务时钟 |
+| `real-vfx` | 影视特效 | Mantaflow 爆炸（黑体辐射火焰）、火星与刚体碎块，由 8k HDRI 背景照明并合成进该背景 |
+| `real-human` | 3D 拟人 · 3D 人物 | 桌面玩具机器人表演，按微距照片拍摄；动作捕捉驱动的舞者 |
+| `real-domino` | 物理规律 | 68 块 Bullet 多米诺绕心形倒下并翻成红色；敲击声按模拟测得的倒下时刻生成 |
+
 ## 结果
 
 与早期尝试做同口径对比：同一片段、同一音频、同一指标（[`docs/baselines.md`](docs/baselines.md)）。

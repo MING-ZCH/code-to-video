@@ -1,0 +1,11 @@
+{
+ "range": "0:11",
+ "scale": 0.5,
+ "workers": 4,
+ "threshold": 6,
+ "edits": [
+  { "id": "robot_blue", "type": "color_change", "zh": "把机器人的车漆从橙色改为蓝色。", "en": "Repaint the robot from orange to blue.", "params": { "robot": "robot_blue" } },
+  { "id": "warm_key", "type": "lighting", "zh": "把舞者场景的主光改为暖橙色并调亮。", "en": "Make the dancer's key light warm orange and brighter.", "params": { "dancer": "dance_warm" } },
+  { "id": "no_caption", "type": "text_remove", "zh": "去掉左下角的说明字幕。", "en": "Remove the captions at the bottom left.", "params": { "caption": false } }
+ ]
+}

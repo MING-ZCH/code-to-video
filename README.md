@@ -70,6 +70,24 @@ For these inputs the words are the content and the layout is the storyboard.
 
 The three inputs are synthetic single pages ([`scripts/dev/make-probe-inputs.py`](scripts/dev/make-probe-inputs.py)); real scans, multi-page papers and arbitrary charts are not covered yet. Details, related work (Paper2Video, Code2Video, Paper2Poster, MoVer…) and limits: [`docs/doc-inputs.md`](docs/doc-inputs.md).
 
+## Realism layer: real footage, path-traced 3D, edit pairs
+
+`PROJECT.look = 'real'` swaps the painted medium for real pixels that the program still controls ([`docs/realism.md`](docs/realism.md)):
+
+- `c2v assets` searches and fetches real media from Wikimedia Commons, NASA, Poly Haven (CC0 HDRIs, PBR textures, models), the Internet Archive, and Pexels/Pixabay with a key. Licence, author, page and sha256 go to `assets.lock.json`; `restore` rebuilds the media on another machine.
+- `footage()` draws source time `st` of a clip under the virtual camera; `speedRamp()` integrates speed curves; `--interp=4` adds motion-compensated in-betweens for slow motion; `grade()` and `PROJECT.shutter` give the frame a camera finish (tone curve, grain, halation, defocus, real motion blur).
+- `c2v blender` renders a Python scene in Cycles (HDRI light, PBR, Bullet rigid bodies, Mantaflow fire and smoke) into a footage layer.
+- `c2v pairs` renders one target video per parameter edit next to a shared source, with exact difference masks and a `pairs.jsonl` of instructions, for editing datasets; `sweep` samples many single-parameter edits from a declared space and `--export` writes keyframe triplets.
+
+| Probe | Categories | Picture |
+|---|---|---|
+| `real-motion` | human motion · title · text · style | Commons gymnastics footage, retimed (0.25× slow motion), reframed, titled, graded, restyled to ink wash |
+| `real-physics` | physics · title · 3D | path-traced metal letters released under Bullet gravity onto PBR concrete; variants change material or gravity (Earth / Moon) |
+| `real-world` | world knowledge | NASA Artemis I launch footage; mission name, date and pad read from the NASA item's metadata; mission clock |
+| `real-vfx` | visual effects | Mantaflow explosion (blackbody flame), embers and rigid debris lit by, and composited into, an 8k HDRI plate |
+| `real-human` | 3D anthropomorphic · 3D human | a toy robot acting on a desk shot like a macro photo; a mocap-driven dancer |
+| `real-domino` | physics | 68 Bullet dominoes round a heart, turning red as they fall; clicks timed from the simulation |
+
 ## Results
 
 Same clip, same audio, same metric, against earlier attempts made in a different way ([`docs/baselines.md`](docs/baselines.md)):

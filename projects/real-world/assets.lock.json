@@ -1,0 +1,48 @@
+{
+ "assets": {
+  "launch": {
+   "source": "nasa",
+   "id": "Artemis I Launch 2022 CU tracking from Press Site_compressed",
+   "url": "https://images-assets.nasa.gov/video/Artemis%20I%20Launch%202022%20CU%20tracking%20from%20Press%20Site_compressed/Artemis%20I%20Launch%202022%20CU%20tracking%20from%20Press%20Site_compressed~orig.mp4",
+   "page": "https://images.nasa.gov/details/Artemis%20I%20Launch%202022%20CU%20tracking%20from%20Press%20Site_compressed",
+   "license": "NASA media (public domain; no endorsement implied)",
+   "author": "NASA",
+   "sha256": "08306b29514c6485b0f43e15a38c3b9b104f8f13cc251d89e56956c7dfd21dc5",
+   "opts": {
+    "start": "42",
+    "dur": "16",
+    "fps": "24",
+    "w": "1920"
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 384,
+    "fps": 24,
+    "w": 1920,
+    "h": 1080,
+    "dur": 16,
+    "start": 42,
+    "facts": {
+     "title": "Artemis I Launch (Press Site)",
+     "date": "2022-11-16",
+     "center": "MSFC",
+     "description": "NASA’s Space Launch System (SLS) rocket with the Orion spacecraft atop launches the agency’s Artemis I flight test, Wednesday, Nov. 16 from Launch Complex 39B at NASA’s Kennedy Space Center in Florida. The Moon rocket and spacecraft lifted off at 1:47 a.m. ET. The Artemis I mission is the first integrated test of the agency’s deep space exploration systems: the Space Launch System rocket, Orion spacecraft, and supporting ground systems. The mission is the first in a series of increasingly complex missions to the Moon. With Artemis missions, NASA will land the first woman and first person of color on the Moon, using innovative technologies to explore more of the lunar surface than ever before.",
+     "keywords": [
+      "Space Launch System",
+      "SLS",
+      "Artemis",
+      "NASA",
+      "Marshall Space Flight Center",
+      "Rocket Science",
+      "rocket",
+      "Artemis I",
+      "Launch Vehicle",
+      "Moon",
+      "Launch"
+     ]
+    }
+   },
+   "fetched": "2026-11-12T09:58:05.189Z"
+  }
+ }
+}

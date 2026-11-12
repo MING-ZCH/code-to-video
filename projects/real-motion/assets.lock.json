@@ -1,0 +1,52 @@
+{
+ "assets": {
+  "highbar": {
+   "source": "wikimedia",
+   "id": "Gymnastics Australia 020.theora.ogv",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/9/95/Gymnastics_Australia_020.theora.ogv?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "page": "https://commons.wikimedia.org/wiki/File:Gymnastics_Australia_020.theora.ogv",
+   "license": "CC BY-SA 3.0",
+   "author": "LauraHale",
+   "sha256": "46f098e2ceb3a20b9467bffd73eb25c653008d795c221341f6d11a1791bb05a2",
+   "opts": {
+    "fps": "24",
+    "w": "1920"
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 380,
+    "fps": 24,
+    "w": 1920,
+    "h": 1088,
+    "dur": 15.833333333333334
+   },
+   "fetched": "2026-11-12T09:18:30.841Z"
+  },
+  "highbar_mci": {
+   "source": "wikimedia",
+   "id": "Gymnastics Australia 020.theora.ogv",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/9/95/Gymnastics_Australia_020.theora.ogv?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "page": "https://commons.wikimedia.org/wiki/File:Gymnastics_Australia_020.theora.ogv",
+   "license": "CC BY-SA 3.0",
+   "author": "LauraHale",
+   "sha256": "46f098e2ceb3a20b9467bffd73eb25c653008d795c221341f6d11a1791bb05a2",
+   "opts": {
+    "start": "9.6",
+    "dur": "2.0",
+    "fps": "24",
+    "w": "1920",
+    "interp": "4"
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 192,
+    "fps": 96,
+    "w": 1920,
+    "h": 1088,
+    "dur": 2,
+    "start": 9.6
+   },
+   "fetched": "2026-11-12T09:20:36.631Z"
+  }
+ }
+}

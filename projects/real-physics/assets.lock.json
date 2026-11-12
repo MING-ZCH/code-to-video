@@ -1,0 +1,273 @@
+{
+ "assets": {
+  "studio": {
+   "source": "polyhaven",
+   "id": "brown_photostudio_02",
+   "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/2k/brown_photostudio_02_2k.hdr",
+   "page": "https://polyhaven.com/a/brown_photostudio_02",
+   "license": "CC0",
+   "author": "Sergej Majboroda",
+   "sha256": "153ca0cb899575c00f5b23065958d250a0f73e8789c8cf5957ccea313baf2bb6",
+   "opts": {
+    "res": "2k"
+   },
+   "meta": {
+    "kind": "hdri",
+    "file": "env.hdr"
+   },
+   "fetched": "2026-11-12T09:39:57.934Z"
+  },
+  "floor": {
+   "source": "polyhaven",
+   "id": "concrete_floor_worn_001",
+   "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/concrete_floor_worn_001/concrete_floor_worn_001_diff_2k.jpg",
+   "page": "https://polyhaven.com/a/concrete_floor_worn_001",
+   "license": "CC0",
+   "author": "Dimitrios Savva, Rico Cilliers",
+   "sha256": "54d8d7c9fb8d3e757a458cc6d0db0cee9504c02f2e6e2ec5fc3838f9342625c5",
+   "opts": {
+    "res": "2k"
+   },
+   "meta": {
+    "kind": "texture",
+    "files": [
+     "Diffuse.jpg",
+     "nor_gl.jpg",
+     "Rough.jpg",
+     "AO.jpg",
+     "Displacement.jpg",
+     "arm.jpg"
+    ]
+   },
+   "fetched": "2026-11-12T09:40:17.671Z"
+  },
+  "drop_gold": {
+   "source": "blender",
+   "id": "projects/real-physics/blender/drop.py",
+   "url": null,
+   "page": "projects/real-physics/blender/drop.py",
+   "license": "own (rendered from code)",
+   "author": "c2v",
+   "sha256": "0768fca8496ec81f82741a4538e23eb5de2d839e94bb050b3afd4dd3de0e3354",
+   "opts": {
+    "params": {
+     "word": "GRAVITY",
+     "material": "gold",
+     "gravity": 9.81,
+     "bounce": null,
+     "height": 1.1,
+     "first_release": 8,
+     "release_gap": 7,
+     "seed": 0
+    },
+    "frames": 144,
+    "samples": 48,
+    "w": 1920,
+    "h": 1080
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 144,
+    "fps": 24,
+    "w": 1920,
+    "h": 1080,
+    "dur": 6,
+    "params": {
+     "word": "GRAVITY",
+     "material": "gold",
+     "gravity": 9.81,
+     "bounce": null,
+     "height": 1.1,
+     "first_release": 8,
+     "release_gap": 7,
+     "seed": 0
+    }
+   },
+   "render": {
+    "kind": "video",
+    "frames": 144,
+    "fps": 24,
+    "w": 1920,
+    "h": 1080,
+    "dur": 6,
+    "samples": 48,
+    "blender": "5.2.1 LTS",
+    "build_s": 0.2,
+    "render_s_per_frame": 1.46,
+    "rendered": 144
+   },
+   "fetched": "2026-11-12T09:49:32.994Z"
+  },
+  "drop_glass": {
+   "source": "blender",
+   "id": "projects/real-physics/blender/drop.py",
+   "url": null,
+   "page": "projects/real-physics/blender/drop.py",
+   "license": "own (rendered from code)",
+   "author": "c2v",
+   "sha256": "d16b44c137af04088820175e747d8da2fe2c2827e954830f6b6d138b9ccb7f93",
+   "opts": {
+    "params": {
+     "word": "GRAVITY",
+     "material": "glass",
+     "gravity": 9.81,
+     "bounce": null,
+     "height": 1.1,
+     "first_release": 8,
+     "release_gap": 7,
+     "seed": 0
+    },
+    "frames": 144,
+    "samples": 48,
+    "w": 1920,
+    "h": 1080
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 144,
+    "fps": 24,
+    "w": 1920,
+    "h": 1080,
+    "dur": 6,
+    "params": {
+     "word": "GRAVITY",
+     "material": "glass",
+     "gravity": 9.81,
+     "bounce": null,
+     "height": 1.1,
+     "first_release": 8,
+     "release_gap": 7,
+     "seed": 0
+    }
+   },
+   "render": {
+    "kind": "video",
+    "frames": 144,
+    "fps": 24,
+    "w": 1920,
+    "h": 1080,
+    "dur": 6,
+    "samples": 48,
+    "blender": "5.2.1 LTS",
+    "build_s": 0.2,
+    "render_s_per_frame": 1.95,
+    "rendered": 144
+   },
+   "fetched": "2026-11-12T09:54:15.417Z"
+  },
+  "drop_moon": {
+   "source": "blender",
+   "id": "projects/real-physics/blender/drop.py",
+   "url": null,
+   "page": "projects/real-physics/blender/drop.py",
+   "license": "own (rendered from code)",
+   "author": "c2v",
+   "sha256": "54d0e18aa579353eceedb13245980361b89d689930ee1617efa95f0a26982b93",
+   "opts": {
+    "params": {
+     "word": "GRAVITY",
+     "material": "gold",
+     "gravity": 1.62,
+     "bounce": null,
+     "height": 1.1,
+     "first_release": 8,
+     "release_gap": 7,
+     "seed": 0
+    },
+    "frames": 144,
+    "samples": 48,
+    "w": 1920,
+    "h": 1080
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 144,
+    "fps": 24,
+    "w": 1920,
+    "h": 1080,
+    "dur": 6,
+    "params": {
+     "word": "GRAVITY",
+     "material": "gold",
+     "gravity": 1.62,
+     "bounce": null,
+     "height": 1.1,
+     "first_release": 8,
+     "release_gap": 7,
+     "seed": 0
+    }
+   },
+   "render": {
+    "kind": "video",
+    "frames": 144,
+    "fps": 24,
+    "w": 1920,
+    "h": 1080,
+    "dur": 6,
+    "samples": 48,
+    "blender": "5.2.1 LTS",
+    "build_s": 0.1,
+    "render_s_per_frame": 1.83,
+    "rendered": 144
+   },
+   "fetched": "2026-11-12T09:58:40.963Z"
+  },
+  "drop_rubber": {
+   "source": "blender",
+   "id": "projects/real-physics/blender/drop.py",
+   "url": null,
+   "page": "projects/real-physics/blender/drop.py",
+   "license": "own (rendered from code)",
+   "author": "c2v",
+   "sha256": "bb8b8880b816d4e69bf2be10e289579f5f88af92855a540cd5c44e3e005a0c56",
+   "opts": {
+    "params": {
+     "word": "GRAVITY",
+     "material": "rubber",
+     "gravity": 9.81,
+     "bounce": null,
+     "height": 1.1,
+     "first_release": 8,
+     "release_gap": 7,
+     "seed": 0
+    },
+    "frames": 144,
+    "samples": 48,
+    "w": 1920,
+    "h": 1080
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 144,
+    "fps": 24,
+    "w": 1920,
+    "h": 1080,
+    "dur": 6,
+    "params": {
+     "word": "GRAVITY",
+     "material": "rubber",
+     "gravity": 9.81,
+     "bounce": null,
+     "height": 1.1,
+     "first_release": 8,
+     "release_gap": 7,
+     "seed": 0
+    }
+   },
+   "render": {
+    "kind": "video",
+    "frames": 144,
+    "fps": 24,
+    "w": 1920,
+    "h": 1080,
+    "dur": 6,
+    "samples": 48,
+    "blender": "5.2.1 LTS",
+    "build_s": 0.1,
+    "render_s_per_frame": 1.86,
+    "rendered": 144
+   },
+   "fetched": "2026-11-12T10:03:09.705Z"
+  }
+ }
+}

@@ -570,3 +570,17 @@ Each render command appends a line to `out/render-log.jsonl` (ms/frame, GPU, out
 - long near-still stretches (16–46% of 1/12 s steps barely change)
 - tiny characters (about 1/10 of the frame height) acting through props and captions instead of faces and bodies
 - a shader effect with no ink edge or palette link, so it looks pasted over the painting
+
+# Part 3 · Realism layer (engine/real.js, docs/realism.md)
+
+Part 1's look rules (brush, flat 2D, boil, no 3D) are the rules of the *painted* medium. A project with `PROJECT.look = 'real'` is a different medium: real footage, photos and path-traced layers composed by code. In a real project:
+
+- **The picture is a source, the program is the edit.** Fetch media with `c2v assets` (licence, author and sha256 land in `assets.lock.json`); never paste a file into `assets/` by hand. Credit CC BY / BY-SA sources on screen or in the description (`c2v assets <p> credits`).
+- **Time is still t.** `footage(name, st)` reads source second `st`; derive `st` from `t` (`speedRamp` for ramps). For slow motion below ~0.5×, fetch the window again with `--interp=4` (motion-compensated in-betweens) instead of holding or cross-fading frames.
+- **The camera is code.** Reframe with `camBegin` (push-ins, drift via `handheld(t)`), keep a 3–5 % zoom margin so drift never shows an edge. On a source shot with a moving camera, do not composite anything that must stick to the scene: there is no tracking.
+- **Finish every frame with `grade()`** (tone curve, grain, halation, vignette); type and painted marks drawn after it stay crisp. `PROJECT.shutter` adds true motion blur at `samples` × the cost.
+- **Facts on screen must match their source.** A caption that states a number (gravity, a date, a speed) reads it from the same params or render meta the picture uses, and throws if they disagree.
+- **Every editable choice is a param** (`P('name')`), so `c2v pairs` can render source/target pairs with exact masks. Do not hard-code a value a pair might want to change.
+- 3D layers come from `c2v blender` scene files (`build(ctx)` with `ctx.P()`); bake physics, keep the camera locked off when the background is an HDRI plate, and add shake in the composite as rotation only.
+- Time sound and captions from the simulation, not from guesses: define `measure(ctx)` in the scene (impact frames, final state) and read `ASSET_META[layer].measure` in the composite.
+- Physical layouts must be physically possible: dominoes turn on arcs (radius ≳ plaque height), not at points; check a chain with a fallen-count over time before rendering.

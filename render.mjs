@@ -18,6 +18,7 @@
 //   Sound: --synth writes the project's code-generated score to out/synth.wav (clip/encode use it automatically).
 //   Loops: add --loop=<name> (times are loop times), or --loop=emotions --png for a PNG cycle.
 //   Preview: --scale=0.5 renders the WebGL layer at half resolution (≈4x cheaper fills) for checks; never for finals.
+//   Edits: --params='{"temp":-.3}' overrides PROJECT.params for this render (c2v pairs uses it).
 //   Other flags: --audio=<file> (else PROJECT.audio), --fps=24, --chrome=<path>, --soft-gl (no GPU: SwiftShader),
 //   --gpu-angle=vulkan|gl-egl (headless Linux + NVIDIA).
 import puppeteer from 'puppeteer-core';
@@ -74,7 +75,7 @@ async function openPage(tag = '') {
   const page = await browser.newPage();
   page.on('console', m => { if (['error', 'warn'].includes(m.type())) console.log(`[page${tag}]`, m.text()); });
   page.on('pageerror', e => console.log(`[page error${tag}]`, e.message));
-  await page.goto(pathToFileURL(STUDIO).href + `?render&project=${encodeURIComponent(PROJ)}${args.scale ? '&scale=' + args.scale : ''}${args.medium ? '&medium=' + args.medium : ''}`, { waitUntil: 'networkidle0', timeout: 120000 });
+  await page.goto(pathToFileURL(STUDIO).href + `?render&project=${encodeURIComponent(PROJ)}${args.scale ? '&scale=' + args.scale : ''}${args.medium ? '&medium=' + args.medium : ''}${args.params ? '&params=' + encodeURIComponent(args.params) : ''}`, { waitUntil: 'networkidle0', timeout: 120000 });
   await page.waitForFunction('window.ready === true', { timeout: 120000 });
   if (args.loop) {
     const ok = await page.evaluate(name => { if (!LOOPS[name]) return false; window.LOOP = LOOPS[name]; return true; }, args.loop);

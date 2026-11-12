@@ -1,6 +1,7 @@
 // shaders.js: the "shader" medium. One fragment shader per style, applied as a full-frame pass with p5's filter().
 //
 //   stylize(name, u)  POST filters: restyle everything painted so far in this frame (tex0 = the canvas).
+//                     oil (u.r = stroke radius) also applies to real footage and Blender layers
 //                     cave, inkwash, blueprint, halftone, pixel (u.r = block size), crt, cel, thermal, stained (u.r = cell size)
 //   shade(name, u)    GENERATORS: paint procedural imagery over what's there (explosion, shockwave, rays, fire).
 //
@@ -121,6 +122,28 @@ const STYLES = {
            : L < .5 ? mix(vec3(.4, .0, .55), vec3(.95, .2, .1), (L - .25) / .25)
            : L < .75 ? mix(vec3(.95, .2, .1), vec3(1., .8, .1), (L - .5) / .25) : mix(vec3(1., .8, .1), vec3(1.), (L - .75) / .25);
     gl_FragColor = vec4(mix(tex(uv), c, u_k), 1.);
+  }`,
+  // Oil paint: a 4-sector Kuwahara filter (u.r = radius px, default 7) flattens regions into strokes while keeping edges,
+  // then a canvas weave and a light impasto relief (luminance gradient as a bump) sit on top.
+  oil: `void main() {
+    vec2 uv = vTexCoord; float r = u_r > 0. ? min(u_r, 10.) : 7.;
+    vec3 m0 = vec3(0.), m1 = vec3(0.), m2 = vec3(0.), m3 = vec3(0.), s0 = vec3(0.), s1 = vec3(0.), s2 = vec3(0.), s3 = vec3(0.); float n = 0.;
+    for (int j = 0; j <= 10; j++) { if (float(j) > r) break;
+      for (int i = 0; i <= 10; i++) { if (float(i) > r) break;
+        vec2 o = vec2(float(i), float(j)) * texelSize;
+        vec3 a = tex(uv + vec2(-o.x, -o.y)), b = tex(uv + vec2(o.x, -o.y)), c = tex(uv + vec2(-o.x, o.y)), d = tex(uv + o);
+        m0 += a; s0 += a * a; m1 += b; s1 += b * b; m2 += c; s2 += c * c; m3 += d; s3 += d * d; n += 1.;
+      } }
+    m0 /= n; m1 /= n; m2 /= n; m3 /= n;
+    float v0 = dot(s0 / n - m0 * m0, vec3(1.)), v1 = dot(s1 / n - m1 * m1, vec3(1.)), v2 = dot(s2 / n - m2 * m2, vec3(1.)), v3 = dot(s3 / n - m3 * m3, vec3(1.));
+    vec3 c = m0; float v = v0; if (v1 < v) { v = v1; c = m1; } if (v2 < v) { v = v2; c = m2; } if (v3 < v) { c = m3; }
+    vec2 p = px(); float weave = .5 + .25 * (sin(p.x * 1.9) * sin(p.y * 1.9)) + .25 * fbm(p / 3.);
+    float bx = luma(tex(uv + vec2(texelSize.x * 2., 0.))) - luma(tex(uv - vec2(texelSize.x * 2., 0.)));
+    float by = luma(tex(uv + vec2(0., texelSize.y * 2.))) - luma(tex(uv - vec2(0., texelSize.y * 2.)));
+    float relief = clamp(.5 + 2.2 * (bx - by), 0., 1.);
+    c = c * (.9 + .2 * weave) * (.85 + .3 * relief);
+    c = mix(vec3(luma(c)), c, 1.15);
+    gl_FragColor = vec4(mix(tex(uv), clamp(c, 0., 1.), u_k), 1.);
   }`,
   // Stained glass: Voronoi cells take the colour at their centre, dark lead between them.
   stained: `void main() {

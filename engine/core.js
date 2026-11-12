@@ -9,6 +9,10 @@ const TAU = Math.PI * 2;
 // watercolour fill becomes a flat wash (no bleed/texture): much cheaper, for machines without a GPU or a cel look.
 const MEDIUM = new URLSearchParams(location.search).get('medium') || PROJECT.medium || 'brush';
 const SCALE = Math.min(1, Math.max(.25, +(new URLSearchParams(location.search).get('scale') || 1)));
+// Edit parameters: PROJECT.params holds the defaults; ?params=<json> overrides some of them (c2v pairs renders one video per
+// override set). Scenes read them with P('name'), so an edit is a value, not a code change.
+const PARAMS = { ...(PROJECT.params || {}), ...JSON.parse(decodeURIComponent(new URLSearchParams(location.search).get('params') || '%7B%7D')) };
+const P = (k, d) => PARAMS[k] ?? d;
 const PAL = {
   paper: '#F3EBDC', ink: '#2B2233', clay: '#D97757', clayDk: '#A84D33', clayLt: '#F2A283',
   night: '#1F2550', indigo: '#2F3C7A', rose: '#E27A92', ochre: '#E8AA38', sap: '#6E9F58',
@@ -251,6 +255,9 @@ function drawLetters(c) {
     c.save(); c.translate(L.x, L.y); c.rotate(L.rot || 0); c.scale(k, k); c.globalAlpha = L.alpha ?? 1;
     c.font = L.font || `${L.size}px "Permanent Marker", "Comic Sans MS", cursive`;
     c.textAlign = L.align || 'center'; c.textBaseline = 'middle';
+    if (L.track) c.letterSpacing = L.track + 'px';                  // titles: tracking, focus blur, light bloom around letters
+    if (L.blur) c.filter = `blur(${L.blur}px)`;
+    if (L.glow) { c.shadowColor = L.glow; c.shadowBlur = L.glowR ?? L.size * .4; }
     if (L.stroke) { c.lineJoin = 'round'; c.lineWidth = L.size * .12; c.strokeStyle = L.stroke; c.strokeText(L.txt, 0, 0); }
     if (L.ink !== false) { c.fillStyle = PAL.ink; c.fillText(L.txt, L.size * .045, L.size * .055); }
     c.fillStyle = L.color; c.fillText(L.txt, 0, 0);
@@ -319,20 +326,42 @@ function draw() {
   LETTERS = []; CAM = LAST_CAM = null; window.FOCUS = []; window.EMOLOG = []; window.CAMS = []; window.FILLAREA = 0;
   push(); translate(-W / 2, -H / 2);
   BOILN = Math.floor(T * BOIL); CLAWD_N = 0; boilSeed('frame'); noiseSeed(77);
-  image(paperG, 0, 0);
+  if (PROJECT.look === 'real') { push(); resetMatrix(); background(0); pop(); } else image(paperG, 0, 0);
   drawWorld(T);
   pop();
+}
+// One drawing of time t. Footage frames are files: a draw that asked for frames not yet decoded is re-run once they are.
+async function drawAt(t) {
+  for (let k = 0; k < 4; k++) { T = t; await redraw(); if (typeof footPending !== 'function' || !footPending()) return; await footLoad(); }
+  throw new Error(`footage frames still missing at t=${t}`);
+}
+// A finished frame of time t into FRAME_SRC: one drawing, or with PROJECT.shutter the mean of sub-frames spread over the
+// shutter interval (float accumulation, so the mean is exact and order-independent).
+let FRAME_SRC = null, ACC = null, ACC_C = null;
+async function frameAt(t) {
+  const sh = PROJECT.shutter, n = sh && !window.NO_BLUR ? (sh.samples | 0) : 1;
+  if (n <= 1) { await drawAt(t); FRAME_SRC = drawingContext.canvas; return; }
+  if (!ACC_C) { ACC_C = document.createElement('canvas'); ACC_C.width = W; ACC_C.height = H; ACC = new Float32Array(W * H * 4); }
+  const c = ACC_C.getContext('2d', { willReadFrequently: true }), span = (sh.angle ?? .5) / (PROJECT.fps || 24);
+  ACC.fill(0);
+  for (let i = 0; i < n; i++) {
+    await drawAt(t + ((i + .5) / n - .5) * span);
+    c.drawImage(drawingContext.canvas, 0, 0, W, H);
+    const d = c.getImageData(0, 0, W, H).data; for (let j = 0; j < d.length; j++) ACC[j] += d[j];
+  }
+  const img = c.createImageData(W, H); for (let j = 0; j < ACC.length; j++) img.data[j] = Math.round(ACC[j] / n);
+  c.putImageData(img, 0, 0); FRAME_SRC = ACC_C; T = t;
 }
 function composite(t) {
   const c = outX;
   c.globalCompositeOperation = 'source-over'; c.globalAlpha = 1;
-  c.drawImage(drawingContext.canvas, 0, 0, W, H);
+  c.drawImage(FRAME_SRC || drawingContext.canvas, 0, 0, W, H);
   drawLetters(c);
   if (typeof drawKaraoke === 'function') drawKaraoke(c, t);
-  c.globalCompositeOperation = 'multiply'; c.drawImage(grainC, 0, 0);
+  if (PROJECT.look !== 'real') { c.globalCompositeOperation = 'multiply'; c.drawImage(grainC, 0, 0); }
   c.globalCompositeOperation = 'source-over';
 }
-window.renderAt = async (t, type = 'image/png', q = .92) => { T = t; await redraw(); composite(t); return outC.toDataURL(type, q); };
+window.renderAt = async (t, type = 'image/png', q = .92) => { await frameAt(t); composite(t); return outC.toDataURL(type, q); };
 // Contact sheet of several times, for visual checks: returns { url, ms[] }. crop = [x, y, w, h] fills each cell with just
 // that region of the frame, at full resolution (for checking faces, hands and contacts up close). at = [x, y, w, h]
 // instead crops w × h around the WORLD point (x, y), wherever each frame's camera put it (a foot, a splash, a prop on
@@ -342,7 +371,7 @@ window.renderSheet = async (times, cols = 3, w = 640, crop = null, at = null) =>
   const [, , cw, ch] = at || crop || [0, 0, W, H], h = Math.round(w * ch / cw), rows = Math.ceil(times.length / cols), sc = document.createElement('canvas');
   sc.width = cols * w; sc.height = rows * h; const c = sc.getContext('2d'), ms = [];
   for (let i = 0; i < times.length; i++) {
-    const t0 = performance.now(); T = times[i]; await redraw(); composite(times[i]); ms.push(Math.round(performance.now() - t0));
+    const t0 = performance.now(); await frameAt(times[i]); composite(times[i]); ms.push(Math.round(performance.now() - t0));
     const x = (i % cols) * w, y = Math.floor(i / cols) * h;
     const [cx, cy] = at ? toScreen(at[0], at[1], LAST_CAM).map((v, j) => v - (j ? ch : cw) / 2) : crop || [0, 0];
     c.drawImage(outC, cx, cy, cw, ch, x, y, w, h); c.fillStyle = 'rgba(0,0,0,.65)'; c.fillRect(x, y, 84, 24); c.fillStyle = '#fff'; c.font = '15px sans-serif'; c.fillText(times[i].toFixed(2) + 's', x + 6, y + 17);
@@ -364,7 +393,7 @@ function focus(id, x, y, w, h, o = {}) {
 // a character's box is opaque: R6 warns when it covers a read target that isn't drawn over it (o.front / o.held)
 const focusClawd = (id, x, y, u, o = {}) => o.sit ? focus(id, x, y - 3 * u, 10 * u, 6 * u, { ...o, char: true }) : focus(id, x, y - 4 * u, 10 * u, 8 * u, { ...o, char: true });
 // what a frame declares, for tools: focus boxes (screen px), emotion timelines, cameras used
-window.inspectAt = async t => { T = t; await redraw(); return { t, focus: FOCUS, emolog: EMOLOG, cams: CAMS, fillArea: FILLAREA }; };
+window.inspectAt = async t => { await drawAt(t); return { t, focus: FOCUS, emolog: EMOLOG, cams: CAMS, fillArea: FILLAREA }; };
 window.gpuInfo = () => { const gl = drawingContext, e = gl.getExtension('WEBGL_debug_renderer_info'); return e ? gl.getParameter(e.UNMASKED_RENDERER_WEBGL) : gl.getParameter(gl.RENDERER); };
 
 function devUI() {

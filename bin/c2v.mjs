@@ -16,6 +16,8 @@
 //   c2v report <name>                           out/report.html: storyboard, checks, sheets, metrics, video
 //   c2v audio <file>                            tempo / first beat / sections of a song
 //   c2v deliver                                 deliver/index.html: every case, before/after, generalization matrix
+//   c2v assets <name> search|fetch|list|credits|restore   real-world media (lib/assets.mjs) with licence + sha256 lock
+//   c2v pairs <name> [--only=a,b] [--scale=.5]  edit pairs: base + one video per PROJECT.params edit, diff masks, pairs.jsonl
 // Render flags pass through to render.mjs: --scale, --medium, --soft-gl, --gpu-angle, --chrome, --workers.
 import { spawnSync } from 'node:child_process';
 import { existsSync, mkdirSync, writeFileSync, readFileSync, readdirSync, copyFileSync } from 'node:fs';
@@ -120,6 +122,31 @@ const commands = {
     const res = files.map(f => videoMetrics(f)); for (const m of res) { const { cut_times_s, ...r } = m; console.log(JSON.stringify(r)); }
     if (OUT && existsSync(OUT)) writeFileSync(join(OUT, 'metrics.json'), JSON.stringify(res, null, 1));
   },
+  async assets() {
+    need(); const A = await import('../lib/assets.mjs'), [sub, a1, ...a2] = rest;
+    if (sub === 'search') {
+      const hits = await A.search(a1, a2.join(' '), opt);
+      hits.forEach((h, i) => console.log(`${String(i + 1).padStart(2)}. ${a1}:${h.id}\n    ${h.type || ''} ${h.size || ''} ${h.dur ? (+h.dur).toFixed(1) + ' s' : ''} · ${h.license} · ${h.author}`));
+    } else if (sub === 'fetch') {
+      const r = await A.fetchAsset(PDIR, a1, { ...opt, as: opt.as });
+      console.log(`${opt.as}: ${r.meta.kind} ${JSON.stringify(r.meta)} · ${r.license} · sha256 ${r.sha256.slice(0, 12)}`);
+    } else if (sub === 'restore') console.log((await A.restore(PDIR)).join('\n'));
+    else if (sub === 'credits') console.log(A.credits(PDIR));
+    else console.log(A.list(PDIR) || 'no assets: c2v assets <name> search <source> <query>');
+  },
+  async blender() {
+    need(); const scene = rest[0]; if (!scene || !opt.as) die('usage: c2v blender <name> <scene.py> --as=<asset> [--params=json] [--frames=120] [--scale=.5] [--samples=64] [--only=1,60]');
+    const { registerLayer } = await import('../lib/assets.mjs'), sc = +(opt.scale || 1), out = join(PDIR, 'assets', opt.as);
+    const args = ['-b', '--factory-startup', '--python', 'blender/render_layer.py', '--', '--scene', resolve(scene), '--out', out, '--project', PDIR,
+      '--params', opt.params || '{}', '--frames', String(opt.frames || 120), '--fps', String(opt.fps || 24), '--width', String(Math.round(1920 * sc)), '--height', String(Math.round(1080 * sc)),
+      '--samples', String(opt.samples || 64), ...(opt.only ? ['--only', String(opt.only)] : [])];
+    const t0 = Date.now(), r = spawnSync(process.env.BLENDER || 'blender', args, { encoding: 'utf8', maxBuffer: 1 << 28 });
+    const line = (r.stdout || '').split('\n').find(l => l.startsWith('C2V_META '));
+    if (r.status || !line) { console.error((r.stdout || '').split('\n').filter(l => /Error|Traceback|error/i.test(l)).slice(-20).join('\n'), r.stderr); die('blender failed'); }
+    const meta = JSON.parse(line.slice(9)), e = registerLayer(PDIR, opt.as, scene, meta);
+    console.log(`${opt.as}: ${meta.rendered}/${meta.frames} frames ${meta.w}x${meta.h} · build ${meta.build_s} s · ${meta.render_s_per_frame} s/frame · total ${((Date.now() - t0) / 1000).toFixed(0)} s · sha256 ${e.sha256.slice(0, 12)}`);
+  },
+  async pairs() { need(); const { runPairs } = await import('../lib/pairs.mjs'); await runPairs(name, opt); },
   async report() { need(); const { writeReport } = await import('../lib/report.mjs'); console.log('wrote ' + writeReport(name)); },
   async deliver() { const { writeDelivery } = await import('../lib/delivery.mjs'); console.log('wrote ' + writeDelivery('.')); },
   async audio() { const { analyzeAudio } = await import('../lib/audio-analysis.mjs'); const { sections, ...a } = analyzeAudio(name); console.log(JSON.stringify(a, null, 1)); },
@@ -155,5 +182,5 @@ function sceneTemplate(dur) {
 `;
 }
 
-if (!commands[cmd]) { console.log(readFileSync(fileURLToPath(import.meta.url), 'utf8').split('\n').slice(1, 19).map(l => l.replace(/^\/\/ ?/, '')).join('\n')); process.exit(cmd ? 1 : 0); }
+if (!commands[cmd]) { console.log(readFileSync(fileURLToPath(import.meta.url), 'utf8').split('\n').slice(1, 21).map(l => l.replace(/^\/\/ ?/, '')).join('\n')); process.exit(cmd ? 1 : 0); }
 await commands[cmd]();

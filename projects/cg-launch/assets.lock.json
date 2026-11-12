@@ -1,0 +1,111 @@
+{
+ "assets": {
+  "sls": {
+   "source": "url",
+   "id": "https://assets.science.nasa.gov/content/dam/science/cds/3d/resources/printable/space-launch-system-(sls)/Space%20Launch%20System%20(SLS).zip",
+   "url": "https://assets.science.nasa.gov/content/dam/science/cds/3d/resources/printable/space-launch-system-(sls)/Space%20Launch%20System%20(SLS).zip",
+   "page": "https://assets.science.nasa.gov/content/dam/science/cds/3d/resources/printable/space-launch-system-(sls)/Space%20Launch%20System%20(SLS).zip",
+   "license": "NASA 3D Resources (no copyright; NASA media guidelines)",
+   "author": "NASA",
+   "sha256": "df99ebf23f34c6800f31aed58756f05c7f4e929d0cf39735c6fd1ed7556c9282",
+   "opts": {},
+   "meta": {
+    "kind": "model",
+    "files": [
+     "Space Launch System (SLS).stl"
+    ]
+   },
+   "fetched": "2026-11-12T15:25:57.025Z"
+  },
+  "night": {
+   "source": "polyhaven",
+   "id": "rogland_clear_night",
+   "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/4k/rogland_clear_night_4k.hdr",
+   "page": "https://polyhaven.com/a/rogland_clear_night",
+   "license": "CC0",
+   "author": "Greg Zaal",
+   "sha256": "133d77ddf6a69926a138574169e5cdf4c04b785e8d22545274aa285f1ec3d879",
+   "opts": {
+    "res": "4k"
+   },
+   "meta": {
+    "kind": "hdri",
+    "file": "env.hdr"
+   },
+   "fetched": "2026-11-12T15:26:58.916Z"
+  },
+  "concrete": {
+   "source": "polyhaven",
+   "id": "concrete_floor_worn_001",
+   "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/concrete_floor_worn_001/concrete_floor_worn_001_diff_2k.jpg",
+   "page": "https://polyhaven.com/a/concrete_floor_worn_001",
+   "license": "CC0",
+   "author": "Dimitrios Savva, Rico Cilliers",
+   "sha256": "54d8d7c9fb8d3e757a458cc6d0db0cee9504c02f2e6e2ec5fc3838f9342625c5",
+   "opts": {
+    "res": "2k"
+   },
+   "meta": {
+    "kind": "texture",
+    "files": [
+     "Diffuse.jpg",
+     "nor_gl.jpg",
+     "Rough.jpg",
+     "AO.jpg",
+     "Displacement.jpg",
+     "arm.jpg"
+    ]
+   },
+   "fetched": "2026-11-12T15:27:14.051Z"
+  },
+  "launch": {
+   "source": "blender",
+   "id": "projects/cg-launch/blender/launch.py",
+   "url": null,
+   "page": "projects/cg-launch/blender/launch.py",
+   "license": "own (rendered from code)",
+   "author": "c2v",
+   "sha256": "e8ca08d3c5ac6cb1ee6c8088cf50dff025f9f94813337401e238b0001ac7af2a",
+   "opts": {
+    "params": {
+     "rs25_frame": 14,
+     "liftoff_frame": 62,
+     "thrust_to_weight": 1.5,
+     "seed": 0
+    },
+    "frames": 192,
+    "samples": 20,
+    "w": 1280,
+    "h": 720
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 192,
+    "fps": 24,
+    "w": 1280,
+    "h": 720,
+    "dur": 8,
+    "params": {
+     "rs25_frame": 14,
+     "liftoff_frame": 62,
+     "thrust_to_weight": 1.5,
+     "seed": 0
+    }
+   },
+   "render": {
+    "kind": "video",
+    "frames": 192,
+    "fps": 24,
+    "w": 1280,
+    "h": 720,
+    "dur": 8,
+    "samples": 20,
+    "blender": "5.2.1 LTS",
+    "build_s": 2.8,
+    "render_s_per_frame": 20.02,
+    "rendered": 192
+   },
+   "fetched": "2026-11-12T16:53:36.751Z"
+  }
+ }
+}

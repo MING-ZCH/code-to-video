@@ -308,10 +308,11 @@ def bake_physics() -> int:
 
 
 def camera(keys: Iterable[tuple[int, Sequence[float], Sequence[float]]], lens: float = 50.0, fstop: float | None = None,
-           focus: bpy.types.Object | None = None) -> bpy.types.Object:
+           focus: bpy.types.Object | None = None, clip_end: float = 1000.0) -> bpy.types.Object:
     """A camera keyed at (frame, location, look-at target) triples, eased by Blender's default Bezier interpolation."""
     cam_data = bpy.data.cameras.new("cam")
     cam_data.lens = lens
+    cam_data.clip_end = clip_end                                 # Blender's default (100 m) hides distant sets
     cam = bpy.data.objects.new("cam", cam_data)
     bpy.context.collection.objects.link(cam)
     bpy.context.scene.camera = cam

@@ -1,0 +1,129 @@
+{
+ "assets": {
+  "profile": {
+   "source": "wikimedia",
+   "id": "Portrait of a Man in Profile MET DP164822.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Portrait_of_a_Man_in_Profile_MET_DP164822.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "page": "https://commons.wikimedia.org/wiki/File:Portrait_of_a_Man_in_Profile_MET_DP164822.jpg",
+   "license": "CC0",
+   "author": "anonymous",
+   "sha256": "85fdec383c56b072c7e330986b18a0937152828a262d89f8048d2c265aac75c2",
+   "opts": {},
+   "meta": {
+    "kind": "image",
+    "file": "image.jpg",
+    "w": 3022,
+    "h": 3784
+   },
+   "fetched": "2026-11-12T14:50:18.456Z"
+  },
+  "plant": {
+   "source": "wikimedia",
+   "id": "Temelin.ogv",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Temelin.ogv?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "page": "https://commons.wikimedia.org/wiki/File:Temelin.ogv",
+   "license": "CC BY-SA 4.0",
+   "author": "Rkocman",
+   "sha256": "0b001361b236a877b2a6783719a977bb0e6150f1a136e54041c1f73ab2649f35",
+   "opts": {
+    "start": "5",
+    "dur": "12",
+    "fps": "24",
+    "w": "1920"
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 288,
+    "fps": 24,
+    "w": 1920,
+    "h": 1080,
+    "dur": 12,
+    "start": 5
+   },
+   "fetched": "2026-11-12T14:50:23.152Z"
+  },
+  "fog": {
+   "source": "polyhaven",
+   "id": "misty_dawn",
+   "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/4k/misty_dawn_4k.hdr",
+   "page": "https://polyhaven.com/a/misty_dawn",
+   "license": "CC0",
+   "author": "Greg Zaal",
+   "sha256": "29b0f2970058ff9cd7ba44931fa0634929c9a7aa2957ff2edfe4cdbf77f75f15",
+   "opts": {
+    "res": "4k"
+   },
+   "meta": {
+    "kind": "hdri",
+    "file": "env.hdr"
+   },
+   "fetched": "2026-11-12T14:50:39.648Z"
+  },
+  "silhouette": {
+   "source": "file",
+   "id": "projects/real-exposure/assets/profile/mask.jpg",
+   "url": null,
+   "page": "projects/real-exposure/assets/profile/mask.jpg",
+   "license": "CC0 (derived from MET DP164822 by scripts/dev/silhouette.py --tol 16 --fill …)",
+   "author": "The Met (source painting)",
+   "sha256": "6a5178fe57944658b9d4ebef40f8b8691933143015721b9f86299ef92c29b8d1",
+   "opts": {},
+   "meta": {
+    "kind": "image",
+    "file": "image.jpg",
+    "w": 1600,
+    "h": 2003
+   },
+   "fetched": "2026-11-12T14:52:48.540Z"
+  },
+  "moor": {
+   "source": "blender",
+   "id": "projects/real-exposure/blender/moor.py",
+   "url": null,
+   "page": "projects/real-exposure/blender/moor.py",
+   "license": "own (rendered from code)",
+   "author": "c2v",
+   "sha256": "a9aa524db459f4faf7a611ec6f82340a0323d1d49879a7780ac4220ac96d6a15",
+   "opts": {
+    "params": {
+     "fog": 0.022,
+     "figure_y": 16,
+     "poles": 8,
+     "hdri_rot": 205
+    },
+    "frames": 144,
+    "samples": 32,
+    "w": 1440,
+    "h": 810
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 144,
+    "fps": 24,
+    "w": 1440,
+    "h": 810,
+    "dur": 6,
+    "params": {
+     "fog": 0.022,
+     "figure_y": 16,
+     "poles": 8,
+     "hdri_rot": 205
+    }
+   },
+   "render": {
+    "kind": "video",
+    "frames": 144,
+    "fps": 24,
+    "w": 1440,
+    "h": 810,
+    "dur": 6,
+    "samples": 32,
+    "blender": "5.2.1 LTS",
+    "build_s": 0.1,
+    "render_s_per_frame": 1.58,
+    "rendered": 144
+   },
+   "fetched": "2026-11-12T15:01:01.646Z"
+  }
+ }
+}

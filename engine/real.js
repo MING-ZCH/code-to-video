@@ -11,12 +11,14 @@
 //     o.blend 'screen' | 'add' | 'multiply' | 'lightest' | 'darkest'   for elements shot on black (fire, sparks, smoke)
 //     o.key { col: '#00FF00', sim: .12, smooth: .08, spill: .8 }       chroma key for green-screen elements
 //     o.slot                  a name for the upload canvas when one clip is drawn twice at different times in a frame
+//     o.mask { name, rect: [x, y, w, h], invert }   show the footage only inside an image asset's white area, placed in
+//                             frame pixels (screen space: the camera moves the footage, not the mask); o.tint [r, g, b] multiplies it
 // strobe(name, times, x, y, w, h, o) chronophotography: several source times composited with lightest/darkest
 //                                    (o.mode, default 'darkest' for a dark subject on a light ground), then the live frame
 // grade(u)                           film finish over everything so far (screen space, after camEnd()). Uniforms:
 //     exposure (stops), contrast, sat, temp (-1 cool .. 1 warm), tint, lift, gamma, gain, filmic (0..1 tone curve),
 //     bloom, bloomThr, halation, ca (chromatic aberration px), vignette, grain, letterbox (bar height, frame fraction),
-//     t (grain frame; pass the video time), fade (0..1 to black)
+//     t (grain frame; pass the video time), fade (0..1 to black), scratch (0..1 old-film scratches and dust)
 // handheld(t, amp, seed)             { x, y, r }: a smooth, deterministic hand-held camera drift (px, px, rad) to add to camBegin
 // speedRamp(lt, keys)                source time for shot time lt under a speed curve: keys [[lt0, speed0], [lt1, speed1], …],
 //                                    speed is linear between keys and integrated exactly, so ramps stay f(t)
@@ -67,6 +69,19 @@ void main() {
   gl_FragColor = vec4(c * a * uAlpha, a * uAlpha);
 }`;
 let KEY_SH = null;
+// footage inside a screen-space mask (double exposure, picture-in-shape): an image asset's luminance (white = inside)
+// becomes the alpha of a canvas, computed once per mask.
+const MASKS = {};
+function maskAlpha(name, img, invert) {
+  const key = name + (invert ? ':inv' : '');
+  if (MASKS[key]) return MASKS[key];
+  const cv = document.createElement('canvas'); cv.width = img.naturalWidth; cv.height = img.naturalHeight;
+  const c = cv.getContext('2d', { willReadFrequently: true }); c.drawImage(img, 0, 0);
+  const d = c.getImageData(0, 0, cv.width, cv.height);
+  for (let i = 0; i < d.data.length; i += 4) { const a = invert ? 255 - d.data[i] : d.data[i]; d.data[i] = d.data[i + 1] = d.data[i + 2] = 255; d.data[i + 3] = a; }
+  c.putImageData(d, 0, 0);
+  return (MASKS[key] = cv);
+}
 
 function footage(name, st, x = 0, y = 0, w = W, h = H, o = {}) {
   const m = assetMeta(name);
@@ -83,7 +98,25 @@ function footage(name, st, x = 0, y = 0, w = W, h = H, o = {}) {
   if (g._c2vKey !== name + ':' + i) { g.drawingContext.drawImage(img, 0, 0); g._c2vKey = name + ':' + i; }
   const [sx, sy, sw, sh] = o.src || [0, 0, g.width, g.height];
   push();
-  if (o.key) {
+  if (o.mask) {
+    // Composited on a screen-sized 2D canvas, then drawn once in screen space: the footage goes through the camera, the
+    // mask does not. (A two-sampler p5 shader here lost its other uniforms when the second texture was bound.)
+    const mimg = footImage(o.mask.name, 0);
+    if (!mimg) { pop(); return false; }
+    const alphaMask = maskAlpha(o.mask.name, mimg, !!o.mask.invert), comp = footSlot('__maskcomp', W, H), c = comp.drawingContext;
+    c.save(); c.setTransform(1, 0, 0, 1, 0, 0); c.clearRect(0, 0, W, H);
+    if (CAM) { const co = Math.cos(CAM.rot), si = Math.sin(CAM.rot), z = CAM.zoom; c.setTransform(z * co, z * si, -z * si, z * co, W / 2 - z * co * CAM.cx + z * si * CAM.cy, H / 2 - z * si * CAM.cx - z * co * CAM.cy); }
+    c.drawImage(img, sx, sy, sw, sh, x, y, w, h);
+    c.setTransform(1, 0, 0, 1, 0, 0);
+    if (o.tint) { c.globalCompositeOperation = 'multiply'; c.fillStyle = `rgb(${o.tint.map(v => Math.round(255 * clamp(v))).join(',')})`; c.fillRect(0, 0, W, H); }
+    const [rx, ry, rw, rh] = o.mask.rect || [0, 0, W, H];
+    c.globalCompositeOperation = 'destination-in'; c.drawImage(alphaMask, rx, ry, rw, rh);
+    c.restore();
+    comp._c2vKey = null;
+    resetMatrix(); translate(-W / 2, -H / 2);
+    if (o.alpha != null && o.alpha < 1) tint(255, 255 * clamp(o.alpha));
+    image(comp, 0, 0, W, H); noTint();
+  } else if (o.key) {
     if (!KEY_SH) KEY_SH = createShader(GLOW_VERT, KEY_FRAG);
     const k = color(o.key.col || '#00FF00');
     noStroke(); shader(KEY_SH);
@@ -124,7 +157,7 @@ function handheld(t, amp = 1, seed = 0) {
 }
 
 const GRADE_FRAG = `
-uniform float g_exposure, g_contrast, g_sat, g_temp, g_tint, g_lift, g_gamma, g_gain, g_filmic, g_bloom, g_bloomThr, g_halation, g_ca, g_vignette, g_grain, g_letterbox, g_fade, g_defocus;
+uniform float g_exposure, g_contrast, g_sat, g_temp, g_tint, g_lift, g_gamma, g_gain, g_filmic, g_bloom, g_bloomThr, g_halation, g_ca, g_vignette, g_grain, g_letterbox, g_fade, g_defocus, g_scratch;
 vec3 filmic(vec3 x) { const float a = 2.51, b = .03, c = 2.43, d = .59, e = .14; return clamp((x * (a * x + b)) / (x * (c * x + d) + e), 0., 1.); }
 vec3 bright(vec2 uv) { vec3 c = tex(uv); return max(c - g_bloomThr, 0.) / max(1. - g_bloomThr, .001); }
 void main() {
@@ -156,6 +189,16 @@ void main() {
   c *= mix(1., smoothstep(1.15, .35, length(d * vec2(1.1, 1.))), g_vignette);
   float gr = h21(floor(px() / 1.5) + floor(u_t * 24.) * 17.13) - .5;
   c += gr * g_grain * (1.2 - L);
+  if (g_scratch > 0.) {                                              // old film: a few vertical scratches and dust per frame
+    float fr = floor(u_t * 24.); vec2 q = px();
+    for (int k = 0; k < 4; k++) {
+      float x = h21(vec2(float(k) * 7.1, fr)) * canvasSize.x, on = step(.55, h21(vec2(float(k) * 3.3, fr + 1.)));
+      float y0 = h21(vec2(float(k), fr + 2.)) * canvasSize.y * .6, y1 = y0 + canvasSize.y * (.2 + .6 * h21(vec2(float(k), fr + 3.)));
+      c = mix(c, vec3(.92, .9, .85), on * g_scratch * (1. - smoothstep(.4, 1.3, abs(q.x - x))) * step(y0, q.y) * step(q.y, y1) * .55);
+    }
+    float dust = step(.99985, h21(floor(q / 3.) + fr * 13.7));
+    c = mix(c, vec3(.08, .07, .06), dust * g_scratch);
+  }
   c *= 1. - g_fade;
   if (abs(d.y) > .5 - g_letterbox) c = vec3(0.);
   gl_FragColor = vec4(clamp(c, 0., 1.), 1.);
@@ -168,6 +211,6 @@ function grade(u = {}) {
   s.setUniform('u_t', u.t ?? 0); s.setUniform('u_seed', 0); s.setUniform('u_k', 1); s.setUniform('u_r', 0); s.setUniform('u_at', [W / 2, H / 2]);
   s.setUniform('u_c1', [1, 1, 1]); s.setUniform('u_c2', [1, 1, 1]); s.setUniform('u_c3', [1, 1, 1]);
   v('exposure', 0); v('contrast', 1); v('sat', 1); v('temp', 0); v('tint', 0); v('lift', 0); v('gamma', 1); v('gain', 1); v('filmic', 0);
-  v('bloom', 0); v('bloomThr', .75); v('halation', 0); v('ca', 0); v('vignette', 0); v('grain', 0); v('letterbox', 0); v('fade', 0); v('defocus', 0);
+  v('bloom', 0); v('bloomThr', .75); v('halation', 0); v('ca', 0); v('vignette', 0); v('grain', 0); v('letterbox', 0); v('fade', 0); v('defocus', 0); v('scratch', 0);
   push(); resetMatrix(); filter(s); pop();
 }

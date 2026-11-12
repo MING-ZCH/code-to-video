@@ -1,0 +1,29 @@
+{
+ "range": "0:10",
+ "scale": 0.5,
+ "workers": 4,
+ "threshold": 6,
+ "base": {
+  "title": false
+ },
+ "edits": [
+  {
+   "id": "human_scan",
+   "type": "subject_swap",
+   "zh": "把人物换成带真实皮肤贴图的人体。",
+   "en": "Replace the gymnast with a photo-textured human.",
+   "params": {
+    "human": "giant_rb"
+   }
+  },
+  {
+   "id": "style_oil",
+   "type": "style",
+   "zh": "改为油画风格。",
+   "en": "Restyle as an oil painting.",
+   "params": {
+    "style": "oil"
+   }
+  }
+ ]
+}

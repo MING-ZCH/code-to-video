@@ -20,7 +20,16 @@ from mathutils import Vector
 import c2v_bpy as C
 
 PARAMS = {"bar_h": 2.5, "omega_top": 1.6, "r_com": 0.98, "k_gyr": 1.18, "start_theta": 0.35, "leotard": [0.32, 0.05, 0.38],
-          "skin": [0.78, 0.55, 0.42], "hair": [0.05, 0.035, 0.025], "camera": "side"}
+          "skin": [0.78, 0.55, 0.42], "hair": [0.05, 0.035, 0.025], "camera": "side", "human": "mpfb"}
+
+# per-human rig mapping: shoulder bone, bones summed for the arm length (+ grip offset), IK bone and chain, spine, thigh.
+# Rocketbox (3ds Max Biped) bones get their tails re-pointed at the next joint first (C.fix_biped_tails).
+RIGS = {
+    "mpfb": {"shoulder": "upperarm01.{s}", "arm": ["upperarm01.{s}", "upperarm02.{s}", "lowerarm01.{s}", "lowerarm02.{s}"], "grip": 0.0, "reach": 0.97,
+             "ik": "lowerarm02.{s}", "chain": 4, "tail": True, "spine": ["spine03", "spine02", "spine01"], "thigh": "upperleg01.{s}"},
+    "rocketbox": {"shoulder": "Bip01 {s} UpperArm", "arm": ["Bip01 {s} UpperArm", "Bip01 {s} Forearm"], "grip": 0.07, "reach": 0.97,
+                  "ik": "Bip01 {s} Forearm", "chain": 2, "tail": True, "spine": ["Bip01 Spine2", "Bip01 Spine1", "Bip01 Spine"], "thigh": "Bip01 {s} Thigh"},
+}
 
 
 def swing_angles(ctx: C.Ctx) -> list[float]:
@@ -71,6 +80,66 @@ def human(ctx: C.Ctx):
     return base, rig, zmax
 
 
+def _scan_skin(name: str, tex_dir: str, prefix: str) -> bpy.types.Material:
+    """Skin from the avatar's photographic textures: colour, tangent-space normal and specular maps, plus subsurface."""
+    mat = bpy.data.materials.new(name); mat.use_nodes = True
+    nt = mat.node_tree; bsdf = nt.nodes["Principled BSDF"]
+    def tex(kind: str, non_color: bool) -> bpy.types.Node:
+        n = nt.nodes.new("ShaderNodeTexImage"); n.image = bpy.data.images.load(os.path.join(tex_dir, f"{prefix}_{kind}.tga"), check_existing=True)
+        if non_color:
+            n.image.colorspace_settings.name = "Non-Color"
+        return n
+    nt.links.new(tex("color", False).outputs["Color"], bsdf.inputs["Base Color"])
+    nm = nt.nodes.new("ShaderNodeNormalMap"); nt.links.new(tex("normal", True).outputs["Color"], nm.inputs["Color"]); nt.links.new(nm.outputs["Normal"], bsdf.inputs["Normal"])
+    nt.links.new(tex("specular", True).outputs["Color"], bsdf.inputs["Specular IOR Level"])
+    bsdf.inputs["Roughness"].default_value = 0.45
+    bsdf.inputs["Subsurface Weight"].default_value = 0.25
+    bsdf.inputs["Subsurface Radius"].default_value = (1.0, 0.35, 0.2)
+    bsdf.inputs["Subsurface Scale"].default_value = 0.006
+    return mat
+
+
+def human_rocketbox(ctx: C.Ctx):
+    """Microsoft Rocketbox avatar (MIT): photographic skin and hair textures; the leotard is a material region on the torso."""
+    root = ctx.asset("rb_athlete")
+    bpy.ops.import_scene.fbx(filepath=os.path.join(root, "Export", "Sports_Female_01.fbx"))
+    rig = next(o for o in bpy.context.selected_objects if o.type == "ARMATURE")
+    base = next(o for o in bpy.context.selected_objects if o.type == "MESH")
+    base.animation_data_clear()                                  # the FBX carries a take that pins the rig's transform
+    C.fix_biped_tails(rig)
+    for o in list(bpy.context.selected_objects):
+        if o.type == "EMPTY" and o.name.startswith("Bip01 Footsteps"):
+            bpy.data.objects.remove(o)
+    tex_dir = os.path.join(root, "Textures")
+    for i, m in enumerate(base.data.materials):
+        part = "head" if "head" in m.name else "body"
+        base.data.materials[i] = _scan_skin(f"skin_{part}", tex_dir, f"f021_{part}")
+    leo = C.pbr_material("leotard", color=tuple(ctx.P("leotard")), roughness=0.32, coat=0.25)
+    base.data.materials.append(leo)
+    k = len(base.data.materials) - 1
+    bpy.context.view_layer.update()
+    mw = base.matrix_world
+    zmax = max((mw @ v.co).z for v in base.data.vertices)
+    for p in base.data.polygons:
+        c = mw @ p.center
+        if base.data.materials[p.material_index].name.startswith("skin_head"):
+            continue
+        if 0.915 < c.z < 1.42 and abs(c.x) < 0.165:
+            p.material_index = k                                    # torso, arms excluded (they leave the body below z 1.38)
+        elif 0.83 < c.z <= 0.915 and abs(c.x) < 0.045 + (c.z - 0.83) * 1.3:
+            p.material_index = k                                    # high-cut legs
+    return base, rig, zmax
+
+
+def _bend(rig: bpy.types.Object, pb: bpy.types.PoseBone, angle: float) -> None:
+    """Rotate a pose bone by ``angle`` about the world X axis (the bar), whatever the bone's local axes are."""
+    from mathutils import Quaternion
+    axis = (rig.matrix_world.inverted().to_3x3() @ Vector((1, 0, 0))).normalized()
+    rest = pb.bone.matrix_local.to_quaternion()
+    pb.rotation_mode = "QUATERNION"
+    pb.rotation_quaternion = rest.inverted() @ Quaternion(axis, angle) @ rest
+
+
 def apparatus(ctx: C.Ctx, h: float) -> None:
     """High bar of an uneven-bars set: wooden rail, red uprights, cables, blue landing mats."""
     wood = C.texture_material("rail", ctx.asset("wood"), scale=0.4)
@@ -101,32 +170,38 @@ def build(ctx: C.Ctx) -> None:
     floor = C.pbr_material("floor", color=(0.35, 0.3, 0.26), roughness=0.6)
     bpy.ops.mesh.primitive_plane_add(size=40); bpy.context.active_object.data.materials.append(floor)
     apparatus(ctx, h)
-    base, rig, zmax = human(ctx)
+    kind = ctx.P("human")
+    base, rig, zmax = human_rocketbox(ctx) if kind == "rocketbox" else human(ctx)
+    R = RIGS[kind]
+    bone = lambda key, s="L": rig.pose.bones[R[key].format(s=s)]
     pivot = bpy.data.objects.new("pivot", None); bpy.context.collection.objects.link(pivot); pivot.location = (0, 0, h)
     # hang the body below the bar: shoulders one arm-length under it, hands reaching up to the rail by IK
     bpy.context.view_layer.update()
-    sh = rig.matrix_world @ rig.pose.bones["upperarm01.L"].head
-    arm = sum(rig.pose.bones[b].length for b in ("upperarm01.L", "upperarm02.L", "lowerarm01.L", "lowerarm02.L")) * rig.matrix_world.to_scale().z
+    sh = rig.matrix_world @ bone("shoulder").head - rig.matrix_world.translation
+    arm = sum(rig.pose.bones[b.format(s="L")].length for b in R["arm"]) * rig.matrix_world.to_scale().z + R["grip"]
     rig.parent = pivot
-    rig.location = (0, -sh.y, -(sh.z + 0.97 * arm))            # shoulders 0.97 arm-lengths under the rail: straight arms
+    rig.location = (0, -sh.y, -(sh.z + R["reach"] * arm))       # shoulders just under one arm-length below the rail: straight arms
     for side, x in (("L", 0.2), ("R", -0.2)):
-        tgt = bpy.data.objects.new(f"hand_{side}", None); bpy.context.collection.objects.link(tgt); tgt.parent = pivot; tgt.location = (x if side == "L" else x, 0, 0)
+        tgt = bpy.data.objects.new(f"hand_{side}", None); bpy.context.collection.objects.link(tgt); tgt.parent = pivot; tgt.location = (x, 0, -R["grip"])
         pole = bpy.data.objects.new(f"pole_{side}", None); bpy.context.collection.objects.link(pole); pole.parent = pivot; pole.location = (x * 1.5, 0.6, -0.4)
-        pb = rig.pose.bones.get(f"lowerarm02.{side}") or rig.pose.bones.get(f"wrist.{side}")
-        ik = pb.constraints.new("IK"); ik.target = tgt; ik.pole_target = pole; ik.chain_count = 4; ik.pole_angle = math.radians(-90)
+        ik = bone("ik", side).constraints.new("IK"); ik.target = tgt; ik.pole_target = pole; ik.chain_count = R["chain"]; ik.use_tail = R["tail"]; ik.pole_angle = math.radians(-90)
     angles = swing_angles(ctx)
     for f, th in enumerate(angles, start=1):
         pivot.rotation_euler = (th - math.pi, 0, 0)             # θ = π: hanging straight down under the bar
         pivot.keyframe_insert("rotation_euler", frame=f)
         # body shape: arch through the bottom, hollow over the top (spine and hips bend about the bar axis)
         bend = 0.22 * math.cos(th) - 0.08
-        for bn, w in (("spine03", 0.4), ("spine02", 0.35), ("spine01", 0.25)):
+        for bn, w in zip(R["spine"], (0.4, 0.35, 0.25)):
             b = rig.pose.bones.get(bn)
-            if b:
+            if b and kind == "rocketbox":
+                _bend(rig, b, bend * w); b.keyframe_insert("rotation_quaternion", frame=f)
+            elif b:
                 b.rotation_mode = "XYZ"; b.rotation_euler = (bend * w, 0, 0); b.keyframe_insert("rotation_euler", frame=f)
         for side in ("L", "R"):
-            b = rig.pose.bones.get(f"upperleg01.{side}")
-            if b:
+            b = bone("thigh", side)
+            if kind == "rocketbox":
+                _bend(rig, b, -bend * 0.5); b.keyframe_insert("rotation_quaternion", frame=f)
+            else:
                 b.rotation_mode = "XYZ"; b.rotation_euler = (-bend * 0.5, 0, (0.06 if side == "L" else -0.06)); b.keyframe_insert("rotation_euler", frame=f)
     cam = ctx.P("camera")
     keys = [(1, (4.6, -1.9, 2.55), (0, 0, 2.55)), (ctx.frames, (4.3, -1.6, 2.55), (0, 0, 2.55))] if cam == "side" else [(1, (0.0, -6.0, 1.6), (0, 0, 1.9))]
@@ -134,3 +209,20 @@ def build(ctx: C.Ctx) -> None:
     bpy.context.scene.render.motion_blur_shutter = 0.3            # a fast shutter, as sports cameras use
     meta = {"theta_deg": [round(math.degrees(a) % 360, 1) for a in angles[::24]]}
     print("C2V swing", meta)
+
+
+def measure(ctx: C.Ctx) -> dict:
+    """Grip check, sampled every 6 frames: each wrist's distance to the bar axis and to its IK target (on the bar)."""
+    scene = bpy.context.scene
+    rig = next(o for o in scene.objects if o.type == "ARMATURE")
+    R, h, d, e = RIGS[ctx.P("human")], float(ctx.P("bar_h")), [], []
+    for f in range(1, ctx.frames + 1, 6):
+        scene.frame_set(f)
+        ev = rig.evaluated_get(bpy.context.evaluated_depsgraph_get())
+        for s in ("L", "R"):
+            pb = ev.pose.bones[R["ik"].format(s=s)]
+            w = ev.matrix_world @ (pb.tail if R["tail"] else pb.head)
+            d.append(math.hypot(w.y, w.z - h))
+            e.append((w - bpy.data.objects[f"hand_{s}"].matrix_world.translation).length)
+    return {"wrist_to_bar_m": {"mean": round(sum(d) / len(d), 3), "max": round(max(d), 3), "grip_target": R["grip"]},
+            "wrist_to_ik_target_m": {"mean": round(sum(e) / len(e), 3), "max": round(max(e), 3)}}

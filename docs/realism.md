@@ -100,3 +100,34 @@ styles apply to footage and Blender layers as they do to painted frames.
 - Determinism is per machine (GPU, fonts, Blender version); the lock records the Blender version and the scene hash.
 - Cycles' Metal kernel loader crashed twice (NSException) while the Chrome renderer shared the GPU; render Blender layers
   on their own (cause not established).
+
+## Captured scenes rendered from code (`c2v splat`)
+
+Real appearance can come from a capture instead of assets: photos → COLMAP poses → 3D Gaussian Splatting (e.g. Brush,
+which trains on Apple Silicon) → `engine/splat.js`, a deterministic WebGL2 renderer (SH degree 3, EWA projection,
+float-framebuffer blending, Brush's raster conventions). A scene module (`projects/splat-garden/splat/garden.mjs`) is
+code: the camera path, recolouring and removal inside a region, and procedural splats added per frame.
+
+```bash
+node bin/c2v.mjs splat --eval --ply=<scene.ply> --colmap=<sparse/0> --images=<photos> --out=<dir>   # held-out views
+node bin/c2v.mjs splat splat-garden projects/splat-garden/splat/garden.mjs --as=orbit --frames=240 --scale=.6667
+```
+
+On Mip-NeRF 360 garden (every 8th photo held out, 30k steps) the WebGL render scores 27.62 dB PSNR / 0.867 SSIM /
+0.130 LPIPS on the held-out photos, the same as Brush's own renderer (65.4 dB apart) and in line with published 3DGS
+results. Recolouring a region works as an edit pair; removal exposes surfaces never photographed, and inserted objects
+need relighting.
+
+## Interaction checks (contact, support, scale)
+
+A single asset can look real while the shot still reads as fake: a hand that passes through a cup, a ball that sinks
+into a table. Code scenes have explicit 3D state, so these are measured per frame and solved:
+
+- `projects/cg-grasp/blender/grasp.py`: a contact solver moves the open hand out of the cup's volume (its convex hull,
+  i.e. the mouth closed) and closes each finger joint until it is within 2 mm of the surface; `measure()` reports
+  vertices inside the porcelain and inside the cup, fingertip gaps and the cup-table gap. A fixed grip pose on the
+  same wrist path puts 158 vertices up to 29 mm inside the cup; the solved grip puts none.
+- Inserted splats rest on the captured surface height estimated from nearby Gaussians
+  (`scripts/dev/splat_scene_probe.py … <e1> <e2>`), not on a guessed plane.
+- `C.fix_biped_tails` re-points FBX-imported 3ds Max Biped bones (Microsoft Rocketbox avatars) at the next joint so IK
+  ends at the real wrist.

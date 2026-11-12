@@ -613,3 +613,27 @@ def hash01(i: float) -> float:
     """Deterministic pseudo-random value in [0, 1) (the same hash as engine/core.js)."""
     x = math.sin(i * 127.1 + 311.7) * 43758.5453
     return x - math.floor(x)
+
+
+def fix_biped_tails(rig: bpy.types.Object) -> None:
+    """Point 3ds Max Biped arm and finger bones at the next joint and zero the pose.
+
+    FBX import guesses Biped bone tails off the limb, so IK (which ends at a bone's tail) misses the real wrist by
+    centimetres. Upper arm → elbow, forearm → wrist, finger → next knuckle; rest-pose edits leave the skinned mesh in
+    place. The FBX take's pose values are cleared too.
+    """
+    rig.animation_data_clear()
+    for pb in rig.pose.bones:
+        pb.matrix_basis.identity()
+    bpy.context.view_layer.objects.active = rig
+    bpy.ops.object.mode_set(mode="EDIT")
+    eb = rig.data.edit_bones
+    for s in ("L", "R"):
+        eb[f"Bip01 {s} UpperArm"].tail = eb[f"Bip01 {s} Forearm"].head
+        eb[f"Bip01 {s} Forearm"].tail = eb[f"Bip01 {s} Hand"].head
+        for k in range(5):
+            a, b, c = (eb[f"Bip01 {s} Finger{k}{x}"] for x in ("", "1", "2"))
+            a.tail = b.head
+            b.tail = c.head
+            c.tail = c.head + (c.head - b.head) * 0.8
+    bpy.ops.object.mode_set(mode="OBJECT")

@@ -1,0 +1,12 @@
+{
+ "range": "0:10",
+ "scale": 0.5,
+ "workers": 4,
+ "threshold": 6,
+ "edits": [
+  { "id": "table_blue", "type": "color_change", "zh": "把木桌刷成蓝色。", "en": "Paint the wooden table blue.", "params": { "layer": "orbit_tint" } },
+  { "id": "remove_pot", "type": "object_removal", "zh": "移走桌上的花盆和植物。", "en": "Remove the pot and plant from the table.", "params": { "layer": "orbit_nopot" } },
+  { "id": "add_ball", "type": "object_insertion", "zh": "在桌上加一个弹跳的红球。", "en": "Add a red ball bouncing on the table.", "params": { "layer": "orbit_ball" } },
+  { "id": "camera_high", "type": "camera", "zh": "机位升高，俯视桌面。", "en": "Raise the camera to look down on the table.", "params": { "layer": "orbit_high" } }
+ ]
+}

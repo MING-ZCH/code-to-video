@@ -18,6 +18,7 @@
 //   c2v deliver                                 deliver/index.html: every case, before/after, generalization matrix
 //   c2v assets <name> search|fetch|list|credits|restore   real-world media (lib/assets.mjs) with licence + sha256 lock
 //   c2v pairs <name> [--only=a,b] [--scale=.5]  edit pairs: base + one video per PROJECT.params edit, diff masks, pairs.jsonl
+//   c2v splat <name> <scene.mjs> --as=<layer>   code-driven camera/edits over a captured 3DGS scene (lib/splat.mjs)
 // Render flags pass through to render.mjs: --scale, --medium, --soft-gl, --gpu-angle, --chrome, --workers.
 import { spawnSync } from 'node:child_process';
 import { existsSync, mkdirSync, writeFileSync, readFileSync, readdirSync, copyFileSync } from 'node:fs';
@@ -145,6 +146,16 @@ const commands = {
     if (r.status || !line) { console.error((r.stdout || '').split('\n').filter(l => /Error|Traceback|error/i.test(l)).slice(-20).join('\n'), r.stderr); die('blender failed'); }
     const meta = JSON.parse(line.slice(9)), e = registerLayer(PDIR, opt.as, scene, meta);
     console.log(`${opt.as}: ${meta.rendered}/${meta.frames} frames ${meta.w}x${meta.h} · build ${meta.build_s} s · ${meta.render_s_per_frame} s/frame · total ${((Date.now() - t0) / 1000).toFixed(0)} s · sha256 ${e.sha256.slice(0, 12)}`);
+  },
+  async splat() {
+    const S = await import('../lib/splat.mjs');
+    if (opt.eval) {
+      if (!opt.ply || !opt.colmap || !opt.images || !opt.out) die('usage: c2v splat --eval --ply=<f.ply> --colmap=<sparse/0> --images=<dir> --out=<dir> [--split=8]');
+      return console.log(JSON.stringify(await S.evalViews({ ply: opt.ply, colmap: opt.colmap, images: opt.images, out: opt.out, split: +(opt.split || 8), which: opt.which || 'test', ablate: opt.ablate ? String(opt.ablate).split(',') : [] })));
+    }
+    need(); const scene = rest[0]; if (!scene || !opt.as) die('usage: c2v splat <name> <scene.mjs> --as=<layer> [--frames=120] [--scale=1] [--params=json]');
+    const r = await S.renderLayer(PDIR, scene, opt);
+    console.log(`${opt.as}: ${r.frames} frames ${r.w}x${r.h} · ${r.splats} splats · ${r.s_per_frame} s/frame${r.hits?.length ? ' · edit hits ' + r.hits.join(',') : ''}`);
   },
   async pairs() { need(); const { runPairs } = await import('../lib/pairs.mjs'); await runPairs(name, opt); },
   async report() { need(); const { writeReport } = await import('../lib/report.mjs'); console.log('wrote ' + writeReport(name)); },

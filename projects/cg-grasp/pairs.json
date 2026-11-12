@@ -1,0 +1,20 @@
+{
+ "range": "0:6",
+ "scale": 0.5,
+ "workers": 4,
+ "threshold": 6,
+ "base": {
+  "caption": false
+ },
+ "edits": [
+  {
+   "id": "grip_canned",
+   "type": "pose",
+   "zh": "手指改为固定握姿合拢（不做接触求解）。",
+   "en": "Close the fingers with a fixed grip pose instead of solving contact.",
+   "params": {
+    "layer": "grasp_naive"
+   }
+  }
+ ]
+}

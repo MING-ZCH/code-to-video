@@ -15,10 +15,14 @@
     "deliver": "node bin/c2v.mjs deliver"
   },
   "dependencies": {
+    "@dimforge/rapier3d-deterministic-compat": "0.21.0",
     "@fontsource/permanent-marker": "^5.2.5",
     "p5": "2.3.3",
     "p5.brush": "2.2.3",
-    "puppeteer-core": "^25.11.0"
+    "puppeteer-core": "^25.11.0",
+    "three": "0.187.0",
+    "three-gpu-pathtracer": "0.0.28",
+    "three-mesh-bvh": "0.9.18"
   },
   "license": "MIT",
   "engines": {

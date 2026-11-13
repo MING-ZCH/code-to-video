@@ -1,0 +1,82 @@
+{
+ "assets": {
+  "studio": {
+   "source": "polyhaven",
+   "id": "studio_small_09",
+   "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/2k/studio_small_09_2k.hdr",
+   "page": "https://polyhaven.com/a/studio_small_09",
+   "license": "CC0",
+   "author": "Sergej Majboroda",
+   "sha256": "36724313c0fc66dab126ff90f081b85a0b1ef47be65eda1417bd20b033f0573f",
+   "opts": {
+    "res": "2k"
+   },
+   "meta": {
+    "kind": "hdri",
+    "file": "env.hdr"
+   },
+   "fetched": "2026-11-12T14:53:22.113Z"
+  },
+  "mobius": {
+   "source": "blender",
+   "id": "projects/real-mobius/blender/mobius.py",
+   "url": null,
+   "page": "projects/real-mobius/blender/mobius.py",
+   "license": "own (rendered from code)",
+   "author": "c2v",
+   "sha256": "b095b94fde689e2bcfa9b6671d861a7bcaf10e41c023d65461f064aac8047ce9",
+   "opts": {
+    "params": {
+     "R": 1,
+     "width": 0.42,
+     "laps": 4,
+     "strip": [
+      0.9,
+      0.86,
+      0.8
+     ],
+     "metal": 0,
+     "ant_scale": 0.26
+    },
+    "frames": 192,
+    "samples": 32,
+    "w": 1440,
+    "h": 810
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 192,
+    "fps": 24,
+    "w": 1440,
+    "h": 810,
+    "dur": 8,
+    "params": {
+     "R": 1,
+     "width": 0.42,
+     "laps": 4,
+     "strip": [
+      0.9,
+      0.86,
+      0.8
+     ],
+     "metal": 0,
+     "ant_scale": 0.26
+    }
+   },
+   "render": {
+    "kind": "video",
+    "frames": 192,
+    "fps": 24,
+    "w": 1440,
+    "h": 810,
+    "dur": 8,
+    "samples": 32,
+    "blender": "5.2.1 LTS",
+    "build_s": 0.1,
+    "render_s_per_frame": 0.4,
+    "rendered": 192
+   },
+   "fetched": "2026-11-12T14:56:11.843Z"
+  }
+ }
+}

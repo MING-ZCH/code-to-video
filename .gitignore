@@ -15,3 +15,9 @@ release/
 projects/_rp*/
 .env
 .env.*
+
+# realism layer: fetched media and rendered layers are restored from projects/<p>/assets.lock.json (c2v assets <p> restore)
+projects/*/assets/
+.playwright-mcp/
+waveletNoiseTile.bin
+__pycache__/

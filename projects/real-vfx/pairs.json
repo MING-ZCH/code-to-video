@@ -1,0 +1,10 @@
+{
+ "range": "0:3.5",
+ "scale": 0.5,
+ "workers": 3,
+ "threshold": 6,
+ "edits": [
+  { "id": "no_shake", "type": "camera", "zh": "去掉爆炸时的镜头震动。", "en": "Remove the camera shake on the blast.", "params": { "shake": 0 } },
+  { "id": "no_flash", "type": "lighting", "zh": "去掉爆炸瞬间的曝光闪烁。", "en": "Remove the exposure flash at the blast.", "params": { "flash": 0 } }
+ ]
+}

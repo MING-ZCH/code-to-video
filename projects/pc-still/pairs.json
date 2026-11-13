@@ -1,0 +1,11 @@
+{
+ "range": "0:4",
+ "scale": 0.5,
+ "workers": 4,
+ "threshold": 6,
+ "base": { "caption": false },
+ "edits": [
+  { "id": "layout_naive", "type": "layout", "zh": "改为直接按原点摆放（不做布局求解）。", "en": "Place objects by their origins without solving the layout.", "params": { "layer": "still_naive" } },
+  { "id": "layout_scaled", "type": "scale", "zh": "把每个物体统一缩放到 20 cm。", "en": "Normalise every object to a 20 cm largest side.", "params": { "layer": "still_naive_scaled" } }
+ ]
+}

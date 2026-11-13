@@ -1,0 +1,30 @@
+{
+ "assets": {
+  "hgf": {
+   "source": "archive-range",
+   "id": "HisGirlFriday1940_201808/HisGirlFriday1940.mp4#t=300,450",
+   "url": "https://archive.org/download/HisGirlFriday1940_201808/HisGirlFriday1940.mp4",
+   "page": "https://archive.org/details/HisGirlFriday1940_201808",
+   "license": "Public Domain Mark 1.0 (Internet Archive item HisGirlFriday1940_201808)",
+   "author": "Howard Hawks, Columbia Pictures (1940)",
+   "sha256": "6f8492f0770ed9610716065781eb2b9f0abf5fed993a5273d226c86885ea3973",
+   "opts": {
+    "start": "0",
+    "dur": "100",
+    "fps": "24",
+    "w": "960",
+    "range_cmd": "ffmpeg -ss 300 -i <url> -t 150 -c copy (HTTP range; 65 MB of 2.2 GB)"
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 2400,
+    "fps": 24,
+    "w": 960,
+    "h": 720,
+    "dur": 100,
+    "start": 0
+   },
+   "fetched": "2026-11-13T10:26:14.895Z"
+  }
+ }
+}

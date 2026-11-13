@@ -1,0 +1,249 @@
+{
+ "assets": {
+  "gym": {
+   "source": "polyhaven",
+   "id": "gym_01",
+   "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/4k/gym_01_4k.hdr",
+   "page": "https://polyhaven.com/a/gym_01",
+   "license": "CC0",
+   "author": "Sergej Majboroda",
+   "sha256": "68068431eae743e1e9e9e32bb0c4816253325908edfa1746ea9094fc64dd73a8",
+   "opts": {
+    "res": "4k"
+   },
+   "meta": {
+    "kind": "hdri",
+    "file": "env.hdr"
+   },
+   "fetched": "2026-11-12T15:50:29.790Z"
+  },
+  "wood": {
+   "source": "polyhaven",
+   "id": "wood_table_001",
+   "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/wood_table_001/wood_table_001_diff_1k.jpg",
+   "page": "https://polyhaven.com/a/wood_table_001",
+   "license": "CC0",
+   "author": "Dimitrios Savva, Rico Cilliers",
+   "sha256": "dc27bdb2b53f749831b3c887b8e713b86b48e928b9ccca03ca61a3b29f50b1cf",
+   "opts": {
+    "res": "1k"
+   },
+   "meta": {
+    "kind": "texture",
+    "files": [
+     "Diffuse.jpg",
+     "nor_gl.jpg",
+     "Rough.jpg",
+     "AO.jpg",
+     "Displacement.jpg",
+     "arm.jpg"
+    ]
+   },
+   "fetched": "2026-11-12T15:50:57.345Z"
+  },
+  "giant": {
+   "source": "blender",
+   "id": "projects/cg-gym/blender/giant.py",
+   "url": null,
+   "page": "projects/cg-gym/blender/giant.py",
+   "license": "own (rendered from code)",
+   "author": "c2v",
+   "sha256": "8236ed0077c1943d77e68530829c57f2bc2505d3348131e32e1feb1bd90558eb",
+   "opts": {
+    "params": {
+     "bar_h": 2.5,
+     "omega_top": 1.6,
+     "r_com": 0.98,
+     "k_gyr": 1.18,
+     "start_theta": 0.35,
+     "leotard": [
+      0.32,
+      0.05,
+      0.38
+     ],
+     "skin": [
+      0.78,
+      0.55,
+      0.42
+     ],
+     "hair": [
+      0.05,
+      0.035,
+      0.025
+     ],
+     "camera": "side"
+    },
+    "frames": 240,
+    "samples": 32,
+    "w": 1280,
+    "h": 720
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 240,
+    "fps": 24,
+    "w": 1280,
+    "h": 720,
+    "dur": 10,
+    "params": {
+     "bar_h": 2.5,
+     "omega_top": 1.6,
+     "r_com": 0.98,
+     "k_gyr": 1.18,
+     "start_theta": 0.35,
+     "leotard": [
+      0.32,
+      0.05,
+      0.38
+     ],
+     "skin": [
+      0.78,
+      0.55,
+      0.42
+     ],
+     "hair": [
+      0.05,
+      0.035,
+      0.025
+     ],
+     "camera": "side"
+    }
+   },
+   "render": {
+    "kind": "video",
+    "frames": 240,
+    "fps": 24,
+    "w": 1280,
+    "h": 720,
+    "dur": 10,
+    "samples": 32,
+    "blender": "5.2.1 LTS",
+    "build_s": 1.3,
+    "render_s_per_frame": 0.58,
+    "rendered": 240
+   },
+   "fetched": "2026-11-12T17:02:22.805Z"
+  },
+  "rb_athlete": {
+   "source": "github",
+   "id": "microsoft/Microsoft-Rocketbox/Assets/Avatars/Professions/Sports_Female_01@0943055db6ec570bcef9f2c8b41c9e5467c808f9",
+   "url": "https://github.com/microsoft/Microsoft-Rocketbox/tree/0943055db6ec570bcef9f2c8b41c9e5467c808f9/Assets/Avatars/Professions/Sports_Female_01",
+   "page": "https://github.com/microsoft/Microsoft-Rocketbox/tree/0943055db6ec570bcef9f2c8b41c9e5467c808f9/Assets/Avatars/Professions/Sports_Female_01",
+   "license": "MIT",
+   "author": "microsoft",
+   "sha256": "42ec302b2b88c281503861644e2f3cd1fed2930d41c13238fda31733cc969bbf",
+   "opts": {
+    "include": "(Export/Sports_Female_01\\.fbx|Textures/)"
+   },
+   "meta": {
+    "kind": "model",
+    "files": [
+     "Export/Sports_Female_01.fbx",
+     "Textures/f021_body_color.tga",
+     "Textures/f021_body_normal.tga",
+     "Textures/f021_body_specular.tga",
+     "Textures/f021_head_color.tga",
+     "Textures/f021_head_normal.tga",
+     "Textures/f021_head_specular.tga"
+    ]
+   },
+   "fetched": "2026-11-12T18:26:19.421Z"
+  },
+  "giant_rb": {
+   "source": "blender",
+   "id": "projects/cg-gym/blender/giant.py",
+   "url": null,
+   "page": "projects/cg-gym/blender/giant.py",
+   "license": "own (rendered from code)",
+   "author": "c2v",
+   "sha256": "3c0251129d478f848bfba38f37ee86d6933daffbd1be5767baf37aa6117cad29",
+   "opts": {
+    "params": {
+     "bar_h": 2.5,
+     "omega_top": 1.6,
+     "r_com": 0.98,
+     "k_gyr": 1.18,
+     "start_theta": 0.35,
+     "leotard": [
+      0.32,
+      0.05,
+      0.38
+     ],
+     "skin": [
+      0.78,
+      0.55,
+      0.42
+     ],
+     "hair": [
+      0.05,
+      0.035,
+      0.025
+     ],
+     "camera": "side",
+     "human": "rocketbox"
+    },
+    "frames": 240,
+    "samples": 32,
+    "w": 1280,
+    "h": 720
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 240,
+    "fps": 24,
+    "w": 1280,
+    "h": 720,
+    "dur": 10,
+    "params": {
+     "bar_h": 2.5,
+     "omega_top": 1.6,
+     "r_com": 0.98,
+     "k_gyr": 1.18,
+     "start_theta": 0.35,
+     "leotard": [
+      0.32,
+      0.05,
+      0.38
+     ],
+     "skin": [
+      0.78,
+      0.55,
+      0.42
+     ],
+     "hair": [
+      0.05,
+      0.035,
+      0.025
+     ],
+     "camera": "side",
+     "human": "rocketbox"
+    },
+    "measure": {
+     "wrist_to_bar_m": {
+      "mean": 0.071,
+      "max": 0.079,
+      "grip_target": 0.07
+     },
+     "wrist_to_ik_target_m": {
+      "mean": 0.001,
+      "max": 0.009
+     }
+    }
+   },
+   "render": {
+    "kind": "video",
+    "frames": 240,
+    "fps": 24,
+    "w": 1280,
+    "h": 720,
+    "dur": 10,
+    "samples": 32,
+    "blender": "5.2.1 LTS",
+    "build_s": 0.3,
+    "render_s_per_frame": 0.45,
+    "rendered": 240
+   },
+   "fetched": "2026-11-12T20:00:07.989Z"
+  }
+ }
+}

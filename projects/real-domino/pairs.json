@@ -1,0 +1,9 @@
+{
+ "range": "0:7",
+ "scale": 0.5,
+ "workers": 4,
+ "threshold": 6,
+ "edits": [
+  { "id": "slick", "type": "physics", "zh": "把木牌与桌面的摩擦调小、弹性调大（更滑、更弹）。", "en": "Lower the plaques' friction and raise their restitution (slicker, bouncier).", "params": { "layer": "heart_slick" } }
+ ]
+}

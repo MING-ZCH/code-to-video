@@ -1,0 +1,12 @@
+{
+ "range": "0:6",
+ "scale": 0.5,
+ "workers": 4,
+ "threshold": 6,
+ "edits": [
+  { "id": "material_glass", "type": "material", "zh": "把字母材质从金属金改为玻璃。", "en": "Change the letters' material from gold to glass.", "params": { "variant": "glass" } },
+  { "id": "material_rubber", "type": "material", "zh": "把字母改为红色橡胶（弹性更大）。", "en": "Make the letters red rubber (bouncier).", "params": { "variant": "rubber" } },
+  { "id": "gravity_moon", "type": "physics", "zh": "把重力从地球（9.81 m/s²）改为月球（1.62 m/s²）。", "en": "Change gravity from Earth (9.81 m/s²) to the Moon (1.62 m/s²).", "params": { "variant": "moon" } },
+  { "id": "no_caption", "type": "text_remove", "zh": "去掉底部的重力说明字幕。", "en": "Remove the gravity caption at the bottom.", "params": { "caption": false } }
+ ]
+}

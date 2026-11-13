@@ -1,0 +1,252 @@
+{
+ "range": "0:10",
+ "scale": 0.5,
+ "workers": 4,
+ "threshold": 6,
+ "edits": [
+  {
+   "id": "grade_cool",
+   "type": "color_grade",
+   "zh": "把整体调色从暖色改为冷色。",
+   "en": "Change the grade from warm to cool.",
+   "params": {
+    "temp": -0.4
+   }
+  },
+  {
+   "id": "grade_mono",
+   "type": "color_grade",
+   "zh": "把画面改为黑白。",
+   "en": "Make the footage black and white.",
+   "params": {
+    "sat": 0
+   }
+  },
+  {
+   "id": "title_text",
+   "type": "text_replace",
+   "zh": "把中文标题（片头标题与结尾印章）改为「女子高低杠」。",
+   "en": "Replace the Chinese title (opening title and closing seal) with “女子高低杠”.",
+   "params": {
+    "title_zh": "女子高低杠"
+   }
+  },
+  {
+   "id": "accent_blue",
+   "type": "text_style",
+   "zh": "把标题横线和慢放标记改为蓝色。",
+   "en": "Make the title rule and the slow-motion tag blue.",
+   "params": {
+    "accent": "#5CC8F2"
+   }
+  },
+  {
+   "id": "no_slowmo",
+   "type": "speed",
+   "zh": "去掉中段的慢动作，保持原速。",
+   "en": "Remove the slow motion in the middle; keep normal speed.",
+   "params": {
+    "slow": 1
+   }
+  },
+  {
+   "id": "no_push",
+   "type": "camera",
+   "zh": "去掉慢动作时的镜头推近。",
+   "en": "Remove the camera push-in during the slow motion.",
+   "params": {
+    "zoom": 1
+   }
+  },
+  {
+   "id": "style_halftone",
+   "type": "style",
+   "zh": "把结尾的水墨风格改为网点印刷风格。",
+   "en": "Change the closing ink-wash style to a halftone print style.",
+   "params": {
+    "style": "halftone"
+   }
+  },
+  {
+   "id": "style_none",
+   "type": "style",
+   "zh": "去掉结尾的风格化，保持真实画面。",
+   "en": "Remove the closing restyle; keep the real footage.",
+   "params": {
+    "style": "none"
+   }
+  }
+ ],
+ "sweep": {
+  "n": 16,
+  "seed": 7,
+  "space": {
+   "temp": {
+    "range": [
+     -0.6,
+     0.6
+    ],
+    "step": 0.3
+   },
+   "sat": {
+    "values": [
+     0,
+     0.5,
+     1.35
+    ]
+   },
+   "accent": {
+    "values": [
+     "#5CC8F2",
+     "#E85D75",
+     "#7BD389",
+     "#FFFFFF"
+    ]
+   },
+   "style": {
+    "values": [
+     "halftone",
+     "cel",
+     "blueprint",
+     "none"
+    ]
+   },
+   "title_zh": {
+    "values": [
+     "女子高低杠",
+     "大回环",
+     "体操 · 高低杠"
+    ]
+   },
+   "slow": {
+    "values": [
+     1,
+     0.5,
+     0.35
+    ]
+   },
+   "zoom": {
+    "values": [
+     1,
+     1.1,
+     1.35
+    ]
+   }
+  },
+  "templates": {
+   "temp": {
+    "type": "color_grade",
+    "zh": "把色温参数改为 {v}（负值偏冷，正值偏暖）。",
+    "en": "Set the colour temperature to {v} (negative cooler, positive warmer)."
+   },
+   "sat": {
+    "type": "color_grade",
+    "zh": "把饱和度改为{v}。",
+    "en": "Set saturation to {v}.",
+    "names": {
+     "0": [
+      "黑白",
+      "black and white"
+     ],
+     "0.5": [
+      "低饱和",
+      "half saturation"
+     ],
+     "1.35": [
+      "高饱和",
+      "high saturation"
+     ]
+    }
+   },
+   "accent": {
+    "type": "text_style",
+    "zh": "把标题横线和慢放标记改为{v}。",
+    "en": "Make the title rule and slow-motion tag {v}.",
+    "names": {
+     "#5CC8F2": [
+      "蓝色",
+      "blue"
+     ],
+     "#E85D75": [
+      "玫红色",
+      "rose"
+     ],
+     "#7BD389": [
+      "绿色",
+      "green"
+     ],
+     "#FFFFFF": [
+      "白色",
+      "white"
+     ]
+    }
+   },
+   "style": {
+    "type": "style",
+    "zh": "把结尾的水墨风格改为{v}。",
+    "en": "Change the closing ink-wash style to {v}.",
+    "names": {
+     "halftone": [
+      "网点印刷风格",
+      "a halftone print"
+     ],
+     "cel": [
+      "赛璐璐卡通风格",
+      "a cel-shaded cartoon"
+     ],
+     "blueprint": [
+      "蓝图线稿风格",
+      "a blueprint drawing"
+     ],
+     "none": [
+      "真实画面（去掉风格化）",
+      "the real footage (no restyle)"
+     ]
+    }
+   },
+   "title_zh": {
+    "type": "text_replace",
+    "zh": "把中文标题（片头与结尾印章）改为「{v}」。",
+    "en": "Replace the Chinese title (opening and seal) with “{v}”."
+   },
+   "slow": {
+    "type": "speed",
+    "zh": "把中段慢动作速度改为{v}。",
+    "en": "Change the mid-film slow motion to {v}.",
+    "names": {
+     "1": [
+      "原速（去掉慢动作）",
+      "normal speed (no slow motion)"
+     ],
+     "0.5": [
+      "0.5 倍速",
+      "0.5×"
+     ],
+     "0.35": [
+      "0.35 倍速",
+      "0.35×"
+     ]
+    }
+   },
+   "zoom": {
+    "type": "camera",
+    "zh": "把慢动作时的镜头推近改为{v}。",
+    "en": "Change the push-in during the slow motion to {v}.",
+    "names": {
+     "1": [
+      "不推近",
+      "no push-in"
+     ],
+     "1.1": [
+      "轻微推近（1.1 倍）",
+      "a slight push-in (1.1×)"
+     ],
+     "1.35": [
+      "大幅推近（1.35 倍）",
+      "a strong push-in (1.35×)"
+     ]
+    }
+   }
+  }
+ }
+}

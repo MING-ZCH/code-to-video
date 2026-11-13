@@ -1,0 +1,422 @@
+{
+ "assets": {
+  "table": {
+   "source": "polyhaven",
+   "id": "wooden_table_02",
+   "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/wooden_table_02/wooden_table_02_1k.gltf",
+   "page": "https://polyhaven.com/a/wooden_table_02",
+   "license": "CC0",
+   "author": "Serhii Khromov",
+   "sha256": "a615cfff28ecbb10cc8ee885af00276ebde4b41b3f8df2e269f8f3706ec2b58a",
+   "opts": {
+    "res": "1k"
+   },
+   "meta": {
+    "kind": "model",
+    "files": [
+     "wooden_table_02_1k.gltf",
+     "textures/wooden_table_02_diff_1k.jpg",
+     "textures/wooden_table_02_nor_gl_1k.jpg",
+     "wooden_table_02.bin",
+     "textures/wooden_table_02_arm_1k.jpg"
+    ]
+   },
+   "fetched": "2026-11-13T10:28:10.525Z"
+  },
+  "tea": {
+   "source": "polyhaven",
+   "id": "tea_set_01",
+   "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/tea_set_01/tea_set_01_1k.gltf",
+   "page": "https://polyhaven.com/a/tea_set_01",
+   "license": "CC0",
+   "author": "James Ray Cock, Rico Cilliers, Jurita Burger",
+   "sha256": "eaca5e96b988492dda9bb861dfc36ee76fc3282253c458f3ac25328e8ee6749a",
+   "opts": {
+    "res": "1k"
+   },
+   "meta": {
+    "kind": "model",
+    "files": [
+     "tea_set_01_1k.gltf",
+     "tea_set_01.bin",
+     "textures/tea_set_01_nor_gl_1k.jpg",
+     "textures/tea_set_01_diff_1k.jpg",
+     "textures/tea_set_01_arm_1k.jpg"
+    ]
+   },
+   "fetched": "2026-11-13T10:28:11.319Z"
+  },
+  "apple": {
+   "source": "polyhaven",
+   "id": "food_apple_01",
+   "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/food_apple_01/food_apple_01_1k.gltf",
+   "page": "https://polyhaven.com/a/food_apple_01",
+   "license": "CC0",
+   "author": "Oliver Harries",
+   "sha256": "b293b2a8aa68d3a125ef35d6df439480148ca25eea83ce23bf373f7299211c8f",
+   "opts": {
+    "res": "1k"
+   },
+   "meta": {
+    "kind": "model",
+    "files": [
+     "food_apple_01_1k.gltf",
+     "textures/food_apple_01_diff_1k.jpg",
+     "food_apple_01.bin",
+     "textures/food_apple_01_nor_gl_1k.jpg",
+     "textures/food_apple_01_rough_1k.jpg"
+    ]
+   },
+   "fetched": "2026-11-13T10:28:11.865Z"
+  },
+  "lemon": {
+   "source": "polyhaven",
+   "id": "lemon",
+   "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/lemon/lemon_1k.gltf",
+   "page": "https://polyhaven.com/a/lemon",
+   "license": "CC0",
+   "author": "Kuutti Siitonen",
+   "sha256": "f1d9209a77a90a6544e7fb0ad5b38d7bb00491743dcc67544eabc28830a0d83b",
+   "opts": {
+    "res": "1k"
+   },
+   "meta": {
+    "kind": "model",
+    "files": [
+     "lemon_1k.gltf",
+     "textures/lemon_nor_gl_1k.jpg",
+     "textures/lemon_arm_1k.jpg",
+     "textures/lemon_diff_1k.jpg",
+     "lemon.bin"
+    ]
+   },
+   "fetched": "2026-11-13T10:28:12.748Z"
+  },
+  "pears": {
+   "source": "polyhaven",
+   "id": "food_pears_asian_01",
+   "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/food_pears_asian_01/food_pears_asian_01_1k.gltf",
+   "page": "https://polyhaven.com/a/food_pears_asian_01",
+   "license": "CC0",
+   "author": "Amal Kumar",
+   "sha256": "8db5f0e330cd9cda424fd68be3bd30acbb61d7858be391e3b35593d11ed64419",
+   "opts": {
+    "res": "1k"
+   },
+   "meta": {
+    "kind": "model",
+    "files": [
+     "food_pears_asian_01_1k.gltf",
+     "textures/food_pears_asian_01_arm_1k.jpg",
+     "textures/food_pears_asian_01_nor_gl_1k.jpg",
+     "food_pears_asian_01.bin",
+     "textures/food_pears_asian_01_diff_1k.jpg"
+    ]
+   },
+   "fetched": "2026-11-13T10:28:13.721Z"
+  },
+  "pomegranate": {
+   "source": "polyhaven",
+   "id": "food_pomegranate_01",
+   "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/food_pomegranate_01/food_pomegranate_01_1k.gltf",
+   "page": "https://polyhaven.com/a/food_pomegranate_01",
+   "license": "CC0",
+   "author": "Oliver Harries",
+   "sha256": "3913924be84b12095ced819542022448301b33e77d0ff461d4dadca909119d88",
+   "opts": {
+    "res": "1k"
+   },
+   "meta": {
+    "kind": "model",
+    "files": [
+     "food_pomegranate_01_1k.gltf",
+     "textures/food_pomegranate_01_rough_1k.jpg",
+     "textures/food_pomegranate_01_diff_1k.jpg",
+     "food_pomegranate_01.bin",
+     "textures/food_pomegranate_01_nor_gl_1k.jpg"
+    ]
+   },
+   "fetched": "2026-11-13T10:28:14.545Z"
+  },
+  "vase": {
+   "source": "polyhaven",
+   "id": "antique_ceramic_vase_01",
+   "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/antique_ceramic_vase_01/antique_ceramic_vase_01_1k.gltf",
+   "page": "https://polyhaven.com/a/antique_ceramic_vase_01",
+   "license": "CC0",
+   "author": "James Ray Cock",
+   "sha256": "2052b1aad5284fc52296fb58652c60b86e376ebd5b6085b4e32ce11a39f9253e",
+   "opts": {
+    "res": "1k"
+   },
+   "meta": {
+    "kind": "model",
+    "files": [
+     "antique_ceramic_vase_01_1k.gltf",
+     "textures/antique_ceramic_vase_01_nor_gl_1k.jpg",
+     "antique_ceramic_vase_01.bin",
+     "textures/antique_ceramic_vase_01_diff_1k.jpg",
+     "textures/antique_ceramic_vase_01_arm_1k.jpg"
+    ]
+   },
+   "fetched": "2026-11-13T10:28:15.270Z"
+  },
+  "bottles": {
+   "source": "polyhaven",
+   "id": "wine_bottles_01",
+   "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/wine_bottles_01/wine_bottles_01_1k.gltf",
+   "page": "https://polyhaven.com/a/wine_bottles_01",
+   "license": "CC0",
+   "author": "Rico Cilliers, Jurita Burger",
+   "sha256": "82734fdc152f375d21854755da99eed639ef559ba21633d41180db954e410a9d",
+   "opts": {
+    "res": "1k"
+   },
+   "meta": {
+    "kind": "model",
+    "files": [
+     "wine_bottles_01_1k.gltf",
+     "textures/wine_bottles_01_label_ftero_vinea_02_arm_1k.jpg",
+     "textures/wine_bottles_01_label_ftero_vinea_01_diff_1k.jpg",
+     "textures/wine_bottles_01_label_intertwine_01_arm_1k.jpg",
+     "textures/wine_bottles_01_label_clearwater_crystals_01_diff_1k.jpg",
+     "textures/wine_bottles_01_label_ftero_vinea_01_arm_1k.jpg",
+     "textures/wine_bottles_01_label_clearwater_crystals_01_arm_1k.jpg",
+     "textures/wine_bottles_01_label_ftero_vinea_02_diff_1k.jpg",
+     "textures/wine_bottles_01_paper_nor_gl_1k.jpg",
+     "wine_bottles_01.bin",
+     "textures/wine_bottles_01_label_intertwine_01_diff_1k.jpg",
+     "textures/wine_bottles_01_diff_1k.jpg",
+     "textures/wine_bottles_01_nor_gl_1k.jpg",
+     "textures/wine_bottles_01_arm_1k.jpg"
+    ]
+   },
+   "fetched": "2026-11-13T10:28:16.482Z"
+  },
+  "candles": {
+   "source": "polyhaven",
+   "id": "brass_candleholders",
+   "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/brass_candleholders/brass_candleholders_1k.gltf",
+   "page": "https://polyhaven.com/a/brass_candleholders",
+   "license": "CC0",
+   "author": "Tina",
+   "sha256": "456492e55d55e42b00b10d20eafd8adfa33b3216ba0105d5e12e0b756b43c51a",
+   "opts": {
+    "res": "1k"
+   },
+   "meta": {
+    "kind": "model",
+    "files": [
+     "brass_candleholders_1k.gltf",
+     "textures/brass_candleholders_03_arm_1k.jpg",
+     "textures/brass_candleholders_03_nor_gl_1k.jpg",
+     "textures/brass_candleholders_flame_diff_1k.jpg",
+     "textures/brass_candleholders_candles_nor_gl_1k.jpg",
+     "textures/brass_candleholders_candles_arm_1k.jpg",
+     "textures/brass_candleholders_02_arm_1k.jpg",
+     "textures/brass_candleholders_01_diff_1k.jpg",
+     "textures/brass_candleholders_03_diff_1k.jpg",
+     "textures/brass_candleholders_01_nor_gl_1k.jpg",
+     "textures/brass_candleholders_02_nor_gl_1k.jpg",
+     "textures/brass_candleholders_02_diff_1k.jpg",
+     "textures/brass_candleholders_candles_diff_1k.jpg",
+     "textures/brass_candleholders_01_arm_1k.jpg",
+     "brass_candleholders.bin"
+    ]
+   },
+   "fetched": "2026-11-13T10:28:19.284Z"
+  },
+  "chair": {
+   "source": "polyhaven",
+   "id": "dining_chair_02",
+   "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/dining_chair_02/dining_chair_02_1k.gltf",
+   "page": "https://polyhaven.com/a/dining_chair_02",
+   "license": "CC0",
+   "author": "James Ray Cock",
+   "sha256": "fe5bd414cc763456f18ef4ff81bb0d45075e8a910efdcff4d55fc7a28d4761fe",
+   "opts": {
+    "res": "1k"
+   },
+   "meta": {
+    "kind": "model",
+    "files": [
+     "dining_chair_02_1k.gltf",
+     "dining_chair_02.bin",
+     "textures/dining_chair_02_nor_gl_1k.jpg",
+     "textures/dining_chair_02_diff_1k.jpg",
+     "textures/dining_chair_02_arm_1k.jpg"
+    ]
+   },
+   "fetched": "2026-11-13T10:28:20.096Z"
+  },
+  "cafe": {
+   "source": "blender",
+   "id": "projects/film-cafe/blender/cafe.py",
+   "url": null,
+   "page": "projects/film-cafe/blender/cafe.py",
+   "license": "own (rendered from code)",
+   "author": "c2v",
+   "sha256": "8ff9d6f278ef85b69693eedab9cd4b313846dac943fc64a0131bd1d6b4327643",
+   "opts": {
+    "params": {
+     "key": [
+      0.25,
+      0.2
+     ],
+     "fstop": 2,
+     "cut1": 3,
+     "cut2": 6.5,
+     "naive": false
+    },
+    "frames": 240,
+    "samples": 32,
+    "w": 1280,
+    "h": 720
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 240,
+    "fps": 24,
+    "w": 1280,
+    "h": 720,
+    "dur": 10,
+    "params": {
+     "key": [
+      0.25,
+      0.2
+     ],
+     "fstop": 2,
+     "cut1": 3,
+     "cut2": 6.5,
+     "naive": false
+    },
+    "measure": {
+     "woman": {
+      "moved_back_cm": 0,
+      "lifted_mm": 20.4,
+      "underside_m": 0.462,
+      "chair_scale": 1.017,
+      "chair_offset_cm": 7,
+      "table_penetrating_vertices_max": 0,
+      "chair_penetrating_vertices_max": 0,
+      "seat_gap_mm": {
+       "min": -3.6,
+       "max": 4.3
+      },
+      "lowest_point_above_floor_mm": {
+       "min": -0.8,
+       "max": 5.6
+      }
+     },
+     "man": {
+      "moved_back_cm": 0,
+      "lifted_mm": 9.7,
+      "underside_m": 0.472,
+      "chair_scale": 1.04,
+      "chair_offset_cm": 7,
+      "table_penetrating_vertices_max": 1,
+      "chair_penetrating_vertices_max": 0,
+      "seat_gap_mm": {
+       "min": -1.4,
+       "max": 0.5
+      },
+      "lowest_point_above_floor_mm": {
+       "min": 0,
+       "max": 0.3
+      }
+     }
+    }
+   },
+   "render": {
+    "kind": "video",
+    "frames": 240,
+    "fps": 24,
+    "w": 1280,
+    "h": 720,
+    "dur": 10,
+    "samples": 32,
+    "blender": "5.2.1 LTS",
+    "build_s": 1.4,
+    "render_s_per_frame": 0.88,
+    "rendered": 240
+   },
+   "fetched": "2026-11-13T10:37:28.025Z"
+  },
+  "rb_woman": {
+   "source": "github",
+   "id": "microsoft/Microsoft-Rocketbox/Assets/Avatars/Adults/Female_Adult_05@0943055db6ec570bcef9f2c8b41c9e5467c808f9",
+   "url": "https://github.com/microsoft/Microsoft-Rocketbox/tree/0943055db6ec570bcef9f2c8b41c9e5467c808f9/Assets/Avatars/Adults/Female_Adult_05",
+   "page": "https://github.com/microsoft/Microsoft-Rocketbox/tree/0943055db6ec570bcef9f2c8b41c9e5467c808f9/Assets/Avatars/Adults/Female_Adult_05",
+   "license": "MIT",
+   "author": "microsoft",
+   "sha256": "24159486ac1714ee4918bfeeabb3085c5bceadadfc46bf9197fb3f61c38cfe7f",
+   "opts": {
+    "include": "(Export/Female_Adult_05\\.fbx|Textures/)"
+   },
+   "meta": {
+    "kind": "model",
+    "files": [
+     "Export/Female_Adult_05.fbx",
+     "Textures/f005_body_color.tga",
+     "Textures/f005_body_normal.tga",
+     "Textures/f005_body_specular.tga",
+     "Textures/f005_head_color.tga",
+     "Textures/f005_head_normal.tga",
+     "Textures/f005_head_specular.tga",
+     "Textures/f005_opacity_color.tga"
+    ]
+   },
+   "fetched": "2026-11-13T10:28:58.784Z"
+  },
+  "rb_man": {
+   "source": "github",
+   "id": "microsoft/Microsoft-Rocketbox/Assets/Avatars/Adults/Male_Adult_08@0943055db6ec570bcef9f2c8b41c9e5467c808f9",
+   "url": "https://github.com/microsoft/Microsoft-Rocketbox/tree/0943055db6ec570bcef9f2c8b41c9e5467c808f9/Assets/Avatars/Adults/Male_Adult_08",
+   "page": "https://github.com/microsoft/Microsoft-Rocketbox/tree/0943055db6ec570bcef9f2c8b41c9e5467c808f9/Assets/Avatars/Adults/Male_Adult_08",
+   "license": "MIT",
+   "author": "microsoft",
+   "sha256": "fec5db6240fd937d04e74f7220a24ffc33b3cb6575994529c1d6bc9e28369e6f",
+   "opts": {
+    "include": "(Export/Male_Adult_08\\.fbx|Textures/)"
+   },
+   "meta": {
+    "kind": "model",
+    "files": [
+     "Export/Male_Adult_08.fbx",
+     "Textures/m014_body_color.tga",
+     "Textures/m014_body_normal.tga",
+     "Textures/m014_body_specular.tga",
+     "Textures/m014_head_color.tga",
+     "Textures/m014_head_normal.tga",
+     "Textures/m014_head_specular.tga",
+     "Textures/m014_opacity_color.tga"
+    ]
+   },
+   "fetched": "2026-11-13T10:29:18.484Z"
+  },
+  "anims": {
+   "source": "github",
+   "id": "microsoft/Microsoft-Rocketbox/Assets/Animations/all_animations_max_motextr_static@0943055db6ec570bcef9f2c8b41c9e5467c808f9",
+   "url": "https://github.com/microsoft/Microsoft-Rocketbox/tree/0943055db6ec570bcef9f2c8b41c9e5467c808f9/Assets/Animations/all_animations_max_motextr_static",
+   "page": "https://github.com/microsoft/Microsoft-Rocketbox/tree/0943055db6ec570bcef9f2c8b41c9e5467c808f9/Assets/Animations/all_animations_max_motextr_static",
+   "license": "MIT",
+   "author": "microsoft",
+   "sha256": "90d61738d40374a918ad3285f75677d86b5fa854c84c2e4cd9d121ce3713646c",
+   "opts": {
+    "include": "(f_sit_chair_gestic_thoughtful|f_sit_chair_gestic_shrug_01|f_sit_chair_idle_touch_hair|m_sit_chair_idle_relaxed_01|m_sit_chair_gestic_shrug_02|m_sit_chair_gestic_thoughtful)\\.max\\.fbx"
+   },
+   "meta": {
+    "kind": "model",
+    "files": [
+     "f_sit_chair_gestic_shrug_01.max.fbx",
+     "f_sit_chair_gestic_thoughtful.max.fbx",
+     "f_sit_chair_idle_touch_hair.max.fbx",
+     "m_sit_chair_gestic_shrug_02.max.fbx",
+     "m_sit_chair_gestic_thoughtful.max.fbx",
+     "m_sit_chair_idle_relaxed_01.max.fbx"
+    ]
+   },
+   "fetched": "2026-11-13T10:30:14.718Z"
+  }
+ }
+}

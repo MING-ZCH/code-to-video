@@ -1,0 +1,303 @@
+{
+ "assets": {
+  "tea": {
+   "source": "polyhaven",
+   "id": "tea_set_01",
+   "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/2k/tea_set_01/tea_set_01_2k.gltf",
+   "page": "https://polyhaven.com/a/tea_set_01",
+   "license": "CC0",
+   "author": "James Ray Cock, Rico Cilliers, Jurita Burger",
+   "sha256": "83c9445489a4e986b6c650bf577a98029605fbe1415ad4795c69e4842fe9458d",
+   "opts": {
+    "res": "2k"
+   },
+   "meta": {
+    "kind": "model",
+    "files": [
+     "tea_set_01_2k.gltf",
+     "tea_set_01.bin",
+     "textures/tea_set_01_arm_2k.jpg",
+     "textures/tea_set_01_diff_2k.jpg",
+     "textures/tea_set_01_nor_gl_2k.jpg"
+    ]
+   },
+   "fetched": "2026-11-12T19:29:07.761Z"
+  },
+  "table": {
+   "source": "polyhaven",
+   "id": "wooden_table_02",
+   "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/2k/wooden_table_02/wooden_table_02_2k.gltf",
+   "page": "https://polyhaven.com/a/wooden_table_02",
+   "license": "CC0",
+   "author": "Serhii Khromov",
+   "sha256": "c4e09913d1986db99fa6015c916810846cd918c04d605eeb5db9e5f163062f8e",
+   "opts": {
+    "res": "2k"
+   },
+   "meta": {
+    "kind": "model",
+    "files": [
+     "wooden_table_02_2k.gltf",
+     "wooden_table_02.bin",
+     "textures/wooden_table_02_nor_gl_2k.jpg",
+     "textures/wooden_table_02_diff_2k.jpg",
+     "textures/wooden_table_02_arm_2k.jpg"
+    ]
+   },
+   "fetched": "2026-11-12T19:29:11.258Z"
+  },
+  "room": {
+   "source": "polyhaven",
+   "id": "kiara_interior",
+   "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/2k/kiara_interior_2k.hdr",
+   "page": "https://polyhaven.com/a/kiara_interior",
+   "license": "CC0",
+   "author": "Greg Zaal",
+   "sha256": "553a14947afb83f3cec2619994cb4f1f14c205ebd9d32280524e004b1b0296ce",
+   "opts": {
+    "res": "2k"
+   },
+   "meta": {
+    "kind": "hdri",
+    "file": "env.hdr"
+   },
+   "fetched": "2026-11-12T19:29:13.623Z"
+  },
+  "rb_person": {
+   "source": "github",
+   "id": "microsoft/Microsoft-Rocketbox/Assets/Avatars/Professions/Sports_Female_02@0943055db6ec570bcef9f2c8b41c9e5467c808f9",
+   "url": "https://github.com/microsoft/Microsoft-Rocketbox/tree/0943055db6ec570bcef9f2c8b41c9e5467c808f9/Assets/Avatars/Professions/Sports_Female_02",
+   "page": "https://github.com/microsoft/Microsoft-Rocketbox/tree/0943055db6ec570bcef9f2c8b41c9e5467c808f9/Assets/Avatars/Professions/Sports_Female_02",
+   "license": "MIT",
+   "author": "microsoft",
+   "sha256": "74b01f5735d014bc1466acf244092a0144915a89930efa6d7767fa5ae0d673ab",
+   "opts": {
+    "include": "(Export/Sports_Female_02\\.fbx|Textures/)"
+   },
+   "meta": {
+    "kind": "model",
+    "files": [
+     "Export/Sports_Female_02.fbx",
+     "Textures/f013_body_color.tga",
+     "Textures/f013_body_normal.tga",
+     "Textures/f013_body_specular.tga",
+     "Textures/f013_head_color.tga",
+     "Textures/f013_head_normal.tga",
+     "Textures/f013_head_specular.tga",
+     "Textures/f013_opacity_color.tga"
+    ]
+   },
+   "fetched": "2026-11-12T19:29:30.208Z"
+  },
+  "grasp_solved": {
+   "source": "blender",
+   "id": "projects/cg-grasp/blender/grasp.py",
+   "url": null,
+   "page": "projects/cg-grasp/blender/grasp.py",
+   "license": "own (rendered from code)",
+   "author": "c2v",
+   "sha256": "462a704bafe8e459f268f9b78dbcc34fa187937ca933a4f5bf3ab5fb821cd1b5",
+   "opts": {
+    "params": {
+     "grip": "solved",
+     "canned_deg": [
+      55,
+      65,
+      45
+     ],
+     "contact_mm": 2,
+     "seat_drop": 0.25
+    },
+    "frames": 144,
+    "samples": 32,
+    "w": 1280,
+    "h": 720
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 144,
+    "fps": 24,
+    "w": 1280,
+    "h": 720,
+    "dur": 6,
+    "params": {
+     "grip": "solved",
+     "canned_deg": [
+      55,
+      65,
+      45
+     ],
+     "contact_mm": 2,
+     "seat_drop": 0.25
+    },
+    "measure": {
+     "grip": "solved",
+     "held_frames_sampled": 25,
+     "wall_penetration_mm": {
+      "max": 0,
+      "mean": 0
+     },
+     "wall_penetrating_vertices": {
+      "mean": 0,
+      "max": 0
+     },
+     "in_cup_mm": {
+      "max": 0,
+      "mean": 0
+     },
+     "in_cup_vertices": {
+      "mean": 0,
+      "max": 0
+     },
+     "fingertip_gap_mm": {
+      "mean": 1.3,
+      "max": 2
+     },
+     "cup_table_gap_mm": 0,
+     "cup_body_radius_mm": 48.1,
+     "placement_shift_mm": [
+      -11.6,
+      1.5,
+      7.3
+     ],
+     "joint_deg": {
+      "Bip01 R Finger0": 0,
+      "Bip01 R Finger01": 0,
+      "Bip01 R Finger02": 67.5,
+      "Bip01 R Finger1": 43.5,
+      "Bip01 R Finger11": 0,
+      "Bip01 R Finger12": 0,
+      "Bip01 R Finger2": 46.5,
+      "Bip01 R Finger21": 0,
+      "Bip01 R Finger22": 0,
+      "Bip01 R Finger3": 45,
+      "Bip01 R Finger31": 0,
+      "Bip01 R Finger32": 0,
+      "Bip01 R Finger4": 34.5,
+      "Bip01 R Finger41": 0,
+      "Bip01 R Finger42": 0
+     }
+    }
+   },
+   "render": {
+    "kind": "video",
+    "frames": 144,
+    "fps": 24,
+    "w": 1280,
+    "h": 720,
+    "dur": 6,
+    "samples": 32,
+    "blender": "5.2.1 LTS",
+    "build_s": 0.7,
+    "render_s_per_frame": 0.87,
+    "rendered": 144
+   },
+   "fetched": "2026-11-12T20:02:44.650Z"
+  },
+  "grasp_naive": {
+   "source": "blender",
+   "id": "projects/cg-grasp/blender/grasp.py",
+   "url": null,
+   "page": "projects/cg-grasp/blender/grasp.py",
+   "license": "own (rendered from code)",
+   "author": "c2v",
+   "sha256": "dd63281f53ae825c0530880ae65b4850871737f40e9505847e3d4d4c8c2392e7",
+   "opts": {
+    "params": {
+     "grip": "canned",
+     "canned_deg": [
+      55,
+      65,
+      45
+     ],
+     "contact_mm": 2,
+     "seat_drop": 0.25
+    },
+    "frames": 144,
+    "samples": 32,
+    "w": 1280,
+    "h": 720
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 144,
+    "fps": 24,
+    "w": 1280,
+    "h": 720,
+    "dur": 6,
+    "params": {
+     "grip": "canned",
+     "canned_deg": [
+      55,
+      65,
+      45
+     ],
+     "contact_mm": 2,
+     "seat_drop": 0.25
+    },
+    "measure": {
+     "grip": "canned",
+     "held_frames_sampled": 25,
+     "wall_penetration_mm": {
+      "max": 5.1,
+      "mean": 5.1
+     },
+     "wall_penetrating_vertices": {
+      "mean": 33,
+      "max": 33
+     },
+     "in_cup_mm": {
+      "max": 29,
+      "mean": 29
+     },
+     "in_cup_vertices": {
+      "mean": 158,
+      "max": 158
+     },
+     "fingertip_gap_mm": {
+      "mean": 7.2,
+      "max": 17.4
+     },
+     "cup_table_gap_mm": 0,
+     "cup_body_radius_mm": 48.1,
+     "placement_shift_mm": [
+      0,
+      0,
+      0
+     ],
+     "joint_deg": {
+      "Bip01 R Finger0": 33,
+      "Bip01 R Finger01": 39,
+      "Bip01 R Finger02": 27,
+      "Bip01 R Finger1": 55,
+      "Bip01 R Finger11": 65,
+      "Bip01 R Finger12": 45,
+      "Bip01 R Finger2": 55,
+      "Bip01 R Finger21": 65,
+      "Bip01 R Finger22": 45,
+      "Bip01 R Finger3": 55,
+      "Bip01 R Finger31": 65,
+      "Bip01 R Finger32": 45,
+      "Bip01 R Finger4": 55,
+      "Bip01 R Finger41": 65,
+      "Bip01 R Finger42": 45
+     }
+    }
+   },
+   "render": {
+    "kind": "video",
+    "frames": 144,
+    "fps": 24,
+    "w": 1280,
+    "h": 720,
+    "dur": 6,
+    "samples": 32,
+    "blender": "5.2.1 LTS",
+    "build_s": 0.7,
+    "render_s_per_frame": 0.93,
+    "rendered": 144
+   },
+   "fetched": "2026-11-12T20:05:00.546Z"
+  }
+ }
+}

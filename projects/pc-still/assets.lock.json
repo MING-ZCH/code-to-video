@@ -1,0 +1,1156 @@
+{
+ "assets": {
+  "room": {
+   "source": "polyhaven",
+   "id": "kiara_interior",
+   "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/2k/kiara_interior_2k.hdr",
+   "page": "https://polyhaven.com/a/kiara_interior",
+   "license": "CC0",
+   "author": "Greg Zaal",
+   "sha256": "553a14947afb83f3cec2619994cb4f1f14c205ebd9d32280524e004b1b0296ce",
+   "opts": {
+    "res": "2k"
+   },
+   "meta": {
+    "kind": "hdri",
+    "file": "env.hdr"
+   },
+   "fetched": "2026-11-13T07:34:11.494Z"
+  },
+  "apple": {
+   "source": "polyhaven",
+   "id": "food_apple_01",
+   "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/food_apple_01/food_apple_01_1k.gltf",
+   "page": "https://polyhaven.com/a/food_apple_01",
+   "license": "CC0",
+   "author": "Oliver Harries",
+   "sha256": "b293b2a8aa68d3a125ef35d6df439480148ca25eea83ce23bf373f7299211c8f",
+   "opts": {
+    "res": "1k"
+   },
+   "meta": {
+    "kind": "model",
+    "files": [
+     "food_apple_01_1k.gltf",
+     "textures/food_apple_01_diff_1k.jpg",
+     "food_apple_01.bin",
+     "textures/food_apple_01_nor_gl_1k.jpg",
+     "textures/food_apple_01_rough_1k.jpg"
+    ]
+   },
+   "fetched": "2026-11-13T07:34:25.320Z"
+  },
+  "table": {
+   "source": "polyhaven",
+   "id": "wooden_table_02",
+   "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/wooden_table_02/wooden_table_02_1k.gltf",
+   "page": "https://polyhaven.com/a/wooden_table_02",
+   "license": "CC0",
+   "author": "Serhii Khromov",
+   "sha256": "a615cfff28ecbb10cc8ee885af00276ebde4b41b3f8df2e269f8f3706ec2b58a",
+   "opts": {
+    "res": "1k"
+   },
+   "meta": {
+    "kind": "model",
+    "files": [
+     "wooden_table_02_1k.gltf",
+     "textures/wooden_table_02_diff_1k.jpg",
+     "textures/wooden_table_02_nor_gl_1k.jpg",
+     "wooden_table_02.bin",
+     "textures/wooden_table_02_arm_1k.jpg"
+    ]
+   },
+   "fetched": "2026-11-13T07:34:44.033Z"
+  },
+  "tea": {
+   "source": "polyhaven",
+   "id": "tea_set_01",
+   "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/tea_set_01/tea_set_01_1k.gltf",
+   "page": "https://polyhaven.com/a/tea_set_01",
+   "license": "CC0",
+   "author": "James Ray Cock, Rico Cilliers, Jurita Burger",
+   "sha256": "eaca5e96b988492dda9bb861dfc36ee76fc3282253c458f3ac25328e8ee6749a",
+   "opts": {
+    "res": "1k"
+   },
+   "meta": {
+    "kind": "model",
+    "files": [
+     "tea_set_01_1k.gltf",
+     "tea_set_01.bin",
+     "textures/tea_set_01_nor_gl_1k.jpg",
+     "textures/tea_set_01_diff_1k.jpg",
+     "textures/tea_set_01_arm_1k.jpg"
+    ]
+   },
+   "fetched": "2026-11-13T07:34:52.699Z"
+  },
+  "lemon": {
+   "source": "polyhaven",
+   "id": "lemon",
+   "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/lemon/lemon_1k.gltf",
+   "page": "https://polyhaven.com/a/lemon",
+   "license": "CC0",
+   "author": "Kuutti Siitonen",
+   "sha256": "f1d9209a77a90a6544e7fb0ad5b38d7bb00491743dcc67544eabc28830a0d83b",
+   "opts": {
+    "res": "1k"
+   },
+   "meta": {
+    "kind": "model",
+    "files": [
+     "lemon_1k.gltf",
+     "textures/lemon_nor_gl_1k.jpg",
+     "textures/lemon_arm_1k.jpg",
+     "textures/lemon_diff_1k.jpg",
+     "lemon.bin"
+    ]
+   },
+   "fetched": "2026-11-13T07:34:59.447Z"
+  },
+  "pears": {
+   "source": "polyhaven",
+   "id": "food_pears_asian_01",
+   "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/food_pears_asian_01/food_pears_asian_01_1k.gltf",
+   "page": "https://polyhaven.com/a/food_pears_asian_01",
+   "license": "CC0",
+   "author": "Amal Kumar",
+   "sha256": "8db5f0e330cd9cda424fd68be3bd30acbb61d7858be391e3b35593d11ed64419",
+   "opts": {
+    "res": "1k"
+   },
+   "meta": {
+    "kind": "model",
+    "files": [
+     "food_pears_asian_01_1k.gltf",
+     "textures/food_pears_asian_01_arm_1k.jpg",
+     "textures/food_pears_asian_01_nor_gl_1k.jpg",
+     "food_pears_asian_01.bin",
+     "textures/food_pears_asian_01_diff_1k.jpg"
+    ]
+   },
+   "fetched": "2026-11-13T07:35:08.654Z"
+  },
+  "pomegranate": {
+   "source": "polyhaven",
+   "id": "food_pomegranate_01",
+   "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/food_pomegranate_01/food_pomegranate_01_1k.gltf",
+   "page": "https://polyhaven.com/a/food_pomegranate_01",
+   "license": "CC0",
+   "author": "Oliver Harries",
+   "sha256": "3913924be84b12095ced819542022448301b33e77d0ff461d4dadca909119d88",
+   "opts": {
+    "res": "1k"
+   },
+   "meta": {
+    "kind": "model",
+    "files": [
+     "food_pomegranate_01_1k.gltf",
+     "textures/food_pomegranate_01_rough_1k.jpg",
+     "textures/food_pomegranate_01_diff_1k.jpg",
+     "food_pomegranate_01.bin",
+     "textures/food_pomegranate_01_nor_gl_1k.jpg"
+    ]
+   },
+   "fetched": "2026-11-13T07:35:13.772Z"
+  },
+  "vase": {
+   "source": "polyhaven",
+   "id": "antique_ceramic_vase_01",
+   "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/antique_ceramic_vase_01/antique_ceramic_vase_01_1k.gltf",
+   "page": "https://polyhaven.com/a/antique_ceramic_vase_01",
+   "license": "CC0",
+   "author": "James Ray Cock",
+   "sha256": "2052b1aad5284fc52296fb58652c60b86e376ebd5b6085b4e32ce11a39f9253e",
+   "opts": {
+    "res": "1k"
+   },
+   "meta": {
+    "kind": "model",
+    "files": [
+     "antique_ceramic_vase_01_1k.gltf",
+     "textures/antique_ceramic_vase_01_nor_gl_1k.jpg",
+     "antique_ceramic_vase_01.bin",
+     "textures/antique_ceramic_vase_01_diff_1k.jpg",
+     "textures/antique_ceramic_vase_01_arm_1k.jpg"
+    ]
+   },
+   "fetched": "2026-11-13T07:35:21.099Z"
+  },
+  "candles": {
+   "source": "polyhaven",
+   "id": "brass_candleholders",
+   "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/brass_candleholders/brass_candleholders_1k.gltf",
+   "page": "https://polyhaven.com/a/brass_candleholders",
+   "license": "CC0",
+   "author": "Tina",
+   "sha256": "456492e55d55e42b00b10d20eafd8adfa33b3216ba0105d5e12e0b756b43c51a",
+   "opts": {
+    "res": "1k"
+   },
+   "meta": {
+    "kind": "model",
+    "files": [
+     "brass_candleholders_1k.gltf",
+     "textures/brass_candleholders_03_arm_1k.jpg",
+     "textures/brass_candleholders_03_nor_gl_1k.jpg",
+     "textures/brass_candleholders_flame_diff_1k.jpg",
+     "textures/brass_candleholders_candles_nor_gl_1k.jpg",
+     "textures/brass_candleholders_candles_arm_1k.jpg",
+     "textures/brass_candleholders_02_arm_1k.jpg",
+     "textures/brass_candleholders_01_diff_1k.jpg",
+     "textures/brass_candleholders_03_diff_1k.jpg",
+     "textures/brass_candleholders_01_nor_gl_1k.jpg",
+     "textures/brass_candleholders_02_nor_gl_1k.jpg",
+     "textures/brass_candleholders_02_diff_1k.jpg",
+     "textures/brass_candleholders_candles_diff_1k.jpg",
+     "textures/brass_candleholders_01_arm_1k.jpg",
+     "brass_candleholders.bin"
+    ]
+   },
+   "fetched": "2026-11-13T07:35:42.611Z"
+  },
+  "bottles": {
+   "source": "polyhaven",
+   "id": "wine_bottles_01",
+   "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/wine_bottles_01/wine_bottles_01_1k.gltf",
+   "page": "https://polyhaven.com/a/wine_bottles_01",
+   "license": "CC0",
+   "author": "Rico Cilliers, Jurita Burger",
+   "sha256": "82734fdc152f375d21854755da99eed639ef559ba21633d41180db954e410a9d",
+   "opts": {
+    "res": "1k"
+   },
+   "meta": {
+    "kind": "model",
+    "files": [
+     "wine_bottles_01_1k.gltf",
+     "textures/wine_bottles_01_label_ftero_vinea_02_arm_1k.jpg",
+     "textures/wine_bottles_01_label_ftero_vinea_01_diff_1k.jpg",
+     "textures/wine_bottles_01_label_intertwine_01_arm_1k.jpg",
+     "textures/wine_bottles_01_label_clearwater_crystals_01_diff_1k.jpg",
+     "textures/wine_bottles_01_label_ftero_vinea_01_arm_1k.jpg",
+     "textures/wine_bottles_01_label_clearwater_crystals_01_arm_1k.jpg",
+     "textures/wine_bottles_01_label_ftero_vinea_02_diff_1k.jpg",
+     "textures/wine_bottles_01_paper_nor_gl_1k.jpg",
+     "wine_bottles_01.bin",
+     "textures/wine_bottles_01_label_intertwine_01_diff_1k.jpg",
+     "textures/wine_bottles_01_diff_1k.jpg",
+     "textures/wine_bottles_01_nor_gl_1k.jpg",
+     "textures/wine_bottles_01_arm_1k.jpg"
+    ]
+   },
+   "fetched": "2026-11-13T07:35:57.425Z"
+  },
+  "still_solved_ref": {
+   "source": "blender",
+   "id": "projects/pc-still/blender/still.py",
+   "url": null,
+   "page": "projects/pc-still/blender/still.py",
+   "license": "own (rendered from code)",
+   "author": "c2v",
+   "sha256": "7289de1c34c55752f29e677086be50853a24c334657b4f19fa20d630c14d818c",
+   "opts": {
+    "params": {
+     "layout": "solved",
+     "view": "standard",
+     "export": "/Users/hyleochang/Documents/Codex/code-to-video/projects/pc-still/out/still_solved.glb",
+     "seed": 3,
+     "settle_frames": 150,
+     "camera": "static",
+     "denoise": false,
+     "engine": "cycles",
+     "reuse": true
+    },
+    "frames": 1,
+    "samples": 2048,
+    "w": 1280,
+    "h": 720
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 1,
+    "fps": 24,
+    "w": 1280,
+    "h": 720,
+    "dur": 0.041666666666666664,
+    "params": {
+     "layout": "solved",
+     "view": "standard",
+     "export": "/Users/hyleochang/Documents/Codex/code-to-video/projects/pc-still/out/still_solved.glb",
+     "seed": 3,
+     "settle_frames": 150,
+     "camera": "static",
+     "denoise": false,
+     "engine": "cycles",
+     "reuse": true
+    },
+    "measure": {
+     "layout": "solved",
+     "scale_violations": [],
+     "penetrating_pairs_gt1mm": 0,
+     "max_penetration_mm": 0,
+     "worst_pairs": [],
+     "floating_or_embedded_gt3mm": [],
+     "max_gap_mm": 0.9,
+     "probe_max_move_mm": 2.7,
+     "probe_max_rot_deg": 12.7,
+     "probe_moved_gt5mm": [],
+     "footprint_moves": 1,
+     "settle_rounds": [
+      {
+       "fruit": "pomegranate",
+       "candidates_tried": 33,
+       "centre_above_table_mm": 61.7
+      },
+      {
+       "fruit": "lemon",
+       "candidates_tried": 33,
+       "centre_above_table_mm": 103.8
+      },
+      {
+       "settle": 1,
+       "max_move_mm": 124,
+       "off_plate": [
+        "lemon"
+       ]
+      },
+      {
+       "settle": 2,
+       "max_move_mm": 20.9,
+       "off_plate": []
+      }
+     ]
+    }
+   },
+   "render": {
+    "kind": "video",
+    "frames": 1,
+    "fps": 24,
+    "w": 1280,
+    "h": 720,
+    "dur": 0.041666666666666664,
+    "samples": 2048,
+    "blender": "5.2.1 LTS",
+    "build_s": 368.1,
+    "render_s_per_frame": 18.26,
+    "rendered": 1
+   },
+   "fetched": "2026-11-13T08:24:41.872Z"
+  },
+  "still_solved_eevee": {
+   "source": "blender",
+   "id": "projects/pc-still/blender/still.py",
+   "url": null,
+   "page": "projects/pc-still/blender/still.py",
+   "license": "own (rendered from code)",
+   "author": "c2v",
+   "sha256": "e063c7731a7fb8c212ba5128536312f366f5fef92c9c0cae0c56e3968ca404a7",
+   "opts": {
+    "params": {
+     "layout": "solved",
+     "view": "standard",
+     "export": "",
+     "seed": 3,
+     "settle_frames": 150,
+     "camera": "static",
+     "denoise": true,
+     "engine": "eevee",
+     "reuse": true
+    },
+    "frames": 1,
+    "samples": 64,
+    "w": 1280,
+    "h": 720
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 1,
+    "fps": 24,
+    "w": 1280,
+    "h": 720,
+    "dur": 0.041666666666666664,
+    "params": {
+     "layout": "solved",
+     "view": "standard",
+     "export": "",
+     "seed": 3,
+     "settle_frames": 150,
+     "camera": "static",
+     "denoise": true,
+     "engine": "eevee",
+     "reuse": true
+    },
+    "measure": {
+     "layout": "solved",
+     "scale_violations": [],
+     "penetrating_pairs_gt1mm": 0,
+     "max_penetration_mm": 0,
+     "worst_pairs": [],
+     "floating_or_embedded_gt3mm": [],
+     "max_gap_mm": 0.9,
+     "probe_max_move_mm": 2.5,
+     "probe_max_rot_deg": 11.9,
+     "probe_moved_gt5mm": [],
+     "footprint_moves": 1,
+     "settle_rounds": [
+      {
+       "fruit": "pomegranate",
+       "candidates_tried": 33,
+       "centre_above_table_mm": 61.7
+      },
+      {
+       "fruit": "lemon",
+       "candidates_tried": 33,
+       "centre_above_table_mm": 103.8
+      },
+      {
+       "settle": 1,
+       "max_move_mm": 124,
+       "off_plate": [
+        "lemon"
+       ]
+      },
+      {
+       "settle": 2,
+       "max_move_mm": 20.9,
+       "off_plate": []
+      }
+     ]
+    }
+   },
+   "render": {
+    "kind": "video",
+    "frames": 1,
+    "fps": 24,
+    "w": 1280,
+    "h": 720,
+    "dur": 0.041666666666666664,
+    "samples": 64,
+    "blender": "5.2.1 LTS",
+    "build_s": 107.6,
+    "render_s_per_frame": 3.71,
+    "rendered": 1
+   },
+   "fetched": "2026-11-13T08:26:43.793Z"
+  },
+  "still_naive": {
+   "source": "blender",
+   "id": "projects/pc-still/blender/still.py",
+   "url": null,
+   "page": "projects/pc-still/blender/still.py",
+   "license": "own (rendered from code)",
+   "author": "c2v",
+   "sha256": "2673bebb80137ba069485ed360720e858e705a971d0b7235a581ed6e7281f267",
+   "opts": {
+    "params": {
+     "layout": "naive",
+     "view": "agx",
+     "export": "",
+     "seed": 3,
+     "settle_frames": 150,
+     "camera": "hero",
+     "denoise": true,
+     "engine": "cycles",
+     "reuse": true
+    },
+    "frames": 96,
+    "samples": 48,
+    "w": 1280,
+    "h": 720
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 96,
+    "fps": 24,
+    "w": 1280,
+    "h": 720,
+    "dur": 4,
+    "params": {
+     "layout": "naive",
+     "view": "agx",
+     "export": "",
+     "seed": 3,
+     "settle_frames": 150,
+     "camera": "hero",
+     "denoise": true,
+     "engine": "cycles",
+     "reuse": true
+    },
+    "measure": {
+     "layout": "naive",
+     "scale_violations": [],
+     "penetrating_pairs_gt1mm": 6,
+     "max_penetration_mm": 29,
+     "worst_pairs": [
+      [
+       "plate",
+       "lemon",
+       29,
+       166
+      ],
+      [
+       "lemon",
+       "table",
+       13,
+       537
+      ],
+      [
+       "pear_a",
+       "table",
+       13,
+       924
+      ],
+      [
+       "pear_c",
+       "table",
+       13,
+       394
+      ],
+      [
+       "lemon",
+       "plate",
+       1.9,
+       40
+      ]
+     ],
+     "floating_or_embedded_gt3mm": [
+      "cup",
+      "lemon",
+      "pear_a",
+      "pear_c",
+      "pomegranate"
+     ],
+     "max_gap_mm": 1000,
+     "probe_max_move_mm": 25270.5,
+     "probe_max_rot_deg": 194,
+     "probe_moved_gt5mm": [
+      "cup",
+      "lemon",
+      "pear_a",
+      "pear_c",
+      "pomegranate",
+      "teapot_lid"
+     ],
+     "footprint_moves": null,
+     "settle_rounds": null
+    }
+   },
+   "render": {
+    "kind": "video",
+    "frames": 96,
+    "fps": 24,
+    "w": 1280,
+    "h": 720,
+    "dur": 4,
+    "samples": 48,
+    "blender": "5.2.1 LTS",
+    "build_s": 41.7,
+    "render_s_per_frame": 0.91,
+    "rendered": 96
+   },
+   "fetched": "2026-11-13T09:03:34.986Z"
+  },
+  "still_naive_scaled": {
+   "source": "blender",
+   "id": "projects/pc-still/blender/still.py",
+   "url": null,
+   "page": "projects/pc-still/blender/still.py",
+   "license": "own (rendered from code)",
+   "author": "c2v",
+   "sha256": "e3a32b591eb1a5d42b063af2b7ef4760ddd26238a54562bd3cc6a982a3cea147",
+   "opts": {
+    "params": {
+     "layout": "naive_scaled",
+     "view": "agx",
+     "export": "",
+     "seed": 3,
+     "settle_frames": 150,
+     "camera": "hero",
+     "denoise": true,
+     "engine": "cycles",
+     "reuse": true
+    },
+    "frames": 96,
+    "samples": 48,
+    "w": 1280,
+    "h": 720
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 96,
+    "fps": 24,
+    "w": 1280,
+    "h": 720,
+    "dur": 4,
+    "params": {
+     "layout": "naive_scaled",
+     "view": "agx",
+     "export": "",
+     "seed": 3,
+     "settle_frames": 150,
+     "camera": "hero",
+     "denoise": true,
+     "engine": "cycles",
+     "reuse": true
+    },
+    "measure": {
+     "layout": "naive_scaled",
+     "scale_violations": [
+      [
+       "cup",
+       18.5
+      ],
+      [
+       "pomegranate",
+       19.9
+      ],
+      [
+       "apple",
+       19.9
+      ],
+      [
+       "lemon",
+       20
+      ],
+      [
+       "pear_a",
+       20
+      ],
+      [
+       "pear_c",
+       20
+      ],
+      [
+       "bottle_a",
+       20
+      ],
+      [
+       "bottle_b",
+       20
+      ]
+     ],
+     "penetrating_pairs_gt1mm": 15,
+     "max_penetration_mm": 30,
+     "worst_pairs": [
+      [
+       "plate",
+       "lemon",
+       30,
+       563
+      ],
+      [
+       "lemon",
+       "pomegranate",
+       30,
+       423
+      ],
+      [
+       "pomegranate",
+       "lemon",
+       29.9,
+       244
+      ],
+      [
+       "pear_a",
+       "pear_c",
+       29.9,
+       120
+      ],
+      [
+       "pear_c",
+       "pear_a",
+       29.9,
+       108
+      ]
+     ],
+     "floating_or_embedded_gt3mm": [
+      "cup",
+      "lemon",
+      "pear_a",
+      "pear_c",
+      "pomegranate"
+     ],
+     "max_gap_mm": 1000,
+     "probe_max_move_mm": 50587.9,
+     "probe_max_rot_deg": 174.1,
+     "probe_moved_gt5mm": [
+      "apple",
+      "bottle_a",
+      "bottle_b",
+      "cup",
+      "lemon",
+      "pear_a",
+      "pear_c",
+      "pomegranate",
+      "teapot_lid",
+      "vase"
+     ],
+     "footprint_moves": null,
+     "settle_rounds": null
+    }
+   },
+   "render": {
+    "kind": "video",
+    "frames": 96,
+    "fps": 24,
+    "w": 1280,
+    "h": 720,
+    "dur": 4,
+    "samples": 48,
+    "blender": "5.2.1 LTS",
+    "build_s": 22.4,
+    "render_s_per_frame": 0.73,
+    "rendered": 96
+   },
+   "fetched": "2026-11-13T09:05:08.709Z"
+  },
+  "still_solved": {
+   "source": "blender",
+   "id": "projects/pc-still/blender/still.py",
+   "url": null,
+   "page": "projects/pc-still/blender/still.py",
+   "license": "own (rendered from code)",
+   "author": "c2v",
+   "sha256": "a21053d48ee73ff0dfe3094b5b0549c34406a86a5feacc2fd5c35d7dda5c389e",
+   "opts": {
+    "params": {
+     "layout": "solved",
+     "view": "agx",
+     "export": "",
+     "seed": 3,
+     "settle_frames": 150,
+     "camera": "hero",
+     "denoise": true,
+     "engine": "cycles",
+     "reuse": true
+    },
+    "frames": 96,
+    "samples": 48,
+    "w": 1280,
+    "h": 720
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 96,
+    "fps": 24,
+    "w": 1280,
+    "h": 720,
+    "dur": 4,
+    "params": {
+     "layout": "solved",
+     "view": "agx",
+     "export": "",
+     "seed": 3,
+     "settle_frames": 150,
+     "camera": "hero",
+     "denoise": true,
+     "engine": "cycles",
+     "reuse": true
+    },
+    "measure": {
+     "layout": "solved",
+     "scale_violations": [],
+     "penetrating_pairs_gt1mm": 0,
+     "max_penetration_mm": 0,
+     "worst_pairs": [],
+     "floating_or_embedded_gt3mm": [],
+     "max_gap_mm": 0.9,
+     "probe_max_move_mm": 2.5,
+     "probe_max_rot_deg": 11.9,
+     "probe_moved_gt5mm": [],
+     "footprint_moves": 1,
+     "settle_rounds": [
+      {
+       "fruit": "pomegranate",
+       "candidates_tried": 33,
+       "centre_above_table_mm": 61.7
+      },
+      {
+       "fruit": "lemon",
+       "candidates_tried": 33,
+       "centre_above_table_mm": 103.8
+      },
+      {
+       "settle": 1,
+       "max_move_mm": 124,
+       "off_plate": [
+        "lemon"
+       ]
+      },
+      {
+       "settle": 2,
+       "max_move_mm": 20.9,
+       "off_plate": []
+      }
+     ]
+    }
+   },
+   "render": {
+    "kind": "video",
+    "frames": 96,
+    "fps": 24,
+    "w": 1280,
+    "h": 720,
+    "dur": 4,
+    "samples": 48,
+    "blender": "5.2.1 LTS",
+    "build_s": 99.1,
+    "render_s_per_frame": 0.87,
+    "rendered": 96
+   },
+   "fetched": "2026-11-13T09:08:12.772Z"
+  },
+  "drop_physics": {
+   "source": "three",
+   "id": "projects/pc-still/three/drop.mjs",
+   "url": null,
+   "page": "projects/pc-still/three/drop.mjs",
+   "license": "own (rendered from code) over the locked assets",
+   "author": "c2v",
+   "sha256": "3a533d7b2aac7896b12c173c605c7144418996642eefc6c17607d176d7558bb4",
+   "opts": {
+    "params": {
+     "mode": "physics",
+     "from": [
+      0.2,
+      1.02,
+      0.07
+     ],
+     "vel": [
+      -0.25,
+      0,
+      -0.18
+     ],
+     "to": [
+      0.13,
+      0.865,
+      -0.02
+     ]
+    },
+    "frames": 96,
+    "w": 1280,
+    "h": 720
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 96,
+    "fps": 24,
+    "w": 1280,
+    "h": 720,
+    "dur": 4,
+    "params": {
+     "mode": "physics",
+     "from": [
+      0.2,
+      1.02,
+      0.07
+     ],
+     "vel": [
+      -0.25,
+      0,
+      -0.18
+     ],
+     "to": [
+      0.13,
+      0.865,
+      -0.02
+     ]
+    },
+    "measure": {
+     "mode": "physics",
+     "colliders": {
+      "static": 19,
+      "dynamic": 4
+     },
+     "max_penetration_mm": 2.4,
+     "frames_over_1mm": 96,
+     "frames_over_5mm": 0,
+     "drop_end": [
+      0.0785,
+      0.8429,
+      0.2878
+     ]
+    },
+    "per_frame_depth_mm": [
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4
+    ]
+   },
+   "render": {
+    "s_per_frame": 0.03
+   },
+   "fetched": "2026-11-13T09:09:26.708Z"
+  },
+  "drop_keyframed": {
+   "source": "three",
+   "id": "projects/pc-still/three/drop.mjs",
+   "url": null,
+   "page": "projects/pc-still/three/drop.mjs",
+   "license": "own (rendered from code) over the locked assets",
+   "author": "c2v",
+   "sha256": "7e2fd728632d54488edf43e3657a40f31a46775f3e97f2b125d29fbe4ddde116",
+   "opts": {
+    "params": {
+     "mode": "keyframed",
+     "from": [
+      0.2,
+      1.02,
+      0.07
+     ],
+     "vel": [
+      -0.25,
+      0,
+      -0.18
+     ],
+     "to": [
+      0.13,
+      0.865,
+      -0.02
+     ]
+    },
+    "frames": 96,
+    "w": 1280,
+    "h": 720
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 96,
+    "fps": 24,
+    "w": 1280,
+    "h": 720,
+    "dur": 4,
+    "params": {
+     "mode": "keyframed",
+     "from": [
+      0.2,
+      1.02,
+      0.07
+     ],
+     "vel": [
+      -0.25,
+      0,
+      -0.18
+     ],
+     "to": [
+      0.13,
+      0.865,
+      -0.02
+     ]
+    },
+    "measure": {
+     "mode": "keyframed",
+     "colliders": {
+      "static": 19,
+      "dynamic": 4
+     },
+     "max_penetration_mm": 36.26,
+     "frames_over_1mm": 96,
+     "frames_over_5mm": 52,
+     "drop_end": [
+      0.13,
+      0.865,
+      -0.02
+     ]
+    },
+    "per_frame_depth_mm": [
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     2.4,
+     22.46,
+     22.46,
+     22.46,
+     28.87,
+     28.87,
+     28.87,
+     28.87,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26,
+     36.26
+    ]
+   },
+   "render": {
+    "s_per_frame": 0.03
+   },
+   "fetched": "2026-11-13T09:09:29.943Z"
+  }
+ }
+}

@@ -1,0 +1,185 @@
+{
+ "assets": {
+  "rooftop": {
+   "source": "polyhaven",
+   "id": "rooftop_night",
+   "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/8k/rooftop_night_8k.hdr",
+   "page": "https://polyhaven.com/a/rooftop_night",
+   "license": "CC0",
+   "author": "Greg Zaal",
+   "sha256": "d0d86eb0a7eae521fcad43a4660452e7df9c4112332eaca3eff082c0bcf4f410",
+   "opts": {
+    "res": "8k"
+   },
+   "meta": {
+    "kind": "hdri",
+    "file": "env.hdr"
+   },
+   "fetched": "2026-11-12T09:46:44.740Z"
+  },
+  "chunk": {
+   "source": "polyhaven",
+   "id": "concrete_floor_worn_001",
+   "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/concrete_floor_worn_001/concrete_floor_worn_001_diff_1k.jpg",
+   "page": "https://polyhaven.com/a/concrete_floor_worn_001",
+   "license": "CC0",
+   "author": "Dimitrios Savva, Rico Cilliers",
+   "sha256": "9f88ed209834f81b8a3493969c1130accf905c0141bed22a077b58254713a4cc",
+   "opts": {
+    "res": "1k"
+   },
+   "meta": {
+    "kind": "texture",
+    "files": [
+     "Diffuse.jpg",
+     "nor_gl.jpg",
+     "Rough.jpg",
+     "AO.jpg",
+     "Displacement.jpg",
+     "arm.jpg"
+    ]
+   },
+   "fetched": "2026-11-12T09:46:48.911Z"
+  },
+  "blast": {
+   "source": "blender",
+   "id": "projects/real-vfx/blender/blast.py",
+   "url": null,
+   "page": "projects/real-vfx/blender/blast.py",
+   "license": "own (rendered from code)",
+   "author": "c2v",
+   "sha256": "2a5da1506637df0f31761fd40a2a103fbc6839a7c3a70e403149723e8b05f372",
+   "opts": {
+    "params": {
+     "blast_frame": 24,
+     "fuel": 2.2,
+     "fire": 14,
+     "smoke": [
+      0.06,
+      0.055,
+      0.05
+     ],
+     "debris": 48,
+     "push": 8000,
+     "hdri_rot": 200,
+     "resolution": 96,
+     "noise": 2,
+     "seed": 0
+    },
+    "frames": 84,
+    "samples": 32,
+    "w": 1440,
+    "h": 810
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 84,
+    "fps": 24,
+    "w": 1440,
+    "h": 810,
+    "dur": 3.5,
+    "params": {
+     "blast_frame": 24,
+     "fuel": 2.2,
+     "fire": 14,
+     "smoke": [
+      0.06,
+      0.055,
+      0.05
+     ],
+     "debris": 48,
+     "push": 8000,
+     "hdri_rot": 200,
+     "resolution": 96,
+     "noise": 2,
+     "seed": 0
+    }
+   },
+   "render": {
+    "kind": "video",
+    "frames": 84,
+    "fps": 24,
+    "w": 1440,
+    "h": 810,
+    "dur": 3.5,
+    "samples": 32,
+    "blender": "5.2.1 LTS",
+    "build_s": 90.1,
+    "render_s_per_frame": 3.67,
+    "rendered": 84
+   },
+   "fetched": "2026-11-12T10:11:57.331Z"
+  },
+  "blast2": {
+   "source": "blender",
+   "id": "projects/real-vfx/blender/blast.py",
+   "url": null,
+   "page": "projects/real-vfx/blender/blast.py",
+   "license": "own (rendered from code)",
+   "author": "c2v",
+   "sha256": "486a0cdf2f914f3f59e58ffdfedd680ce977f40fc1ba66c24096ebe4068cbc6b",
+   "opts": {
+    "params": {
+     "blast_frame": 24,
+     "fuel": 2.2,
+     "fire": 14,
+     "smoke": [
+      0.085,
+      0.072,
+      0.064
+     ],
+     "sparks": 600,
+     "debris": 48,
+     "push": 8000,
+     "hdri_rot": 200,
+     "resolution": 96,
+     "noise": 2,
+     "seed": 0
+    },
+    "frames": 84,
+    "samples": 32,
+    "w": 1440,
+    "h": 810
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 84,
+    "fps": 24,
+    "w": 1440,
+    "h": 810,
+    "dur": 3.5,
+    "params": {
+     "blast_frame": 24,
+     "fuel": 2.2,
+     "fire": 14,
+     "smoke": [
+      0.085,
+      0.072,
+      0.064
+     ],
+     "sparks": 600,
+     "debris": 48,
+     "push": 8000,
+     "hdri_rot": 200,
+     "resolution": 96,
+     "noise": 2,
+     "seed": 0
+    }
+   },
+   "render": {
+    "kind": "video",
+    "frames": 84,
+    "fps": 24,
+    "w": 1440,
+    "h": 810,
+    "dur": 3.5,
+    "samples": 32,
+    "blender": "5.2.1 LTS",
+    "build_s": 52.2,
+    "render_s_per_frame": 2.75,
+    "rendered": 84
+   },
+   "fetched": "2026-11-12T11:08:09.071Z"
+  }
+ }
+}

@@ -1,0 +1,447 @@
+{
+ "assets": {
+  "robot": {
+   "source": "url",
+   "id": "https://raw.githubusercontent.com/mrdoob/three.js/r170/examples/models/gltf/RobotExpressive/RobotExpressive.glb",
+   "url": "https://raw.githubusercontent.com/mrdoob/three.js/r170/examples/models/gltf/RobotExpressive/RobotExpressive.glb",
+   "page": "https://github.com/mrdoob/three.js/tree/r170/examples/models/gltf/RobotExpressive",
+   "license": "CC0 1.0",
+   "author": "Tomás Laulhé (Quaternius), modified by Don McCurdy",
+   "sha256": "3248b8d4d5a948ee61ecc6f9ffddd1663ffb01e0d673744ca2447903d66069a2",
+   "opts": {},
+   "meta": {
+    "kind": "model",
+    "files": [
+     "RobotExpressive.glb"
+    ]
+   },
+   "fetched": "2026-11-12T10:26:59.559Z"
+  },
+  "michelle": {
+   "source": "url",
+   "id": "https://raw.githubusercontent.com/mrdoob/three.js/r170/examples/models/gltf/Michelle.glb",
+   "url": "https://raw.githubusercontent.com/mrdoob/three.js/r170/examples/models/gltf/Michelle.glb",
+   "page": "https://github.com/mrdoob/three.js/blob/r170/examples/models/gltf/Michelle.glb",
+   "license": "Mixamo (Adobe) character and animation, royalty-free use",
+   "author": "Mixamo",
+   "sha256": "dc2712f52a2f01a989db2b7e8cd583af9de64b8e1b4e01c11e9bb12c6f63cc86",
+   "opts": {},
+   "meta": {
+    "kind": "model",
+    "files": [
+     "Michelle.glb"
+    ]
+   },
+   "fetched": "2026-11-12T10:27:01.452Z"
+  },
+  "studio": {
+   "source": "polyhaven",
+   "id": "brown_photostudio_02",
+   "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/4k/brown_photostudio_02_4k.hdr",
+   "page": "https://polyhaven.com/a/brown_photostudio_02",
+   "license": "CC0",
+   "author": "Sergej Majboroda",
+   "sha256": "368251c254a47dc7aaf532a515c0bd9ad3708ce5a3c5bb520b1628bcb9a37bc0",
+   "opts": {
+    "res": "4k"
+   },
+   "meta": {
+    "kind": "hdri",
+    "file": "env.hdr"
+   },
+   "fetched": "2026-11-12T10:27:08.689Z"
+  },
+  "wood": {
+   "source": "polyhaven",
+   "id": "wood_table_001",
+   "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/wood_table_001/wood_table_001_diff_2k.jpg",
+   "page": "https://polyhaven.com/a/wood_table_001",
+   "license": "CC0",
+   "author": "Dimitrios Savva, Rico Cilliers",
+   "sha256": "f702026ee54741731ed8fb9b58ecd4107649900713fb7a38029bcd595f70dc44",
+   "opts": {
+    "res": "2k"
+   },
+   "meta": {
+    "kind": "texture",
+    "files": [
+     "Diffuse.jpg",
+     "nor_gl.jpg",
+     "Rough.jpg",
+     "AO.jpg",
+     "Displacement.jpg",
+     "arm.jpg"
+    ]
+   },
+   "fetched": "2026-11-12T10:27:24.406Z"
+  },
+  "floor": {
+   "source": "polyhaven",
+   "id": "concrete_floor_worn_001",
+   "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/concrete_floor_worn_001/concrete_floor_worn_001_diff_2k.jpg",
+   "page": "https://polyhaven.com/a/concrete_floor_worn_001",
+   "license": "CC0",
+   "author": "Dimitrios Savva, Rico Cilliers",
+   "sha256": "54d8d7c9fb8d3e757a458cc6d0db0cee9504c02f2e6e2ec5fc3838f9342625c5",
+   "opts": {
+    "res": "2k"
+   },
+   "meta": {
+    "kind": "texture",
+    "files": [
+     "Diffuse.jpg",
+     "nor_gl.jpg",
+     "Rough.jpg",
+     "AO.jpg",
+     "Displacement.jpg",
+     "arm.jpg"
+    ]
+   },
+   "fetched": "2026-11-12T10:27:32.622Z"
+  },
+  "robot_toy": {
+   "source": "blender",
+   "id": "projects/real-human/blender/robot.py",
+   "url": null,
+   "page": "projects/real-human/blender/robot.py",
+   "license": "own (rendered from code)",
+   "author": "c2v",
+   "sha256": "be6375d034af02eae46b444beefd0f381d6ba78032f74861019394609aa33026",
+   "opts": {
+    "params": {
+     "paint": [
+      0.9,
+      0.38,
+      0.015
+     ],
+     "sequence": [
+      [
+       "Idle",
+       1,
+       0,
+       15
+      ],
+      [
+       "Wave",
+       16,
+       0,
+       44
+      ],
+      [
+       "ThumbsUp",
+       60,
+       0,
+       38
+      ],
+      [
+       "Dance",
+       98,
+       0,
+       80
+      ]
+     ],
+     "lens": 85,
+     "fstop": 2,
+     "hdri_rot": 120,
+     "height_m": 0.25
+    },
+    "frames": 144,
+    "samples": 48,
+    "w": 1920,
+    "h": 1080
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 144,
+    "fps": 24,
+    "w": 1920,
+    "h": 1080,
+    "dur": 6,
+    "params": {
+     "paint": [
+      0.9,
+      0.38,
+      0.015
+     ],
+     "sequence": [
+      [
+       "Idle",
+       1,
+       0,
+       15
+      ],
+      [
+       "Wave",
+       16,
+       0,
+       44
+      ],
+      [
+       "ThumbsUp",
+       60,
+       0,
+       38
+      ],
+      [
+       "Dance",
+       98,
+       0,
+       80
+      ]
+     ],
+     "lens": 85,
+     "fstop": 2,
+     "hdri_rot": 120,
+     "height_m": 0.25
+    }
+   },
+   "render": {
+    "kind": "video",
+    "frames": 144,
+    "fps": 24,
+    "w": 1920,
+    "h": 1080,
+    "dur": 6,
+    "samples": 48,
+    "blender": "5.2.1 LTS",
+    "build_s": 0.2,
+    "render_s_per_frame": 1.31,
+    "rendered": 144
+   },
+   "fetched": "2026-11-12T10:32:08.714Z"
+  },
+  "robot_blue": {
+   "source": "blender",
+   "id": "projects/real-human/blender/robot.py",
+   "url": null,
+   "page": "projects/real-human/blender/robot.py",
+   "license": "own (rendered from code)",
+   "author": "c2v",
+   "sha256": "ddea86fdf1679bf2c35719f376760710db10a31082b4dec66f3e8f4318398354",
+   "opts": {
+    "params": {
+     "paint": [
+      0.03,
+      0.18,
+      0.75
+     ],
+     "sequence": [
+      [
+       "Idle",
+       1,
+       0,
+       15
+      ],
+      [
+       "Wave",
+       16,
+       0,
+       44
+      ],
+      [
+       "ThumbsUp",
+       60,
+       0,
+       38
+      ],
+      [
+       "Dance",
+       98,
+       0,
+       80
+      ]
+     ],
+     "lens": 85,
+     "fstop": 2,
+     "hdri_rot": 120,
+     "height_m": 0.25
+    },
+    "frames": 144,
+    "samples": 48,
+    "w": 1920,
+    "h": 1080
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 144,
+    "fps": 24,
+    "w": 1920,
+    "h": 1080,
+    "dur": 6,
+    "params": {
+     "paint": [
+      0.03,
+      0.18,
+      0.75
+     ],
+     "sequence": [
+      [
+       "Idle",
+       1,
+       0,
+       15
+      ],
+      [
+       "Wave",
+       16,
+       0,
+       44
+      ],
+      [
+       "ThumbsUp",
+       60,
+       0,
+       38
+      ],
+      [
+       "Dance",
+       98,
+       0,
+       80
+      ]
+     ],
+     "lens": 85,
+     "fstop": 2,
+     "hdri_rot": 120,
+     "height_m": 0.25
+    }
+   },
+   "render": {
+    "kind": "video",
+    "frames": 144,
+    "fps": 24,
+    "w": 1920,
+    "h": 1080,
+    "dur": 6,
+    "samples": 48,
+    "blender": "5.2.1 LTS",
+    "build_s": 0.3,
+    "render_s_per_frame": 1.6,
+    "rendered": 144
+   },
+   "fetched": "2026-11-12T10:36:04.609Z"
+  },
+  "dance": {
+   "source": "blender",
+   "id": "projects/real-human/blender/dance.py",
+   "url": null,
+   "page": "projects/real-human/blender/dance.py",
+   "license": "own (rendered from code)",
+   "author": "c2v",
+   "sha256": "4cc8300cafa751007fbbef1edcfc451ba511ca6e466b10b8406c79d497c3c244",
+   "opts": {
+    "params": {
+     "clip_start": 90,
+     "key_color": [
+      1,
+      0.93,
+      0.85
+     ],
+     "key_power": 450,
+     "hdri_rot": 40,
+     "lens": 50,
+     "fstop": 2.4
+    },
+    "frames": 120,
+    "samples": 48,
+    "w": 1920,
+    "h": 1080
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 120,
+    "fps": 24,
+    "w": 1920,
+    "h": 1080,
+    "dur": 5,
+    "params": {
+     "clip_start": 90,
+     "key_color": [
+      1,
+      0.93,
+      0.85
+     ],
+     "key_power": 450,
+     "hdri_rot": 40,
+     "lens": 50,
+     "fstop": 2.4
+    }
+   },
+   "render": {
+    "kind": "video",
+    "frames": 120,
+    "fps": 24,
+    "w": 1920,
+    "h": 1080,
+    "dur": 5,
+    "samples": 48,
+    "blender": "5.2.1 LTS",
+    "build_s": 0.6,
+    "render_s_per_frame": 1.61,
+    "rendered": 120
+   },
+   "fetched": "2026-11-12T10:39:20.148Z"
+  },
+  "dance_warm": {
+   "source": "blender",
+   "id": "projects/real-human/blender/dance.py",
+   "url": null,
+   "page": "projects/real-human/blender/dance.py",
+   "license": "own (rendered from code)",
+   "author": "c2v",
+   "sha256": "7f4b2954eee123f5b63e3b6c24588b592513000141b701adfc45d207c0d814b2",
+   "opts": {
+    "params": {
+     "clip_start": 90,
+     "key_color": [
+      1,
+      0.62,
+      0.3
+     ],
+     "key_power": 700,
+     "hdri_rot": 40,
+     "lens": 50,
+     "fstop": 2.4
+    },
+    "frames": 120,
+    "samples": 48,
+    "w": 1920,
+    "h": 1080
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 120,
+    "fps": 24,
+    "w": 1920,
+    "h": 1080,
+    "dur": 5,
+    "params": {
+     "clip_start": 90,
+     "key_color": [
+      1,
+      0.62,
+      0.3
+     ],
+     "key_power": 700,
+     "hdri_rot": 40,
+     "lens": 50,
+     "fstop": 2.4
+    }
+   },
+   "render": {
+    "kind": "video",
+    "frames": 120,
+    "fps": 24,
+    "w": 1920,
+    "h": 1080,
+    "dur": 5,
+    "samples": 48,
+    "blender": "5.2.1 LTS",
+    "build_s": 0.9,
+    "render_s_per_frame": 1.64,
+    "rendered": 120
+   },
+   "fetched": "2026-11-12T10:42:39.899Z"
+  }
+ }
+}

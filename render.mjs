@@ -18,11 +18,12 @@
 //   Sound: --synth writes the project's code-generated score to out/synth.wav (clip/encode use it automatically).
 //   Loops: add --loop=<name> (times are loop times), or --loop=emotions --png for a PNG cycle.
 //   Preview: --scale=0.5 renders the WebGL layer at half resolution (≈4x cheaper fills) for checks; never for finals.
+//   Edits: --params='{"temp":-.3}' overrides PROJECT.params for this render (c2v pairs uses it).
 //   Other flags: --audio=<file> (else PROJECT.audio), --fps=24, --chrome=<path>, --soft-gl (no GPU: SwiftShader),
 //   --gpu-angle=vulkan|gl-egl (headless Linux + NVIDIA).
 import puppeteer from 'puppeteer-core';
 import { spawn } from 'node:child_process';
-import { mkdirSync, writeFileSync, readFileSync, existsSync, statSync, renameSync, readdirSync, appendFileSync } from 'node:fs';
+import { mkdirSync, writeFileSync, readFileSync, existsSync, statSync, renameSync, readdirSync, appendFileSync, rmSync } from 'node:fs';
 import { dirname, resolve, join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { findChrome, gpuFlags, baseFlags } from './lib/chrome.mjs';
@@ -74,7 +75,7 @@ async function openPage(tag = '') {
   const page = await browser.newPage();
   page.on('console', m => { if (['error', 'warn'].includes(m.type())) console.log(`[page${tag}]`, m.text()); });
   page.on('pageerror', e => console.log(`[page error${tag}]`, e.message));
-  await page.goto(pathToFileURL(STUDIO).href + `?render&project=${encodeURIComponent(PROJ)}${args.scale ? '&scale=' + args.scale : ''}${args.medium ? '&medium=' + args.medium : ''}`, { waitUntil: 'networkidle0', timeout: 120000 });
+  await page.goto(pathToFileURL(STUDIO).href + `?render&project=${encodeURIComponent(PROJ)}${args.scale ? '&scale=' + args.scale : ''}${args.medium ? '&medium=' + args.medium : ''}${args.params ? '&params=' + encodeURIComponent(args.params) : ''}`, { waitUntil: 'networkidle0', timeout: 120000 });
   await page.waitForFunction('window.ready === true', { timeout: 120000 });
   if (args.loop) {
     const ok = await page.evaluate(name => { if (!LOOPS[name]) return false; window.LOOP = LOOPS[name]; return true; }, args.loop);
@@ -157,6 +158,17 @@ if (args.synth) {
   const probe = await openPage(), len = await lengthOf(probe); await probe.close();
   const [a, b] = args.range ? span(args.range) : typeof args.frames === 'string' ? span(args.frames) : [0, len], workers = +(args.workers || 4);
   mkdirSync(FRAMES_DIR, { recursive: true });
+  // Frames already on disk are reused only while the inputs that make them are unchanged: the project file, its scenes
+  // and the asset lock (a re-rendered Blender / splat / three layer changes its sha256 there). Otherwise start over.
+  const inputs = createHash('sha256');
+  for (const f of [`${PDIR}/project.js`, `${PDIR}/assets.lock.json`, ...readdirSync(`${PDIR}/scenes`).filter(n => n.endsWith('.js')).sort().map(n => `${PDIR}/scenes/${n}`)])
+    if (existsSync(f)) inputs.update(f).update(readFileSync(f));
+  const key = inputs.digest('hex'), keyFile = `${FRAMES_DIR}/.inputs`;
+  if (existsSync(keyFile) && readFileSync(keyFile, 'utf8') !== key || !existsSync(keyFile) && readdirSync(FRAMES_DIR).some(n => n.endsWith('.jpg'))) {
+    for (const n of readdirSync(FRAMES_DIR)) if (n.endsWith('.jpg')) rmSync(`${FRAMES_DIR}/${n}`);
+    console.log('inputs changed since the last render: frames cleared');
+  }
+  writeFileSync(keyFile, key);
   const first = Math.round(a * fps), last = Math.min(Math.ceil(len * fps) - 1, Math.round(b * fps) - 1);
   const todo = []; for (let i = first; i <= last; i++) { const f = `${FRAMES_DIR}/f${String(i).padStart(5, '0')}.jpg`; if (!existsSync(f) || statSync(f).size < 1000) todo.push(i); }
   console.log(`${todo.length} frames to render (${last - first + 1 - todo.length} already done), ${workers} workers`);

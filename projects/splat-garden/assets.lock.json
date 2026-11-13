@@ -1,0 +1,413 @@
+{
+ "assets": {
+  "orbit": {
+   "source": "splat",
+   "id": "projects/splat-garden/splat/garden.mjs",
+   "url": null,
+   "page": "projects/splat-garden/splat/garden.mjs",
+   "license": "derived from the capture: inherits its licence (see the capture entry)",
+   "author": "c2v over the capture authors",
+   "sha256": "f0e0a981bef5e904fe38736c8990a68f0b560848a38c1f9fa074afef04f3d7e7",
+   "opts": {
+    "params": {
+     "ply": "runs/garden30k/export_30000.ply",
+     "sparse": "garden/sparse/0",
+     "orbit_start": -20,
+     "orbit_deg": 70,
+     "radius": 3.4,
+     "height": 1.5,
+     "dolly": 0.12,
+     "lens": 1,
+     "table_tint": null,
+     "remove_pot": false,
+     "ball": false,
+     "ball_color": [
+      0.85,
+      0.12,
+      0.08
+     ],
+     "ball_r": 0.11,
+     "restitution": 0.72
+    },
+    "frames": 240,
+    "w": 1280,
+    "h": 720
+   },
+   "capture": {
+    "ply": "export_30000.ply",
+    "ply_sha256": "b6e6883e4c20e2905bce8b139884300e26db6ee17542e6b4f7af8e040be1ee69",
+    "splats": 2483411,
+    "sh_degree": 3,
+    "edit_hits": [],
+    "framebuffer": "RGBA32F"
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 240,
+    "fps": 24,
+    "w": 1280,
+    "h": 720,
+    "dur": 10,
+    "params": {
+     "ply": "runs/garden30k/export_30000.ply",
+     "sparse": "garden/sparse/0",
+     "orbit_start": -20,
+     "orbit_deg": 70,
+     "radius": 3.4,
+     "height": 1.5,
+     "dolly": 0.12,
+     "lens": 1,
+     "table_tint": null,
+     "remove_pot": false,
+     "ball": false,
+     "ball_color": [
+      0.85,
+      0.12,
+      0.08
+     ],
+     "ball_r": 0.11,
+     "restitution": 0.72
+    }
+   },
+   "render": {
+    "s_per_frame": 0.17
+   },
+   "fetched": "2026-11-12T20:08:17.253Z"
+  },
+  "orbit_tint": {
+   "source": "splat",
+   "id": "projects/splat-garden/splat/garden.mjs",
+   "url": null,
+   "page": "projects/splat-garden/splat/garden.mjs",
+   "license": "derived from the capture: inherits its licence (see the capture entry)",
+   "author": "c2v over the capture authors",
+   "sha256": "0405f3731ebdbf3b26cec0a4b335d22071b322ee8792b52867f1ee832f5c2e2f",
+   "opts": {
+    "params": {
+     "ply": "runs/garden30k/export_30000.ply",
+     "sparse": "garden/sparse/0",
+     "orbit_start": -20,
+     "orbit_deg": 70,
+     "radius": 3.4,
+     "height": 1.5,
+     "dolly": 0.12,
+     "lens": 1,
+     "table_tint": [
+      0.18,
+      0.32,
+      0.75
+     ],
+     "remove_pot": false,
+     "ball": false,
+     "ball_color": [
+      0.85,
+      0.12,
+      0.08
+     ],
+     "ball_r": 0.11,
+     "restitution": 0.72
+    },
+    "frames": 240,
+    "w": 1280,
+    "h": 720
+   },
+   "capture": {
+    "ply": "export_30000.ply",
+    "ply_sha256": "b6e6883e4c20e2905bce8b139884300e26db6ee17542e6b4f7af8e040be1ee69",
+    "splats": 2483411,
+    "sh_degree": 3,
+    "edit_hits": [
+     21363
+    ],
+    "framebuffer": "RGBA32F"
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 240,
+    "fps": 24,
+    "w": 1280,
+    "h": 720,
+    "dur": 10,
+    "params": {
+     "ply": "runs/garden30k/export_30000.ply",
+     "sparse": "garden/sparse/0",
+     "orbit_start": -20,
+     "orbit_deg": 70,
+     "radius": 3.4,
+     "height": 1.5,
+     "dolly": 0.12,
+     "lens": 1,
+     "table_tint": [
+      0.18,
+      0.32,
+      0.75
+     ],
+     "remove_pot": false,
+     "ball": false,
+     "ball_color": [
+      0.85,
+      0.12,
+      0.08
+     ],
+     "ball_r": 0.11,
+     "restitution": 0.72
+    }
+   },
+   "render": {
+    "s_per_frame": 0.17
+   },
+   "fetched": "2026-11-12T20:08:57.502Z"
+  },
+  "orbit_nopot": {
+   "source": "splat",
+   "id": "projects/splat-garden/splat/garden.mjs",
+   "url": null,
+   "page": "projects/splat-garden/splat/garden.mjs",
+   "license": "derived from the capture: inherits its licence (see the capture entry)",
+   "author": "c2v over the capture authors",
+   "sha256": "4fcabbb607cac2af5c73cc3b964737669ed27ce14a7a69763d16986b296b6b52",
+   "opts": {
+    "params": {
+     "ply": "runs/garden30k/export_30000.ply",
+     "sparse": "garden/sparse/0",
+     "orbit_start": -20,
+     "orbit_deg": 70,
+     "radius": 3.4,
+     "height": 1.5,
+     "dolly": 0.12,
+     "lens": 1,
+     "table_tint": null,
+     "remove_pot": true,
+     "ball": false,
+     "ball_color": [
+      0.85,
+      0.12,
+      0.08
+     ],
+     "ball_r": 0.11,
+     "restitution": 0.72
+    },
+    "frames": 240,
+    "w": 1280,
+    "h": 720
+   },
+   "capture": {
+    "ply": "export_30000.ply",
+    "ply_sha256": "b6e6883e4c20e2905bce8b139884300e26db6ee17542e6b4f7af8e040be1ee69",
+    "splats": 2483411,
+    "sh_degree": 3,
+    "edit_hits": [
+     10231
+    ],
+    "framebuffer": "RGBA32F"
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 240,
+    "fps": 24,
+    "w": 1280,
+    "h": 720,
+    "dur": 10,
+    "params": {
+     "ply": "runs/garden30k/export_30000.ply",
+     "sparse": "garden/sparse/0",
+     "orbit_start": -20,
+     "orbit_deg": 70,
+     "radius": 3.4,
+     "height": 1.5,
+     "dolly": 0.12,
+     "lens": 1,
+     "table_tint": null,
+     "remove_pot": true,
+     "ball": false,
+     "ball_color": [
+      0.85,
+      0.12,
+      0.08
+     ],
+     "ball_r": 0.11,
+     "restitution": 0.72
+    }
+   },
+   "render": {
+    "s_per_frame": 0.16
+   },
+   "fetched": "2026-11-12T20:09:36.216Z"
+  },
+  "orbit_ball": {
+   "source": "splat",
+   "id": "projects/splat-garden/splat/garden.mjs",
+   "url": null,
+   "page": "projects/splat-garden/splat/garden.mjs",
+   "license": "derived from the capture: inherits its licence (see the capture entry)",
+   "author": "c2v over the capture authors",
+   "sha256": "e491e563b333560375373e6a99b3e0fea07907d9ef84499d5bffcdb3b8176ed2",
+   "opts": {
+    "params": {
+     "ply": "runs/garden30k/export_30000.ply",
+     "sparse": "garden/sparse/0",
+     "orbit_start": -20,
+     "orbit_deg": 70,
+     "radius": 3.4,
+     "height": 1.5,
+     "dolly": 0.12,
+     "lens": 1,
+     "table_tint": null,
+     "remove_pot": false,
+     "ball": true,
+     "ball_color": [
+      0.85,
+      0.12,
+      0.08
+     ],
+     "ball_r": 0.11,
+     "restitution": 0.72
+    },
+    "frames": 240,
+    "w": 1280,
+    "h": 720
+   },
+   "capture": {
+    "ply": "export_30000.ply",
+    "ply_sha256": "b6e6883e4c20e2905bce8b139884300e26db6ee17542e6b4f7af8e040be1ee69",
+    "splats": 2483411,
+    "sh_degree": 3,
+    "edit_hits": [],
+    "framebuffer": "RGBA32F"
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 240,
+    "fps": 24,
+    "w": 1280,
+    "h": 720,
+    "dur": 10,
+    "params": {
+     "ply": "runs/garden30k/export_30000.ply",
+     "sparse": "garden/sparse/0",
+     "orbit_start": -20,
+     "orbit_deg": 70,
+     "radius": 3.4,
+     "height": 1.5,
+     "dolly": 0.12,
+     "lens": 1,
+     "table_tint": null,
+     "remove_pot": false,
+     "ball": true,
+     "ball_color": [
+      0.85,
+      0.12,
+      0.08
+     ],
+     "ball_r": 0.11,
+     "restitution": 0.72
+    }
+   },
+   "render": {
+    "s_per_frame": 0.17
+   },
+   "fetched": "2026-11-12T20:10:17.600Z"
+  },
+  "orbit_high": {
+   "source": "splat",
+   "id": "projects/splat-garden/splat/garden.mjs",
+   "url": null,
+   "page": "projects/splat-garden/splat/garden.mjs",
+   "license": "derived from the capture: inherits its licence (see the capture entry)",
+   "author": "c2v over the capture authors",
+   "sha256": "d0c6fc2f2eea042dacea07d16e1615de7013db986323e526b06aa78daf027385",
+   "opts": {
+    "params": {
+     "ply": "runs/garden30k/export_30000.ply",
+     "sparse": "garden/sparse/0",
+     "orbit_start": -20,
+     "orbit_deg": 70,
+     "radius": 3.4,
+     "height": 2.1,
+     "dolly": 0.12,
+     "lens": 1,
+     "table_tint": null,
+     "remove_pot": false,
+     "ball": false,
+     "ball_color": [
+      0.85,
+      0.12,
+      0.08
+     ],
+     "ball_r": 0.11,
+     "restitution": 0.72
+    },
+    "frames": 240,
+    "w": 1280,
+    "h": 720
+   },
+   "capture": {
+    "ply": "export_30000.ply",
+    "ply_sha256": "b6e6883e4c20e2905bce8b139884300e26db6ee17542e6b4f7af8e040be1ee69",
+    "splats": 2483411,
+    "sh_degree": 3,
+    "edit_hits": [],
+    "framebuffer": "RGBA32F"
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 240,
+    "fps": 24,
+    "w": 1280,
+    "h": 720,
+    "dur": 10,
+    "params": {
+     "ply": "runs/garden30k/export_30000.ply",
+     "sparse": "garden/sparse/0",
+     "orbit_start": -20,
+     "orbit_deg": 70,
+     "radius": 3.4,
+     "height": 2.1,
+     "dolly": 0.12,
+     "lens": 1,
+     "table_tint": null,
+     "remove_pot": false,
+     "ball": false,
+     "ball_color": [
+      0.85,
+      0.12,
+      0.08
+     ],
+     "ball_r": 0.11,
+     "restitution": 0.72
+    }
+   },
+   "render": {
+    "s_per_frame": 0.16
+   },
+   "fetched": "2026-11-12T20:10:57.496Z"
+  },
+  "garden_capture": {
+   "source": "capture",
+   "id": "mipnerf360/garden",
+   "url": "https://storage.googleapis.com/gresearch/refraw360/360_v2.zip",
+   "page": "https://jonbarron.info/mipnerf360/",
+   "license": "no explicit licence stated (Google Research dataset); cite Barron et al., CVPR 2022; local research use",
+   "author": "Barron, Mildenhall, Verbin, Srinivasan, Hedman",
+   "sha256": "b6e6883e4c20e2905bce8b139884300e26db6ee17542e6b4f7af8e040be1ee69",
+   "opts": {
+    "members": [
+     "garden/images_4/",
+     "garden/sparse/0/"
+    ],
+    "extract": "scripts/dev/zip_range_extract.py (HTTP range, 245 MB of 12.5 GB)"
+   },
+   "meta": {
+    "kind": "capture",
+    "photos": 185,
+    "res": "1297x840",
+    "trainer": "Brush v0.3.0 (Apache-2.0), 30000 steps, seed 42, every 8th photo held out",
+    "splats": 2483411,
+    "ply": "runs/garden30k/export_30000.ply (sha256 above)",
+    "train_cmd": "brush_app garden_b --total-steps 30000 --eval-split-every 8 --eval-every 7500 --export-every 7500 --export-path . --eval-save-to-disk --seed 42  (garden_b/images → images_4, garden_b/sparse → sparse; Brush v0.3.0 aarch64-apple-darwin, release sha256 65b26313…)",
+    "init_points": "COLMAP sparse points from all 185 photos (standard Mip-NeRF 360 protocol)"
+   },
+   "fetched": "2026-11-12T19:20:23.091Z"
+  }
+ }
+}

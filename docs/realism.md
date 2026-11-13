@@ -145,3 +145,22 @@ image-based rasterisation has no contact shadows, so objects resting on the tabl
 reference; 20.8 dB around the contacts); three-gpu-pathtracer converges to Cycles (32.8 dB at 1024 spp) at about 12×
 the cost. `c2v three <p> <scene.mjs> --as=<layer>` runs a Rapier (deterministic build) rigid-body shot and records the
 deepest contact penetration per frame: 2.4 mm for a dropped apple versus 36.3 mm for the same move keyframed.
+
+## People in code-built scenes (Rocketbox avatars + motion capture)
+
+`C.drive_biped(avatar_rig, animation.fbx, anchor)` drives a Microsoft Rocketbox avatar with a Rocketbox animation:
+the animation files are bound in another pose (thighs 66° apart from the avatars'), so each bone copies the animation
+bone's world rotation instead of its local one; the performance is placed by moving `anchor`. `C.rocketbox_skin()`
+sets up the avatars' photographic skin, normal, specular and hair-card alpha maps.
+
+- `projects/film-cafe`: two seated people at the table layout solved in pc-still; each person is lifted to the floor,
+  each chair scaled to the sitter's measured underside and slid to the offset with no person vertex inside it
+  (0 vertices in chair or table, seat gaps within ±4 mm; the unsolved placement: 42 / 21 vertices in the chairs, feet
+  21 mm into the floor).
+- `projects/film-street`: a walk captured with forward travel is made in-place and cycled; the forward speed is solved
+  from the planted feet (1.049 m/s against the capture's 1.035 m/s; foot slide 16 cm/s against 36 cm/s at a fixed
+  1.4 m/s). The camera only rotates, which an HDRI background at infinity supports.
+- `projects/film-pd`: live action from a public-domain film, cut by code with bilingual subtitles and the original
+  sound laid back under the same cut list (`scripts/dev/mux_cuts_audio.mjs`).
+
+`c2v render` reuses frames on disk only while project.js, the scenes and assets.lock.json are unchanged.

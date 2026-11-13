@@ -1,0 +1,208 @@
+{
+ "assets": {
+  "rb_woman": {
+   "source": "github",
+   "id": "microsoft/Microsoft-Rocketbox/Assets/Avatars/Adults/Female_Adult_05@0943055db6ec570bcef9f2c8b41c9e5467c808f9",
+   "url": "https://github.com/microsoft/Microsoft-Rocketbox/tree/0943055db6ec570bcef9f2c8b41c9e5467c808f9/Assets/Avatars/Adults/Female_Adult_05",
+   "page": "https://github.com/microsoft/Microsoft-Rocketbox/tree/0943055db6ec570bcef9f2c8b41c9e5467c808f9/Assets/Avatars/Adults/Female_Adult_05",
+   "license": "MIT",
+   "author": "microsoft",
+   "sha256": "24159486ac1714ee4918bfeeabb3085c5bceadadfc46bf9197fb3f61c38cfe7f",
+   "opts": {
+    "include": "(Export/Female_Adult_05\\.fbx|Textures/)"
+   },
+   "meta": {
+    "kind": "model",
+    "files": [
+     "Export/Female_Adult_05.fbx",
+     "Textures/f005_body_color.tga",
+     "Textures/f005_body_normal.tga",
+     "Textures/f005_body_specular.tga",
+     "Textures/f005_head_color.tga",
+     "Textures/f005_head_normal.tga",
+     "Textures/f005_head_specular.tga",
+     "Textures/f005_opacity_color.tga"
+    ]
+   },
+   "fetched": "2026-11-13T10:34:18.791Z"
+  },
+  "walk": {
+   "source": "github",
+   "id": "microsoft/Microsoft-Rocketbox/Assets/Animations/all_animations_max_motextr_xy@0943055db6ec570bcef9f2c8b41c9e5467c808f9",
+   "url": "https://github.com/microsoft/Microsoft-Rocketbox/tree/0943055db6ec570bcef9f2c8b41c9e5467c808f9/Assets/Animations/all_animations_max_motextr_xy",
+   "page": "https://github.com/microsoft/Microsoft-Rocketbox/tree/0943055db6ec570bcef9f2c8b41c9e5467c808f9/Assets/Animations/all_animations_max_motextr_xy",
+   "license": "MIT",
+   "author": "microsoft",
+   "sha256": "501a1931375017c9e4a800a9c2102fefc0cc8d67c1d837a2a22fc2d181e5edca",
+   "opts": {
+    "include": "f_walk_(neutral|stroll_01)\\.max\\.fbx"
+   },
+   "meta": {
+    "kind": "model",
+    "files": [
+     "f_walk_neutral.max.fbx",
+     "f_walk_stroll_01.max.fbx"
+    ]
+   },
+   "fetched": "2026-11-13T10:34:22.425Z"
+  },
+  "street": {
+   "source": "blender",
+   "id": "projects/film-street/blender/street.py",
+   "url": null,
+   "page": "projects/film-street/blender/street.py",
+   "license": "own (rendered from code)",
+   "author": "c2v",
+   "sha256": "ed77d99c3a0faf1878d11ba4aceedfdf983a435be3d3ce947222958af213dde4",
+   "opts": {
+    "params": {
+     "hdri_rot": 45,
+     "speed": "solved",
+     "fixed_speed": 1.4,
+     "approach": 9,
+     "stop_short": 3.2,
+     "lens": 50,
+     "fstop": 2
+    },
+    "frames": 144,
+    "samples": 24,
+    "w": 1280,
+    "h": 720
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 144,
+    "fps": 24,
+    "w": 1280,
+    "h": 720,
+    "dur": 6,
+    "params": {
+     "hdri_rot": 45,
+     "speed": "solved",
+     "fixed_speed": 1.4,
+     "approach": 9,
+     "stop_short": 3.2,
+     "lens": 50,
+     "fstop": 2
+    },
+    "measure": {
+     "capture_travel_m_s": 1.035,
+     "slide_capture_speed_cm_s": {
+      "mean": 15.9,
+      "p90": 24.4
+     },
+     "speed_solved_m_s": 1.049,
+     "speed_used_m_s": 1.049,
+     "heading": [
+      -0.012,
+      -1
+     ],
+     "cycle_frames": 37,
+     "stance_samples": 63,
+     "slide_solved_cm_s": {
+      "mean": 16,
+      "p90": 22.9
+     },
+     "slide_fixed_cm_s": {
+      "fixed_speed": 1.4,
+      "mean": 36,
+      "p90": 52.7
+     }
+    }
+   },
+   "render": {
+    "kind": "video",
+    "frames": 144,
+    "fps": 24,
+    "w": 1280,
+    "h": 720,
+    "dur": 6,
+    "samples": 24,
+    "blender": "5.2.1 LTS",
+    "build_s": 0.6,
+    "render_s_per_frame": 0.91,
+    "rendered": 144
+   },
+   "fetched": "2026-11-13T10:56:06.561Z"
+  },
+  "street_fixed": {
+   "source": "blender",
+   "id": "projects/film-street/blender/street.py",
+   "url": null,
+   "page": "projects/film-street/blender/street.py",
+   "license": "own (rendered from code)",
+   "author": "c2v",
+   "sha256": "bda623fcb70e653166634f3012e7376384b0d2787b2e64e33a2050a671be3eb6",
+   "opts": {
+    "params": {
+     "hdri_rot": 45,
+     "speed": "fixed",
+     "fixed_speed": 1.4,
+     "approach": 9,
+     "stop_short": 3.2,
+     "lens": 50,
+     "fstop": 2
+    },
+    "frames": 144,
+    "samples": 24,
+    "w": 1280,
+    "h": 720
+   },
+   "meta": {
+    "kind": "video",
+    "frames": 144,
+    "fps": 24,
+    "w": 1280,
+    "h": 720,
+    "dur": 6,
+    "params": {
+     "hdri_rot": 45,
+     "speed": "fixed",
+     "fixed_speed": 1.4,
+     "approach": 9,
+     "stop_short": 3.2,
+     "lens": 50,
+     "fstop": 2
+    },
+    "measure": {
+     "capture_travel_m_s": 1.035,
+     "slide_capture_speed_cm_s": {
+      "mean": 15.9,
+      "p90": 24.4
+     },
+     "speed_solved_m_s": 1.049,
+     "speed_used_m_s": 1.4,
+     "heading": [
+      -0.012,
+      -1
+     ],
+     "cycle_frames": 37,
+     "stance_samples": 63,
+     "slide_solved_cm_s": {
+      "mean": 16,
+      "p90": 22.9
+     },
+     "slide_fixed_cm_s": {
+      "fixed_speed": 1.4,
+      "mean": 36,
+      "p90": 52.7
+     }
+    }
+   },
+   "render": {
+    "kind": "video",
+    "frames": 144,
+    "fps": 24,
+    "w": 1280,
+    "h": 720,
+    "dur": 6,
+    "samples": 24,
+    "blender": "5.2.1 LTS",
+    "build_s": 0.4,
+    "render_s_per_frame": 0.98,
+    "rendered": 144
+   },
+   "fetched": "2026-11-13T10:58:31.603Z"
+  }
+ }
+}

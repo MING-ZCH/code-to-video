@@ -1,0 +1,10 @@
+{
+ "range": "0:6",
+ "scale": 0.5,
+ "workers": 4,
+ "threshold": 6,
+ "base": { "caption": false },
+ "edits": [
+  { "id": "speed_fixed", "type": "motion", "zh": "改为固定 1.4 m/s 前进（不按步态求解速度）。", "en": "Move forward at a fixed 1.4 m/s instead of the speed solved from the gait.", "params": { "layer": "street_fixed" } }
+ ]
+}

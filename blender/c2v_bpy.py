@@ -637,3 +637,68 @@ def fix_biped_tails(rig: bpy.types.Object) -> None:
             b.tail = c.head
             c.tail = c.head + (c.head - b.head) * 0.8
     bpy.ops.object.mode_set(mode="OBJECT")
+
+
+def drive_biped(dst: bpy.types.Object, anim_fbx: str, anchor: bpy.types.Object | None = None) -> tuple[bpy.types.Object, bpy.types.Action]:
+    """Drive a Rocketbox (3ds Max Biped) avatar with a Rocketbox animation file.
+
+    Avatar and animation files are bound in different poses (A pose vs the animation's first pose), so copying local
+    rotations bends limbs wrongly; the bones' axis conventions match, so each avatar bone copies the animation bone's
+    world rotation (and the pelvis its world position). The animation armature stays in the scene, hidden, under
+    ``anchor``: move the anchor to place the performance. Returns (animation armature, its action).
+    """
+    dst.animation_data_clear()
+    for pb in dst.pose.bones:
+        pb.matrix_basis.identity()
+    before = set(bpy.data.objects)
+    bpy.ops.import_scene.fbx(filepath=anim_fbx)
+    new = [o for o in bpy.data.objects if o not in before]
+    src = next(o for o in new if o.type == "ARMATURE")
+    for o in new:
+        if o is not src:
+            bpy.data.objects.remove(o)
+    if anchor is not None:
+        src.parent = anchor
+    src.hide_render = True; src.hide_viewport = True
+    for pb in dst.pose.bones:
+        if pb.name not in src.pose.bones:
+            continue
+        c = pb.constraints.new("COPY_ROTATION"); c.target = src; c.subtarget = pb.name
+        c.owner_space = c.target_space = "WORLD"
+        if pb.parent is None:
+            c = pb.constraints.new("COPY_LOCATION"); c.target = src; c.subtarget = pb.name
+            c.owner_space = c.target_space = "WORLD"
+    return src, src.animation_data.action
+
+
+def rocketbox_skin(mesh: bpy.types.Object, tex_dir: str) -> None:
+    """Replace a Rocketbox avatar's imported materials with its photographic maps: colour, tangent normal and specular
+    with subsurface scattering for body and head, colour + alpha for the hair/eyelash cards ("opacity")."""
+    files = os.listdir(tex_dir)
+    def find(part: str, kind: str) -> str | None:
+        f = next((f for f in files if f.endswith(f"_{part}_{kind}.tga")), None)
+        return os.path.join(tex_dir, f) if f else None
+    for i, m in enumerate(mesh.data.materials):
+        part = "opacity" if "opacity" in m.name else "head" if "head" in m.name else "body"
+        mat = bpy.data.materials.new(f"skin_{part}"); mat.use_nodes = True
+        nt = mat.node_tree; bsdf = nt.nodes["Principled BSDF"]
+        def tex(path: str, non_color: bool) -> bpy.types.Node:
+            n = nt.nodes.new("ShaderNodeTexImage"); n.image = bpy.data.images.load(path, check_existing=True)
+            if non_color:
+                n.image.colorspace_settings.name = "Non-Color"
+            return n
+        col = tex(find(part, "color"), False)
+        nt.links.new(col.outputs["Color"], bsdf.inputs["Base Color"])
+        if part == "opacity":
+            nt.links.new(col.outputs["Alpha"], bsdf.inputs["Alpha"])
+        else:
+            if find(part, "normal"):
+                nm = nt.nodes.new("ShaderNodeNormalMap"); nt.links.new(tex(find(part, "normal"), True).outputs["Color"], nm.inputs["Color"])
+                nt.links.new(nm.outputs["Normal"], bsdf.inputs["Normal"])
+            if find(part, "specular"):
+                nt.links.new(tex(find(part, "specular"), True).outputs["Color"], bsdf.inputs["Specular IOR Level"])
+            bsdf.inputs["Roughness"].default_value = 0.5
+            bsdf.inputs["Subsurface Weight"].default_value = 0.2
+            bsdf.inputs["Subsurface Radius"].default_value = (1.0, 0.35, 0.2)
+            bsdf.inputs["Subsurface Scale"].default_value = 0.006
+        mesh.data.materials[i] = mat

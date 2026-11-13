@@ -131,3 +131,17 @@ into a table. Code scenes have explicit 3D state, so these are measured per fram
   (`scripts/dev/splat_scene_probe.py … <e1> <e2>`), not on a guessed plane.
 - `C.fix_biped_tails` re-points FBX-imported 3ds Max Biped bones (Microsoft Rocketbox avatars) at the next joint so IK
   ends at the real wrist.
+
+## Pure code, no capture: layout solving, renderer choice, rigid-body interaction
+
+`projects/pc-still` lays out Poly Haven scans on a table three ways and measures each (`blender/still.py`, `measure()`):
+by origin (`naive`), by origin with every asset normalised to 20 cm (`naive_scaled`), and solved (size priors, mesh
+bottoms on supports, footprint separation, rest-pose prior, vertical sweep with minimum-potential-energy placement,
+Bullet settling, then a check that the fruit stayed on the plate). Solved: 0 interpenetrating pairs (naive 6), support
+gaps ≤ 0.9 mm, objects move ≤ 2.5 mm when gravity is switched on (naive: pieces thrown metres).
+
+The solved scene exported to glTF renders in three.js (`c2v three --glb … --mode=raster|raster_gtao|pt`, `engine/three.js`):
+image-based rasterisation has no contact shadows, so objects resting on the table look afloat (24.5 dB against a Cycles
+reference; 20.8 dB around the contacts); three-gpu-pathtracer converges to Cycles (32.8 dB at 1024 spp) at about 12×
+the cost. `c2v three <p> <scene.mjs> --as=<layer>` runs a Rapier (deterministic build) rigid-body shot and records the
+deepest contact penetration per frame: 2.4 mm for a dropped apple versus 36.3 mm for the same move keyframed.

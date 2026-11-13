@@ -19,6 +19,7 @@
 //   c2v assets <name> search|fetch|list|credits|restore   real-world media (lib/assets.mjs) with licence + sha256 lock
 //   c2v pairs <name> [--only=a,b] [--scale=.5]  edit pairs: base + one video per PROJECT.params edit, diff masks, pairs.jsonl
 //   c2v splat <name> <scene.mjs> --as=<layer>   code-driven camera/edits over a captured 3DGS scene (lib/splat.mjs)
+//   c2v three --glb=… --hdr=… --mode=…          a glTF scene through three.js: raster, raster + GTAO, path traced (lib/three.mjs)
 // Render flags pass through to render.mjs: --scale, --medium, --soft-gl, --gpu-angle, --chrome, --workers.
 import { spawnSync } from 'node:child_process';
 import { existsSync, mkdirSync, writeFileSync, readFileSync, readdirSync, copyFileSync } from 'node:fs';
@@ -156,6 +157,12 @@ const commands = {
     need(); const scene = rest[0]; if (!scene || !opt.as) die('usage: c2v splat <name> <scene.mjs> --as=<layer> [--frames=120] [--scale=1] [--params=json]');
     const r = await S.renderLayer(PDIR, scene, opt);
     console.log(`${opt.as}: ${r.frames} frames ${r.w}x${r.h} · ${r.splats} splats · ${r.s_per_frame} s/frame${r.hits?.length ? ' · edit hits ' + r.hits.join(',') : ''}`);
+  },
+  async three() {
+    const { renderThree, renderSimLayer } = await import('../lib/three.mjs');
+    if (name && rest[0]) { need(); if (!opt.as) die('usage: c2v three <name> <scene.mjs> --as=<layer> [--frames=96] [--scale=.6667] [--params=json]'); return console.log(JSON.stringify(await renderSimLayer(PDIR, rest[0], opt))); }
+    if (!opt.glb || !opt.hdr || !opt.mode || !opt.out) die('usage: c2v three --glb=<scene.glb> --hdr=<env.hdr> --mode=raster|raster_gtao|pt [--spp=256] [--bounces=8] [--w=1280 --h=720] --out=<file.png>');
+    console.log(JSON.stringify(await renderThree({ glb: opt.glb, hdr: opt.hdr, mode: opt.mode, spp: +(opt.spp || 256), bounces: +(opt.bounces || 8), w: +(opt.w || 1280), h: +(opt.h || 720), out: opt.out, bg: opt.bg !== 'false', envRot: opt.rot != null ? +opt.rot : 0 })));
   },
   async pairs() { need(); const { runPairs } = await import('../lib/pairs.mjs'); await runPairs(name, opt); },
   async report() { need(); const { writeReport } = await import('../lib/report.mjs'); console.log('wrote ' + writeReport(name)); },
